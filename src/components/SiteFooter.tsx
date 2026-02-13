@@ -1,28 +1,55 @@
 import { Mail, Phone, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const footerSections = [
   {
     title: "People",
-    links: ["Our Advisors", "Leadership Team"],
+    titleHref: "/about",
+    links: [
+      { label: "Our Advisors", href: "/about" },
+      { label: "Leadership Team", href: "/about" },
+    ],
   },
   {
     title: "Services",
-    links: ["Citizenship by Investment", "Residency by Investment", "Family Planning", "Government Advisory", "Due Diligence", "Tax Planning"],
+    titleHref: "/services",
+    links: [
+      { label: "Citizenship by Investment", href: "/services" },
+      { label: "Residency by Investment", href: "/services" },
+      { label: "Family Planning", href: "/services" },
+      { label: "Government Advisory", href: "/services" },
+      { label: "Due Diligence", href: "/services" },
+      { label: "Tax Planning", href: "/services" },
+    ],
   },
   {
     title: "Firm",
-    links: ["About Us", "Careers", "Responsible Business", "Equity & Inclusion", "Firm Leadership"],
+    titleHref: "/about",
+    links: [
+      { label: "About Us", href: "/about" },
+      { label: "Careers", href: "/about" },
+      { label: "Responsible Business", href: "/about" },
+      { label: "Equity & Inclusion", href: "/about" },
+      { label: "Firm Leadership", href: "/about" },
+    ],
   },
   {
     title: "Offices",
-    links: ["Dubai", "London", "Hong Kong", "Montreal", "Singapore"],
+    titleHref: "/contact",
+    links: [
+      { label: "Dubai", href: "/contact" },
+      { label: "London", href: "/contact" },
+      { label: "Hong Kong", href: "/contact" },
+      { label: "Montreal", href: "/contact" },
+      { label: "Singapore", href: "/contact" },
+    ],
   },
 ];
 
 const SiteFooter = () => {
   return (
-    <footer id="contact" className="bg-dark-surface text-dark-surface-foreground">
-      {/* CTA Bar - Fasken style */}
+    <footer className="bg-dark-surface text-dark-surface-foreground">
+      {/* CTA Bar */}
       <div className="border-b border-dark-surface-foreground/10">
         <div className="container py-14 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
@@ -31,26 +58,29 @@ const SiteFooter = () => {
               Contact our team for a confidential consultation.
             </p>
           </div>
-          <a href="#" className="btn-fasken-primary">
+          <Link to="/contact" className="btn-fasken-primary">
             Get Started
-          </a>
+          </Link>
         </div>
       </div>
 
-      {/* Footer grid - Fasken style with chevron links */}
+      {/* Footer grid */}
       <div className="container py-14 grid md:grid-cols-5 gap-8">
         {footerSections.map((section) => (
           <div key={section.title}>
-            <a href="#" className="flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.15em] mb-5 text-dark-surface-foreground/80 hover:text-primary transition-colors">
+            <Link
+              to={section.titleHref}
+              className="flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.15em] mb-5 text-dark-surface-foreground/80 hover:text-primary transition-colors"
+            >
               {section.title}
               <ChevronRight size={12} />
-            </a>
+            </Link>
             <ul className="space-y-2.5">
               {section.links.map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-[13px] text-dark-surface-foreground/50 hover:text-primary transition-colors">
-                    {link}
-                  </a>
+                <li key={link.label}>
+                  <Link to={link.href} className="text-[13px] text-dark-surface-foreground/50 hover:text-primary transition-colors">
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -71,7 +101,6 @@ const SiteFooter = () => {
             </a>
           </div>
 
-          {/* Portals section - Fasken style */}
           <div className="mt-8">
             <h4 className="text-xs font-semibold uppercase tracking-[0.15em] mb-3 text-dark-surface-foreground/80">
               Portals
@@ -91,9 +120,9 @@ const SiteFooter = () => {
       {/* Subscribe bar */}
       <div className="border-t border-dark-surface-foreground/10">
         <div className="container py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <a href="#" className="link-arrow text-dark-surface-foreground/60 hover:text-primary">
+          <Link to="/knowledge" className="link-arrow text-dark-surface-foreground/60 hover:text-primary">
             Subscribe to our legal updates <ChevronRight size={12} />
-          </a>
+          </Link>
         </div>
       </div>
 
