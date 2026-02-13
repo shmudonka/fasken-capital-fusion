@@ -82,11 +82,6 @@ const SiteFooter = () => (
       </div>
     </div>
     <div className="border-t border-dark-surface-foreground/10">
-      <div className="container py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-        <Link to="/knowledge" className="link-arrow text-dark-surface-foreground/60 hover:text-primary">Subscribe to our legal updates <ChevronRight size={12} /></Link>
-      </div>
-    </div>
-    <div className="border-t border-dark-surface-foreground/10">
       <div className="container py-5 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-dark-surface-foreground/35">
         <p>© 2026 Citizenship Capital Group. All rights reserved.</p>
         <div className="flex gap-6">
