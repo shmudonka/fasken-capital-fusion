@@ -1,4 +1,5 @@
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import programsBg from "@/assets/programs-bg.jpg";
 
 const programs = [
@@ -19,7 +20,6 @@ const programs = [
 const ProgramsSection = () => {
   return (
     <section id="programs" className="relative py-24 overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0">
         <img src={programsBg} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-dark-surface/92" />
@@ -32,16 +32,16 @@ const ProgramsSection = () => {
             Global Citizen Programs
           </h2>
         </div>
-        <div className="section-divider mb-6" />
+        <div className="w-12 h-[3px] bg-primary mb-6" />
         <p className="text-dark-surface-foreground/60 max-w-2xl text-[15px] mb-12">
           Explore our comprehensive portfolio of citizenship and residency by investment programs across the globe.
         </p>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
           {programs.map((program) => (
-            <a
+            <Link
               key={program.country}
-              href="#"
+              to="/programs"
               className="group flex items-center justify-between border-b border-dark-surface-foreground/10 py-5 px-4 hover:bg-dark-surface-foreground/5 transition-all duration-200"
             >
               <div>
@@ -53,14 +53,14 @@ const ProgramsSection = () => {
                 </p>
               </div>
               <ChevronRight size={16} className="text-dark-surface-foreground/20 group-hover:text-primary transition-colors shrink-0" />
-            </a>
+            </Link>
           ))}
         </div>
 
         <div className="mt-10">
-          <a href="#" className="btn-fasken-outline-white">
+          <Link to="/programs" className="btn-fasken-outline-white">
             View All Programs
-          </a>
+          </Link>
         </div>
       </div>
     </section>

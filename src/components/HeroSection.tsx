@@ -1,27 +1,38 @@
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Pause } from "lucide-react";
+import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const slides = [
   {
     category: "GLOBAL MOBILITY",
     title: "Access a world of visa-free travel and global mobility",
+    link: "/programs",
+    cta: "Explore Programs",
   },
   {
     category: "INVESTMENT PROGRAMS",
     title: "Freedom of mind to focus on what's important for you and your family",
+    link: "/services",
+    cta: "Our Services",
   },
   {
     category: "CITIZENSHIP",
     title: "Secure a better and safer future for your family",
+    link: "/programs",
+    cta: "Learn More",
   },
   {
     category: "ADVISORY",
     title: "Expand your horizons and unlock unimaginable possibilities",
+    link: "/about",
+    cta: "About Us",
   },
   {
     category: "YOUR FUTURE",
     title: "Realize your dreams and build the future you desire",
+    link: "/contact",
+    cta: "Get Started",
   },
 ];
 
@@ -41,68 +52,69 @@ const HeroSection = () => {
   const next = () => setCurrent((c) => (c + 1) % slides.length);
 
   return (
-    <section className="relative min-h-[80vh] flex overflow-hidden">
-      {/* Left content panel - Fasken warm beige */}
-      <div className="relative z-10 w-full lg:w-1/2 bg-warm-beige flex flex-col justify-center px-8 md:px-16 lg:px-20 py-32">
+    <section className="relative min-h-[85vh] flex overflow-hidden">
+      {/* Left content panel */}
+      <div className="relative z-10 w-full lg:w-[48%] bg-warm-beige flex flex-col justify-center px-8 md:px-16 lg:px-20 pt-36 pb-40 lg:pt-44 lg:pb-48">
         <div className="max-w-xl">
-          <h1 className="text-3xl md:text-4xl lg:text-[42px] font-serif leading-[1.2] text-foreground mb-6">
+          <h1
+            className="text-3xl md:text-4xl lg:text-[44px] font-serif leading-[1.18] text-foreground mb-6 transition-opacity duration-500"
+            key={current}
+          >
             {slides[current].title}
           </h1>
-          <div className="section-divider mb-8" />
-          <p className="text-sm text-muted-foreground leading-relaxed mb-8 max-w-md">
+          <div className="w-12 h-[3px] bg-primary mb-8" />
+          <p className="text-[14px] text-muted-foreground leading-relaxed mb-8 max-w-md">
             Citizenship Capital Group empowers individuals and families to become global citizens through strategic investment migration solutions.
           </p>
-          <a href="#programs" className="btn-fasken">
-            Learn More
-          </a>
+          <Link to={slides[current].link} className="btn-fasken">
+            {slides[current].cta}
+          </Link>
         </div>
       </div>
 
-      {/* Right image panel - Fasken style */}
-      <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full">
+      {/* Right image panel */}
+      <div className="hidden lg:block absolute right-0 top-0 w-[52%] h-full">
         <img src={heroBg} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-foreground/20" />
+        <div className="absolute inset-0 bg-foreground/15" />
       </div>
 
-      {/* Navigation arrows - Fasken centered style */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
-        <button onClick={prev} className="p-1.5 text-foreground/50 hover:text-primary transition-colors" aria-label="Previous slide">
-          <ChevronLeft size={20} />
+      {/* Navigation controls — centered like Fasken */}
+      <div className="absolute bottom-[88px] left-1/2 -translate-x-1/2 z-20 flex items-center gap-1 bg-dark-surface/80 backdrop-blur-sm">
+        <button onClick={prev} className="p-3 text-dark-surface-foreground/60 hover:text-primary transition-colors" aria-label="Previous">
+          <ChevronLeft size={18} />
         </button>
-        <button onClick={next} className="p-1.5 text-foreground/50 hover:text-primary transition-colors" aria-label="Next slide">
-          <ChevronRight size={20} />
+        <button onClick={next} className="p-3 text-dark-surface-foreground/60 hover:text-primary transition-colors" aria-label="Next">
+          <ChevronRight size={18} />
         </button>
-        <button onClick={() => setPaused(!paused)} className="p-1.5 text-foreground/50 hover:text-primary transition-colors" aria-label="Pause">
-          <Pause size={16} />
+        <button onClick={() => setPaused(!paused)} className="p-3 text-dark-surface-foreground/60 hover:text-primary transition-colors" aria-label="Pause">
+          {paused ? <Play size={14} /> : <Pause size={14} />}
         </button>
       </div>
 
-      {/* Slide indicators - Fasken numbered tabs at bottom */}
+      {/* Slide tabs — Fasken numbered indicators */}
       <div className="absolute bottom-0 left-0 right-0 z-20">
-        <div className="container">
-          <div className="flex">
-            {slides.map((slide, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={`flex-1 py-5 px-4 text-left transition-all duration-300 border-t-2 ${
-                  i === current
-                    ? "bg-dark-surface border-primary text-dark-surface-foreground triangle-accent"
-                    : "bg-dark-surface/80 border-transparent text-dark-surface-foreground/60 hover:text-dark-surface-foreground"
-                }`}
-              >
-                <span className="text-[10px] font-semibold uppercase tracking-[0.15em] block mb-1">
-                  {slide.category}
-                </span>
-                <span className="text-[13px] font-serif leading-tight block truncate">
-                  {slide.title.length > 40 ? slide.title.substring(0, 40) + "..." : slide.title}
-                </span>
-                <span className="text-[22px] font-serif text-dark-surface-foreground/20 block mt-2 text-right">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-              </button>
-            ))}
-          </div>
+        <div className="flex">
+          {slides.map((slide, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`flex-1 py-5 px-4 text-left transition-all duration-300 border-t-2 ${
+                i === current
+                  ? "bg-dark-surface border-primary text-dark-surface-foreground triangle-accent"
+                  : "bg-dark-surface/90 border-transparent text-dark-surface-foreground/50 hover:text-dark-surface-foreground/80"
+              }`}
+            >
+              <span className="text-[10px] font-semibold uppercase tracking-[0.15em] block mb-1">
+                {slide.category}
+              </span>
+              <span className="text-[12px] font-serif leading-tight block truncate hidden sm:block">
+                {slide.title.length > 35 ? slide.title.substring(0, 35) + "..." : slide.title}
+              </span>
+              <span className="text-[22px] font-serif text-dark-surface-foreground/15 block mt-2 text-right">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+            </button>
+          ))}
         </div>
       </div>
     </section>
