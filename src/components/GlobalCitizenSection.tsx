@@ -1,61 +1,67 @@
 import { ArrowRight } from "lucide-react";
 
+const cards = [
+  {
+    category: "GUIDE",
+    date: "February 2026",
+    title: "Become a Global Citizen",
+    description:
+      "Citizenship Capital Group empowers high net worth individuals and families to become global citizens by investing in a second residence or citizenship.",
+    link: "Become a Global Citizen",
+  },
+  {
+    category: "PARTNERSHIPS",
+    title: "Join Our Certified Partner Network",
+    description:
+      "Citizenship Capital Group equips its Certified Partner network with tools, services, and training to deliver the best possible experience to clients.",
+    link: "Become a Partner",
+  },
+  {
+    category: "GOVERNMENT",
+    title: "Sovereign Partnership Solutions",
+    description:
+      "Citizenship Capital Group enables government agencies as trusted partners in designing, developing, and implementing investor programs for residence and citizenship.",
+    link: "Sovereign Partnerships",
+  },
+];
+
 const GlobalCitizenSection = () => {
   return (
-    <section id="citizenship" className="py-24 bg-background">
+    <section id="citizenship" className="py-20 bg-background">
       <div className="container">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-4">
-            Become a Global Citizen
-          </h2>
-          <div className="section-divider mx-auto mb-6" />
-          <p className="text-lg text-muted-foreground italic font-serif">
-            Discover the power of a second citizenship. Live the life you were destined to live.
-          </p>
-        </div>
+        <div className="grid md:grid-cols-3 gap-0">
+          {cards.map((card, i) => (
+            <a
+              key={i}
+              href="#"
+              className="group block border-b md:border-b-0 md:border-r last:border-r-0 border-border p-8 lg:p-10 hover:bg-warm-beige transition-colors duration-300"
+            >
+              {/* Category + date row */}
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-primary">
+                  {card.category}
+                </span>
+                {card.date && (
+                  <span className="text-[11px] text-muted-foreground">{card.date}</span>
+                )}
+              </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* High Net Worth Investors */}
-          <div className="group card-hover border border-border p-8">
-            <h3 className="text-xl font-serif text-foreground mb-4">
-              High Net Worth Investors
-            </h3>
-            <div className="section-divider mb-4" />
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Citizenship Capital Group empowers high net worth individuals and families to become global citizens by investing in a second residence or citizenship and helps transform their aspirations into reality through highly personalized products and services.
-            </p>
-            <a href="#" className="link-arrow">
-              Become a Global Citizen <ArrowRight size={14} />
-            </a>
-          </div>
+              {/* Title */}
+              <h3 className="text-xl font-serif text-foreground mb-3 leading-snug group-hover:text-primary transition-colors">
+                {card.title}
+              </h3>
 
-          {/* Certified Partners */}
-          <div className="group card-hover border border-border p-8">
-            <h3 className="text-xl font-serif text-foreground mb-4">
-              Certified Partners
-            </h3>
-            <div className="section-divider mb-4" />
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Citizenship Capital Group equips its Certified Partner network with tools, services, and training to deliver the best possible experience to clients seeking to invest in second residence or citizenship. Our partners advise clients on virtually any matter in any jurisdiction around the world.
-            </p>
-            <a href="#" className="link-arrow">
-              Become a Partner <ArrowRight size={14} />
-            </a>
-          </div>
+              {/* Description */}
+              <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                {card.description}
+              </p>
 
-          {/* Government Agencies */}
-          <div className="group card-hover border border-border p-8">
-            <h3 className="text-xl font-serif text-foreground mb-4">
-              Government Agencies
-            </h3>
-            <div className="section-divider mb-4" />
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Citizenship Capital Group enables government agencies as trusted partners in designing, developing, implementing, and running investor programs for residence and citizenship to help boost foreign investments in their countries.
-            </p>
-            <a href="#" className="link-arrow">
-              Sovereign Partnerships <ArrowRight size={14} />
+              {/* Link arrow - Fasken style */}
+              <span className="link-arrow group-hover:text-primary">
+                {card.link} <ArrowRight size={12} />
+              </span>
             </a>
-          </div>
+          ))}
         </div>
       </div>
     </section>
