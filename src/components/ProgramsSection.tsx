@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import programsBg from "@/assets/programs-bg.jpg";
 
 const programs = [
@@ -19,39 +19,48 @@ const programs = [
 const ProgramsSection = () => {
   return (
     <section id="programs" className="relative py-24 overflow-hidden">
-      {/* Background image */}
+      {/* Background */}
       <div className="absolute inset-0">
         <img src={programsBg} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-dark-surface/90" />
+        <div className="absolute inset-0 bg-dark-surface/92" />
       </div>
 
       <div className="relative z-10 container">
-        <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif text-dark-surface-foreground mb-4">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-0 h-0 border-l-[12px] border-l-primary border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent" />
+          <h2 className="text-3xl md:text-4xl font-serif text-dark-surface-foreground">
             Global Citizen Programs
           </h2>
-          <div className="section-divider mb-6" />
-          <p className="text-dark-surface-foreground/70 max-w-2xl">
-            Explore our comprehensive portfolio of citizenship and residency by investment programs across the globe.
-          </p>
         </div>
+        <div className="section-divider mb-6" />
+        <p className="text-dark-surface-foreground/60 max-w-2xl text-[15px] mb-12">
+          Explore our comprehensive portfolio of citizenship and residency by investment programs across the globe.
+        </p>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
           {programs.map((program) => (
             <a
               key={program.country}
               href="#"
-              className="group border border-dark-surface-foreground/10 p-6 hover:border-primary hover:bg-primary/5 transition-all duration-300"
+              className="group flex items-center justify-between border-b border-dark-surface-foreground/10 py-5 px-4 hover:bg-dark-surface-foreground/5 transition-all duration-200"
             >
-              <h3 className="font-serif text-lg text-dark-surface-foreground mb-1 group-hover:text-primary transition-colors">
-                {program.country}
-              </h3>
-              <p className="text-xs text-dark-surface-foreground/50 uppercase tracking-wider">
-                {program.type}
-              </p>
-              <ArrowRight size={14} className="mt-4 text-dark-surface-foreground/30 group-hover:text-primary transition-colors" />
+              <div>
+                <h3 className="font-serif text-[15px] text-dark-surface-foreground group-hover:text-primary transition-colors">
+                  {program.country}
+                </h3>
+                <p className="text-[10px] text-dark-surface-foreground/40 uppercase tracking-[0.1em] mt-0.5">
+                  {program.type}
+                </p>
+              </div>
+              <ChevronRight size={16} className="text-dark-surface-foreground/20 group-hover:text-primary transition-colors shrink-0" />
             </a>
           ))}
+        </div>
+
+        <div className="mt-10">
+          <a href="#" className="btn-fasken-outline-white">
+            View All Programs
+          </a>
         </div>
       </div>
     </section>

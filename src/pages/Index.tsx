@@ -5,6 +5,8 @@ import ServicesSection from "@/components/ServicesSection";
 import ProgramsSection from "@/components/ProgramsSection";
 import InsightsSection from "@/components/InsightsSection";
 import SiteFooter from "@/components/SiteFooter";
+import CookieBanner from "@/components/CookieBanner";
+import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   return (
@@ -18,6 +20,8 @@ const Index = () => {
         <InsightsSection />
       </main>
       <SiteFooter />
+      <CookieBanner />
+      <BackToTop />
     </div>
   );
 };

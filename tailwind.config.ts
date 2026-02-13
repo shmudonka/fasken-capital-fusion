@@ -56,6 +56,7 @@ export default {
           foreground: "hsl(var(--dark-surface-foreground))",
         },
         "warm-gray": "hsl(var(--warm-gray))",
+        "warm-beige": "hsl(var(--warm-beige))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

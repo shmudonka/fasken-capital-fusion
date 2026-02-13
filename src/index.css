@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    /* Fasken-inspired palette */
+    /* Fasken palette */
     --background: 0 0% 100%;
     --foreground: 0 0% 15%;
 
@@ -36,12 +36,13 @@
     --input: 0 0% 88%;
     --ring: 14 89% 46%;
 
-    --radius: 0.25rem;
+    --radius: 0rem;
 
-    /* Custom tokens */
+    /* Fasken custom tokens */
     --dark-surface: 0 0% 13%;
     --dark-surface-foreground: 0 0% 95%;
-    --warm-gray: 30 5% 92%;
+    --warm-gray: 30 10% 92%;
+    --warm-beige: 30 15% 94%;
     --hero-overlay: 0 0% 0%;
 
     --sidebar-background: 0 0% 98%;
@@ -100,15 +101,63 @@
 }
 
 @layer components {
+  /* Fasken-style red bar divider */
   .section-divider {
-    @apply w-16 h-[3px] bg-primary;
+    @apply w-12 h-[3px] bg-primary;
   }
 
+  /* Fasken-style chevron link - uppercase, tracked, with arrow */
   .link-arrow {
-    @apply inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary hover:gap-3 transition-all duration-300;
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-foreground hover:text-primary transition-colors duration-200;
   }
 
+  /* Fasken card hover */
   .card-hover {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+    @apply transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md;
   }
+
+  /* Fasken-style outlined button - square corners, uppercase */
+  .btn-fasken {
+    @apply inline-flex items-center justify-center px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] border border-foreground/30 text-foreground bg-transparent hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300;
+  }
+
+  .btn-fasken-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] bg-primary text-primary-foreground border border-primary hover:bg-primary/90 transition-all duration-300;
+  }
+
+  .btn-fasken-outline-white {
+    @apply inline-flex items-center justify-center px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] border border-primary-foreground/40 text-primary-foreground bg-transparent hover:bg-primary hover:border-primary transition-all duration-300;
+  }
+
+  /* Fasken red triangle accent */
+  .triangle-accent {
+    @apply relative;
+  }
+  .triangle-accent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 40px 40px 0;
+    border-color: transparent hsl(14 89% 46%) transparent transparent;
+  }
+}
+
+/* Cookie banner animation */
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out forwards;
 }
