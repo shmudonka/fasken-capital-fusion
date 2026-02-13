@@ -12,7 +12,7 @@ const Accessibility = () => (
       <div className="container max-w-4xl py-16 space-y-8">
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">Our Commitment</h2>
-          <p className="text-[15px] text-muted-foreground leading-relaxed">Citizenship Capital Group is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.</p>
+          <p className="text-[15px] text-muted-foreground leading-relaxed">Javaid & Associates - Citizenship Capital Group is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.</p>
         </div>
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">Standards</h2>

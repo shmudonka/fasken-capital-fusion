@@ -7,7 +7,7 @@ const cards = [
     date: "February 2026",
     title: "Become a Global Citizen",
     description:
-      "Citizenship Capital Group empowers high net worth individuals and families to become global citizens by investing in a second residence or citizenship.",
+      "Javaid & Associates - Citizenship Capital Group empowers high net worth individuals and families to become global citizens by investing in a second residence or citizenship.",
     link: "Become a Global Citizen",
     href: "/programs",
   },
@@ -15,7 +15,7 @@ const cards = [
     category: "PARTNERSHIPS",
     title: "Join Our Certified Partner Network",
     description:
-      "Citizenship Capital Group equips its Certified Partner network with tools, services, and training to deliver the best possible experience to clients.",
+      "Javaid & Associates equips its Certified Partner network with tools, services, and training to deliver the best possible experience to clients.",
     link: "Become a Partner",
     href: "/contact",
   },
@@ -23,7 +23,7 @@ const cards = [
     category: "GOVERNMENT",
     title: "Sovereign Partnership Solutions",
     description:
-      "Citizenship Capital Group enables government agencies as trusted partners in designing, developing, and implementing investor programs for residence and citizenship.",
+      "Javaid & Associates enables government agencies as trusted partners in designing, developing, and implementing investor programs for residence and citizenship.",
     link: "Sovereign Partnerships",
     href: "/services",
   },

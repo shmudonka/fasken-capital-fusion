@@ -40,7 +40,7 @@ const Careers = () => {
                 <h2 className="text-2xl font-serif text-foreground">Why Join Us</h2>
               </div>
               <p className="text-[15px] text-muted-foreground leading-relaxed mb-5">
-                At Citizenship Capital Group, we believe that our people are our greatest asset. We foster an environment of intellectual curiosity, professional growth, and mutual respect.
+                At Javaid & Associates - Citizenship Capital Group, we believe that our people are our greatest asset. We foster an environment of intellectual curiosity, professional growth, and mutual respect.
               </p>
               <p className="text-[15px] text-muted-foreground leading-relaxed mb-5">
                 Our team members work with high-net-worth individuals and families from around the world, navigating complex international regulations and delivering life-changing outcomes. Every day brings new challenges and opportunities.

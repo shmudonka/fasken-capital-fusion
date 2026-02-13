@@ -14,7 +14,7 @@ const People = () => {
       <main>
         <PageHeader
           title="People"
-          description="Our team of experienced investment migration professionals brings deep expertise across multiple jurisdictions and program types. Meet the people who make Citizenship Capital Group an industry leader."
+          description="Our team of experienced investment migration professionals brings deep expertise across multiple jurisdictions and program types. Meet the people who make Javaid & Associates an industry leader."
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "People" },

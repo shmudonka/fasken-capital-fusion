@@ -11,31 +11,31 @@ const offices = [
     city: "Dubai",
     address: "Level 14, Boulevard Plaza Tower 1, Sheikh Mohammed bin Rashid Boulevard, Downtown Dubai",
     phone: "+971 4 568 5220",
-    email: "dubai@citizenshipcapital.com",
+    email: "dubai@javaidassociates.com",
   },
   {
     city: "London",
     address: "20 Grosvenor Place, Belgravia, London SW1X 7HN, United Kingdom",
     phone: "+44 20 7946 0958",
-    email: "london@citizenshipcapital.com",
+    email: "london@javaidassociates.com",
   },
   {
     city: "Hong Kong",
     address: "Suite 2201, Two International Finance Centre, 8 Finance Street, Central",
     phone: "+852 3103 7500",
-    email: "hongkong@citizenshipcapital.com",
+    email: "hongkong@javaidassociates.com",
   },
   {
     city: "Montreal",
     address: "1250 René-Lévesque Boulevard West, Suite 4100, Montreal, QC H3B 4W8",
     phone: "+1 514 568 5220",
-    email: "montreal@citizenshipcapital.com",
+    email: "montreal@javaidassociates.com",
   },
   {
     city: "Singapore",
     address: "One Raffles Place, Tower 2, #20-61, Singapore 048616",
     phone: "+65 6221 1234",
-    email: "singapore@citizenshipcapital.com",
+    email: "singapore@javaidassociates.com",
   },
 ];
 
@@ -131,7 +131,7 @@ const Contact = () => {
                 <div className="flex items-start gap-3">
                   <input type="checkbox" className="mt-1 accent-primary" required />
                   <label className="text-[12px] text-muted-foreground leading-relaxed">
-                    I consent to having Citizenship Capital Group collect my personal information pursuant to its{" "}
+                    I consent to having Javaid & Associates - Citizenship Capital Group collect my personal information pursuant to its{" "}
                     <Link to="/privacy" className="text-primary hover:underline">Privacy Policy</Link>.
                   </label>
                 </div>
@@ -148,8 +148,8 @@ const Contact = () => {
                 <h2 className="text-2xl font-serif text-foreground">General Inquiries</h2>
               </div>
               <div className="space-y-4 mb-12">
-                <a href="mailto:info@citizenshipcapital.com" className="flex items-center gap-3 text-[14px] text-muted-foreground hover:text-primary transition-colors">
-                  <Mail size={16} className="text-primary" /> info@citizenshipcapital.com
+                <a href="mailto:info@javaidassociates.com" className="flex items-center gap-3 text-[14px] text-muted-foreground hover:text-primary transition-colors">
+                  <Mail size={16} className="text-primary" /> info@javaidassociates.com
                 </a>
                 <a href="tel:+15145685220" className="flex items-center gap-3 text-[14px] text-muted-foreground hover:text-primary transition-colors">
                   <Phone size={16} className="text-primary" /> +1 (514) 568-5220

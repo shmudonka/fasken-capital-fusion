@@ -64,7 +64,7 @@ const HeroSection = () => {
           </h1>
           <div className="w-12 h-[3px] bg-primary mb-8" />
           <p className="text-[14px] text-muted-foreground leading-relaxed mb-8 max-w-md">
-            Citizenship Capital Group empowers individuals and families to become global citizens through strategic investment migration solutions.
+            Javaid & Associates - Citizenship Capital Group empowers individuals and families to become global citizens through strategic investment migration solutions.
           </p>
           <Link to={slides[current].link} className="btn-fasken">
             {slides[current].cta}

@@ -12,7 +12,7 @@ const Cookies = () => (
       <div className="container max-w-4xl py-16 space-y-8">
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">What Are Cookies</h2>
-          <p className="text-[15px] text-muted-foreground leading-relaxed">Cookies are small text files stored on your device when you visit a website. They help websites remember your preferences and improve your browsing experience. Citizenship Capital Group uses cookies to ensure our website functions properly and to understand how visitors interact with our content.</p>
+          <p className="text-[15px] text-muted-foreground leading-relaxed">Cookies are small text files stored on your device when you visit a website. They help websites remember your preferences and improve your browsing experience. Javaid & Associates - Citizenship Capital Group uses cookies to ensure our website functions properly and to understand how visitors interact with our content.</p>
         </div>
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">Types of Cookies We Use</h2>
@@ -29,7 +29,7 @@ const Cookies = () => (
         </div>
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">Contact Us</h2>
-          <p className="text-[15px] text-muted-foreground leading-relaxed">If you have questions about our use of cookies, please contact us at privacy@citizenshipcapital.com.</p>
+          <p className="text-[15px] text-muted-foreground leading-relaxed">If you have questions about our use of cookies, please contact us at privacy@javaidassociates.com.</p>
         </div>
         <p className="text-[12px] text-muted-foreground">Last updated: February 1, 2026</p>
       </div>
