@@ -93,10 +93,10 @@ const Experience = () => {
                 Our 99% case approval rate is not a marketing claim — it is the result of rigorous pre-screening, meticulous documentation, and deep relationships with government agencies across every jurisdiction we serve. We do not submit applications unless we are confident of success.
               </p>
               <p className="text-[15px] text-muted-foreground leading-relaxed mb-8">
-                With offices in Dubai and London, and representative offices in Hong Kong, Montreal, and Singapore, we serve a truly global clientele. Our team of over 30 professionals speaks more than 15 languages and brings diverse expertise from law, finance, real estate, and government.
+                With offices in Toronto and Lahore, we serve a truly global clientele. Our team brings diverse expertise from law, finance, real estate, and government.
               </p>
-              <Link to="/people" className="btn-fasken">
-                Meet Our Team
+              <Link to="/contact" className="btn-fasken">
+                Contact Us
               </Link>
             </div>
             <div className="lg:w-1/2 space-y-6">

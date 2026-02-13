@@ -10,8 +10,6 @@ import About from "./pages/About";
 import Knowledge from "./pages/Knowledge";
 import Contact from "./pages/Contact";
 import Programs from "./pages/Programs";
-import People from "./pages/People";
-import PersonDetail from "./pages/PersonDetail";
 import Experience from "./pages/Experience";
 import ArticleDetail from "./pages/ArticleDetail";
 import ProgramDetail from "./pages/ProgramDetail";
@@ -40,8 +38,6 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/programs" element={<Programs />} />
           <Route path="/programs/:slug" element={<ProgramDetail />} />
-          <Route path="/people" element={<People />} />
-          <Route path="/people/:slug" element={<PersonDetail />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/privacy" element={<Privacy />} />
