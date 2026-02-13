@@ -16,7 +16,6 @@ import Experience from "./pages/Experience";
 import ArticleDetail from "./pages/ArticleDetail";
 import ProgramDetail from "./pages/ProgramDetail";
 import Careers from "./pages/Careers";
-import Events from "./pages/Events";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
@@ -45,7 +44,6 @@ const App = () => (
           <Route path="/people/:slug" element={<PersonDetail />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/careers" element={<Careers />} />
-          <Route path="/events" element={<Events />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/cookies" element={<Cookies />} />
