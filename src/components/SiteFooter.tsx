@@ -69,7 +69,7 @@ const SiteFooter = () => (
       <div>
         <h4 className="text-xs font-semibold uppercase tracking-[0.15em] mb-5 text-dark-surface-foreground/80">Contact</h4>
         <div className="space-y-3 text-[13px] text-dark-surface-foreground/50">
-          <a href="mailto:info@citizenshipcapital.com" className="flex items-center gap-2 hover:text-primary transition-colors"><Mail size={14} /> info@citizenshipcapital.com</a>
+          <a href="mailto:info@javaidassociates.com" className="flex items-center gap-2 hover:text-primary transition-colors"><Mail size={14} /> info@javaidassociates.com</a>
           <a href="tel:+15145685220" className="flex items-center gap-2 hover:text-primary transition-colors"><Phone size={14} /> +1 (514) 568-5220</a>
         </div>
         <div className="mt-8">
@@ -83,7 +83,7 @@ const SiteFooter = () => (
     </div>
     <div className="border-t border-dark-surface-foreground/10">
       <div className="container py-5 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-dark-surface-foreground/35">
-        <p>© 2026 Citizenship Capital Group. All rights reserved.</p>
+        <p>© 2026 Javaid & Associates - Citizenship Capital Group. All rights reserved.</p>
         <div className="flex gap-6">
           <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
           <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>

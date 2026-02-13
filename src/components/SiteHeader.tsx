@@ -41,8 +41,8 @@ const SiteHeader = () => {
       <div className="border-b border-border bg-background">
         <div className="container flex items-center justify-between py-5">
           <Link to="/" className="flex flex-col leading-none">
-            <span className="text-[22px] font-serif font-bold tracking-tight text-foreground uppercase">Citizenship Capital</span>
-            <span className="text-[11px] tracking-[0.12em] text-muted-foreground italic font-serif mt-0.5">Own your future</span>
+            <span className="text-[20px] font-serif font-bold tracking-tight text-foreground uppercase">Javaid & Associates</span>
+            <span className="text-[10px] tracking-[0.12em] text-muted-foreground font-serif mt-0.5 uppercase">Citizenship Capital Group</span>
           </Link>
           <nav className="hidden lg:flex items-center gap-10">
             {navItems.map((item) => (

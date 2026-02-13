@@ -12,11 +12,11 @@ const Terms = () => (
       <div className="container max-w-4xl py-16 space-y-8">
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">Acceptance of Terms</h2>
-          <p className="text-[15px] text-muted-foreground leading-relaxed">By accessing and using the Citizenship Capital Group website and services, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website or services.</p>
+          <p className="text-[15px] text-muted-foreground leading-relaxed">By accessing and using the Javaid & Associates - Citizenship Capital Group website and services, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website or services.</p>
         </div>
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">Services</h2>
-          <p className="text-[15px] text-muted-foreground leading-relaxed">Citizenship Capital Group provides investment migration advisory services, including but not limited to citizenship by investment, residency by investment, due diligence, tax planning, and related advisory services. Our services are subject to individual engagement agreements with each client.</p>
+          <p className="text-[15px] text-muted-foreground leading-relaxed">Javaid & Associates - Citizenship Capital Group provides investment migration advisory services, including but not limited to citizenship by investment, residency by investment, due diligence, tax planning, and related advisory services. Our services are subject to individual engagement agreements with each client.</p>
         </div>
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">No Legal Advice</h2>
@@ -24,11 +24,11 @@ const Terms = () => (
         </div>
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">Intellectual Property</h2>
-          <p className="text-[15px] text-muted-foreground leading-relaxed">All content on this website, including text, graphics, logos, and images, is the property of Citizenship Capital Group and is protected by international copyright and trademark laws. You may not reproduce, distribute, or create derivative works without our prior written consent.</p>
+          <p className="text-[15px] text-muted-foreground leading-relaxed">All content on this website, including text, graphics, logos, and images, is the property of Javaid & Associates - Citizenship Capital Group and is protected by international copyright and trademark laws. You may not reproduce, distribute, or create derivative works without our prior written consent.</p>
         </div>
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">Limitation of Liability</h2>
-          <p className="text-[15px] text-muted-foreground leading-relaxed">Citizenship Capital Group shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our website or services. Our total liability shall not exceed the fees paid by you for the specific services giving rise to the claim.</p>
+          <p className="text-[15px] text-muted-foreground leading-relaxed">Javaid & Associates - Citizenship Capital Group shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our website or services. Our total liability shall not exceed the fees paid by you for the specific services giving rise to the claim.</p>
         </div>
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">Governing Law</h2>

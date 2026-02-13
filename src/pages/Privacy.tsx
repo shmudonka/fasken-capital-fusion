@@ -12,7 +12,7 @@ const Privacy = () => (
       <div className="container max-w-4xl py-16 space-y-8">
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">Introduction</h2>
-          <p className="text-[15px] text-muted-foreground leading-relaxed">Citizenship Capital Group ("we," "our," or "us") is committed to protecting the privacy and security of our clients, website visitors, and other individuals whose personal data we process. This Privacy Policy outlines how we collect, use, disclose, and protect your information.</p>
+          <p className="text-[15px] text-muted-foreground leading-relaxed">Javaid & Associates - Citizenship Capital Group ("we," "our," or "us") is committed to protecting the privacy and security of our clients, website visitors, and other individuals whose personal data we process. This Privacy Policy outlines how we collect, use, disclose, and protect your information.</p>
         </div>
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">Information We Collect</h2>
@@ -40,11 +40,11 @@ const Privacy = () => (
         </div>
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">Your Rights</h2>
-          <p className="text-[15px] text-muted-foreground leading-relaxed">Depending on your jurisdiction, you may have the right to access, correct, delete, or port your personal data, as well as the right to object to or restrict certain processing activities. To exercise your rights, please contact us at privacy@citizenshipcapital.com.</p>
+          <p className="text-[15px] text-muted-foreground leading-relaxed">Depending on your jurisdiction, you may have the right to access, correct, delete, or port your personal data, as well as the right to object to or restrict certain processing activities. To exercise your rights, please contact us at privacy@javaidassociates.com.</p>
         </div>
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">Contact Us</h2>
-          <p className="text-[15px] text-muted-foreground leading-relaxed">For questions about this Privacy Policy or our data practices, please contact our Data Protection Officer at privacy@citizenshipcapital.com or write to us at our London office address.</p>
+          <p className="text-[15px] text-muted-foreground leading-relaxed">For questions about this Privacy Policy or our data practices, please contact our Data Protection Officer at privacy@javaidassociates.com or write to us at our London office address.</p>
         </div>
         <p className="text-[12px] text-muted-foreground">Last updated: February 1, 2026</p>
       </div>

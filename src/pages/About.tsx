@@ -22,7 +22,7 @@ const About = () => (
         <div className="relative z-10 w-full lg:w-1/2 bg-warm-beige flex flex-col justify-center px-8 md:px-16 lg:px-20 pt-32 pb-16 lg:pt-40 lg:pb-20">
           <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-5">Firm</h1>
           <div className="w-12 h-[3px] bg-primary mb-6" />
-          <p className="text-[15px] text-muted-foreground leading-relaxed max-w-md">In this fast-changing world, it takes vision and ambition to secure a better future. Citizenship Capital Group is your trusted partner in global mobility.</p>
+          <p className="text-[15px] text-muted-foreground leading-relaxed max-w-md">In this fast-changing world, it takes vision and ambition to secure a better future. Javaid & Associates - Citizenship Capital Group is your trusted partner in global mobility.</p>
         </div>
         <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full">
           <img src={heroBg} alt="Firm" className="w-full h-full object-cover" /><div className="absolute inset-0 bg-foreground/10" />
@@ -37,7 +37,8 @@ const About = () => (
         <div className="flex flex-col lg:flex-row items-start gap-16">
           <div className="lg:w-1/2">
             <div className="flex items-center gap-3 mb-6"><div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" /><h2 className="text-2xl font-serif text-foreground">Overview</h2></div>
-            <p className="text-[15px] text-muted-foreground leading-relaxed mb-6">Citizenship Capital Group is a global leader in investment migration advisory, empowering high-net-worth individuals and families to access new opportunities through citizenship and residency by investment programs worldwide.</p>
+            <p className="text-[15px] text-muted-foreground leading-relaxed mb-6">Javaid & Associates - Citizenship Capital Group is the investment migration division of Javaid & Associates Law Firm, Pakistan. We are a global leader in investment migration advisory, empowering high-net-worth individuals and families to access new opportunities through citizenship and residency by investment programs worldwide.</p>
+            <p className="text-[15px] text-muted-foreground leading-relaxed mb-6">Our parent firm, <strong>Javaid & Associates Law Firm</strong>, is a well-established legal practice in Pakistan with decades of experience. The Citizenship Capital Group operates as the firm's dedicated investment migration advisory division. We also have a separate Canadian practice, <strong>Javaid & Associates - Canada</strong>, serving clients across North America.</p>
             <p className="text-[15px] text-muted-foreground leading-relaxed mb-8">With a team of seasoned professionals across multiple offices, we deliver end-to-end solutions — from program selection and due diligence to application management and post-approval support.</p>
             <Link to="/people" className="btn-fasken">Meet Our Team</Link>
           </div>
