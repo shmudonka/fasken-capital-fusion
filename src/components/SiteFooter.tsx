@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 
 const footerSections = [
   {
-    title: "People", titleHref: "/people",
+    title: "About Us", titleHref: "/about",
     links: [
-      { label: "Our Advisors", href: "/people" },
-      { label: "Leadership Team", href: "/people" },
+      { label: "Our Firm", href: "/about" },
+      { label: "Experience", href: "/experience" },
+      { label: "Careers", href: "/careers" },
     ],
   },
   {
@@ -21,23 +22,18 @@ const footerSections = [
     ],
   },
   {
-    title: "Firm", titleHref: "/about",
+    title: "Programs", titleHref: "/programs",
     links: [
-      { label: "About Us", href: "/about" },
-      { label: "Careers", href: "/careers" },
-      { label: "Experience", href: "/experience" },
-      { label: "Events", href: "/events" },
-      { label: "Firm Leadership", href: "/people" },
+      { label: "Caribbean Programs", href: "/programs/st-kitts-nevis" },
+      { label: "European Programs", href: "/programs/portugal-golden-visa" },
+      { label: "All Programs", href: "/programs" },
     ],
   },
   {
     title: "Offices", titleHref: "/contact",
     links: [
-      { label: "Dubai", href: "/contact" },
-      { label: "London", href: "/contact" },
-      { label: "Hong Kong", href: "/contact" },
-      { label: "Montreal", href: "/contact" },
-      { label: "Singapore", href: "/contact" },
+      { label: "Toronto, Canada", href: "/contact" },
+      { label: "Lahore, Pakistan", href: "/contact" },
     ],
   },
 ];
@@ -70,7 +66,7 @@ const SiteFooter = () => (
         <h4 className="text-xs font-semibold uppercase tracking-[0.15em] mb-5 text-dark-surface-foreground/80">Contact</h4>
         <div className="space-y-3 text-[13px] text-dark-surface-foreground/50">
           <a href="mailto:info@javaidassociates.com" className="flex items-center gap-2 hover:text-primary transition-colors"><Mail size={14} /> info@javaidassociates.com</a>
-          <a href="tel:+15145685220" className="flex items-center gap-2 hover:text-primary transition-colors"><Phone size={14} /> +1 (514) 568-5220</a>
+          <a href="tel:+14162900707" className="flex items-center gap-2 hover:text-primary transition-colors"><Phone size={14} /> +1-416-290-0707</a>
         </div>
         <div className="mt-8">
           <h4 className="text-xs font-semibold uppercase tracking-[0.15em] mb-3 text-dark-surface-foreground/80">Portals</h4>

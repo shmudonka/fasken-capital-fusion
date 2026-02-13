@@ -6,16 +6,15 @@ const topBarLinks = [
   { label: "Careers", href: "/careers" },
   { label: "Offices", href: "/contact" },
   { label: "News", href: "/knowledge" },
-  { label: "Events", href: "/events" },
   { label: "Contact", href: "/contact" },
 ];
 
 const navItems = [
-  { label: "People", href: "/people" },
+  { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Experience", href: "/experience" },
   { label: "Knowledge", href: "/knowledge" },
-  { label: "Firm", href: "/about", hasDropdown: true },
+  { label: "Programs", href: "/programs" },
 ];
 
 const SiteHeader = () => {
@@ -46,9 +45,8 @@ const SiteHeader = () => {
           </Link>
           <nav className="hidden lg:flex items-center gap-10">
             {navItems.map((item) => (
-              <Link key={item.label} to={item.href} className={`flex items-center gap-1 text-[15px] transition-colors font-serif ${isActive(item.href) ? "text-primary" : "text-foreground hover:text-primary"}`}>
+              <Link key={item.label} to={item.href} className={`text-[15px] transition-colors font-serif ${isActive(item.href) ? "text-primary" : "text-foreground hover:text-primary"}`}>
                 {item.label}
-                {item.hasDropdown && <ChevronDown size={14} className="text-muted-foreground" />}
               </Link>
             ))}
           </nav>

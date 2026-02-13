@@ -8,34 +8,22 @@ import { Link } from "react-router-dom";
 
 const offices = [
   {
-    city: "Dubai",
-    address: "Level 14, Boulevard Plaza Tower 1, Sheikh Mohammed bin Rashid Boulevard, Downtown Dubai",
-    phone: "+971 4 568 5220",
-    email: "dubai@javaidassociates.com",
+    city: "Toronto, Canada",
+    address: "55 Town Centre Court, Suite 700, Toronto, Ontario M1P 4X4",
+    phone: "+1-416-290-0707",
+    mobile: "+1-416-616-1972",
+    mobileLabel: "Mob/WhatsApp",
+    email: "canada@javaidassociates.com",
   },
   {
-    city: "London",
-    address: "20 Grosvenor Place, Belgravia, London SW1X 7HN, United Kingdom",
-    phone: "+44 20 7946 0958",
-    email: "london@javaidassociates.com",
-  },
-  {
-    city: "Hong Kong",
-    address: "Suite 2201, Two International Finance Centre, 8 Finance Street, Central",
-    phone: "+852 3103 7500",
-    email: "hongkong@javaidassociates.com",
-  },
-  {
-    city: "Montreal",
-    address: "1250 René-Lévesque Boulevard West, Suite 4100, Montreal, QC H3B 4W8",
-    phone: "+1 514 568 5220",
-    email: "montreal@javaidassociates.com",
-  },
-  {
-    city: "Singapore",
-    address: "One Raffles Place, Tower 2, #20-61, Singapore 048616",
-    phone: "+65 6221 1234",
-    email: "singapore@javaidassociates.com",
+    city: "Lahore, Pakistan",
+    address: "Office 1004 Haly Tower, Lalak Jan Chowk, DHA Phase II, Lahore, Pakistan",
+    phone: "+92-42-3455-1015",
+    mobile: "+92-345-220-6000",
+    mobileLabel: "WhatsApp",
+    mobile2: "+92-311-147-7772",
+    mobile2Label: "Mob",
+    email: "pakistan@javaidassociates.com",
   },
 ];
 
@@ -151,8 +139,8 @@ const Contact = () => {
                 <a href="mailto:info@javaidassociates.com" className="flex items-center gap-3 text-[14px] text-muted-foreground hover:text-primary transition-colors">
                   <Mail size={16} className="text-primary" /> info@javaidassociates.com
                 </a>
-                <a href="tel:+15145685220" className="flex items-center gap-3 text-[14px] text-muted-foreground hover:text-primary transition-colors">
-                  <Phone size={16} className="text-primary" /> +1 (514) 568-5220
+                <a href="tel:+14162900707" className="flex items-center gap-3 text-[14px] text-muted-foreground hover:text-primary transition-colors">
+                  <Phone size={16} className="text-primary" /> +1-416-290-0707
                 </a>
               </div>
 
@@ -168,14 +156,26 @@ const Contact = () => {
                       <MapPin size={14} className="text-primary shrink-0 mt-0.5" />
                       <span>{office.address}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-[13px] text-muted-foreground mb-1 ml-[22px]">
-                      <Phone size={12} className="text-primary shrink-0" />
-                      <a href={`tel:${office.phone}`} className="hover:text-primary transition-colors">{office.phone}</a>
-                    </div>
-                    <div className="flex items-center gap-2 text-[13px] text-muted-foreground ml-[22px]">
-                      <Mail size={12} className="text-primary shrink-0" />
-                      <a href={`mailto:${office.email}`} className="hover:text-primary transition-colors">{office.email}</a>
-                    </div>
+                     <div className="flex items-center gap-2 text-[13px] text-muted-foreground mb-1 ml-[22px]">
+                       <Phone size={12} className="text-primary shrink-0" />
+                       <a href={`tel:${office.phone}`} className="hover:text-primary transition-colors">Tel: {office.phone}</a>
+                     </div>
+                     {office.mobile && (
+                       <div className="flex items-center gap-2 text-[13px] text-muted-foreground mb-1 ml-[22px]">
+                         <Phone size={12} className="text-primary shrink-0" />
+                         <a href={`tel:${office.mobile}`} className="hover:text-primary transition-colors">{office.mobileLabel}: {office.mobile}</a>
+                       </div>
+                     )}
+                     {office.mobile2 && (
+                       <div className="flex items-center gap-2 text-[13px] text-muted-foreground mb-1 ml-[22px]">
+                         <Phone size={12} className="text-primary shrink-0" />
+                         <a href={`tel:${office.mobile2}`} className="hover:text-primary transition-colors">{office.mobile2Label}: {office.mobile2}</a>
+                       </div>
+                     )}
+                     <div className="flex items-center gap-2 text-[13px] text-muted-foreground ml-[22px]">
+                       <Mail size={12} className="text-primary shrink-0" />
+                       <a href={`mailto:${office.email}`} className="hover:text-primary transition-colors">{office.email}</a>
+                     </div>
                   </div>
                 ))}
               </div>
