@@ -4,6 +4,7 @@ import PageHeader from "@/components/PageHeader";
 import CookieBanner from "@/components/CookieBanner";
 import BackToTop from "@/components/BackToTop";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const offices = [
   {
@@ -131,7 +132,7 @@ const Contact = () => {
                   <input type="checkbox" className="mt-1 accent-primary" required />
                   <label className="text-[12px] text-muted-foreground leading-relaxed">
                     I consent to having Citizenship Capital Group collect my personal information pursuant to its{" "}
-                    <a href="#" className="text-primary hover:underline">Privacy Policy</a>.
+                    <Link to="/privacy" className="text-primary hover:underline">Privacy Policy</Link>.
                   </label>
                 </div>
                 <button type="submit" className="btn-fasken-primary">
