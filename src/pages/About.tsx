@@ -4,8 +4,13 @@ import CookieBanner from "@/components/CookieBanner";
 import BackToTop from "@/components/BackToTop";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Link } from "react-router-dom";
-import { ChevronRight } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+
+const ArrowUpRight = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block">
+    <line x1="7" y1="17" x2="17" y2="7" />
+    <polyline points="7 7 17 7 17 17" />
+  </svg>
+);
 
 const values = [
   { title: "Excellence", description: "We set the highest standards in everything we do, delivering meticulous due diligence and exceptional client outcomes." },
@@ -15,86 +20,100 @@ const values = [
 ];
 
 const offices = [
-  {
-    city: "Toronto, Canada",
-    address: "55 Town Centre Court, Suite 700\nToronto, Ontario M1P 4X4",
-    phone: "+1-416-290-0707",
-  },
-  {
-    city: "Lahore, Pakistan",
-    address: "Office 1004 Haly Tower\nLalak Jan Chowk, DHA Phase II\nLahore, Pakistan",
-    phone: "+92-42-3455 1015",
-  },
+  { city: "Toronto, Canada", address: "55 Town Centre Court, Suite 700\nToronto, Ontario M1P 4X4", phone: "+1-416-290-0707" },
+  { city: "Lahore, Pakistan", address: "Office 1004 Haly Tower\nLalak Jan Chowk, DHA Phase II\nLahore, Pakistan", phone: "+92-42-3455 1015" },
 ];
 
 const About = () => (
   <div className="min-h-screen bg-background">
     <SiteHeader />
     <main>
-      <div className="relative min-h-[50vh] flex">
-        <div className="relative z-10 w-full lg:w-1/2 bg-warm-beige flex flex-col justify-center px-8 md:px-16 lg:px-20 pt-32 pb-16 lg:pt-40 lg:pb-20">
-          <ScrollReveal>
-            <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-5">About Us</h1>
-            <div className="w-12 h-[3px] bg-primary mb-6" />
-            <p className="text-[15px] text-muted-foreground leading-relaxed max-w-md">In this fast-changing world, it takes vision and ambition to secure a better future. Javaid & Associates — Citizenship Capital Group is your trusted partner in global mobility.</p>
-          </ScrollReveal>
-        </div>
-        <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full">
-          <img src={heroBg} alt="About Us" className="w-full h-full object-cover" /><div className="absolute inset-0 bg-foreground/10" />
-        </div>
-      </div>
-      <div className="border-b border-border">
-        <div className="container flex items-center py-4 text-[11px] uppercase tracking-[0.1em] text-muted-foreground">
-          <Link to="/" className="hover:text-primary transition-colors">Home</Link><ChevronRight size={11} className="mx-2" /><span className="text-foreground">About Us</span>
-        </div>
-      </div>
-      <div className="container py-20">
-        <div className="flex flex-col lg:flex-row items-start gap-16">
-          <ScrollReveal className="lg:w-1/2">
-            <div className="flex items-center gap-3 mb-6"><div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" /><h2 className="text-2xl font-serif text-foreground">Overview</h2></div>
-            <p className="text-[15px] text-muted-foreground leading-relaxed mb-6">With over <strong>30 years of legal experience</strong>, Javaid & Associates — Citizenship Capital Group is the investment migration division of Javaid & Associates Law Firm, Pakistan. We are a trusted leader in investment migration advisory, empowering high-net-worth individuals and families to access new opportunities through citizenship and residency by investment programs worldwide.</p>
-            <p className="text-[15px] text-muted-foreground leading-relaxed mb-6">Operating from <strong>two offices</strong> in Toronto, Canada and Lahore, Pakistan, our parent firm is a well-established legal practice with decades of experience. The Citizenship Capital Group operates as the firm's dedicated investment migration advisory division. We also have a separate Canadian practice, <strong>Javaid & Associates — Canada</strong>, serving clients across North America.</p>
-            <p className="text-[15px] text-muted-foreground leading-relaxed mb-8">With a team of seasoned professionals, we deliver end-to-end solutions — from program selection and due diligence to application management and post-approval support.</p>
-            <Link to="/experience" className="btn-fasken">Our Experience</Link>
-          </ScrollReveal>
-          <ScrollReveal className="lg:w-1/2" delay={0.2}>
-            <img src={heroBg} alt="Our office" className="w-full h-80 object-cover" />
-          </ScrollReveal>
-        </div>
-      </div>
-      <div className="bg-warm-beige py-20">
+      {/* Hero */}
+      <div className="bg-background pt-32 pb-16 lg:pt-40 lg:pb-24">
         <div className="container">
           <ScrollReveal>
-            <div className="flex items-center gap-3 mb-12"><div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" /><h2 className="text-2xl font-serif text-foreground">Our Values</h2></div>
+            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-light text-foreground mb-6">About Us</h1>
+            <p className="text-[15px] font-light text-muted-foreground leading-relaxed max-w-2xl">
+              In this fast-changing world, it takes vision and ambition to secure a better future. Javaid & Associates — Citizenship Capital Group is your trusted partner in global mobility.
+            </p>
+          </ScrollReveal>
+        </div>
+      </div>
+
+      {/* Overview */}
+      <section className="bg-dark-surface py-24">
+        <div className="container">
+          <div className="flex flex-col lg:flex-row gap-16">
+            <ScrollReveal className="lg:w-1/2">
+              <div className="flex items-start gap-6 mb-8">
+                <div className="w-[3px] bg-primary shrink-0 self-stretch min-h-[40px]" />
+                <h2 className="text-2xl md:text-3xl font-light text-foreground">Overview</h2>
+              </div>
+              <p className="text-[15px] font-light text-muted-foreground leading-relaxed mb-6">
+                With over <strong className="text-foreground font-normal">30 years of legal experience</strong>, Javaid & Associates — Citizenship Capital Group is the investment migration division of Javaid & Associates Law Firm, Pakistan. We are a trusted leader in investment migration advisory.
+              </p>
+              <p className="text-[15px] font-light text-muted-foreground leading-relaxed mb-6">
+                Operating from <strong className="text-foreground font-normal">two offices</strong> in Toronto, Canada and Lahore, Pakistan, our parent firm is a well-established legal practice with decades of experience.
+              </p>
+              <p className="text-[15px] font-light text-muted-foreground leading-relaxed mb-8">
+                With a team of seasoned professionals, we deliver end-to-end solutions — from program selection and due diligence to application management and post-approval support.
+              </p>
+              <Link to="/experience" className="link-arrow">
+                Our Experience <ArrowUpRight />
+              </Link>
+            </ScrollReveal>
+            <ScrollReveal className="lg:w-1/2" delay={0.2}>
+              <div className="bg-card h-80 w-full" />
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="bg-background py-24">
+        <div className="container">
+          <ScrollReveal>
+            <div className="flex items-start gap-6 mb-14">
+              <div className="w-[3px] bg-primary shrink-0 self-stretch min-h-[40px]" />
+              <h2 className="text-2xl md:text-3xl font-light text-foreground">Our Values</h2>
+            </div>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0">
             {values.map((value, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="border-r last:border-r-0 border-border/40 px-6 py-2"><h3 className="font-serif text-lg text-foreground mb-3">{value.title}</h3><p className="text-[13px] text-muted-foreground leading-relaxed">{value.description}</p></div>
+                <div className="border-r last:border-r-0 border-border px-6 py-2">
+                  <h3 className="text-[18px] font-light text-foreground mb-3">{value.title}</h3>
+                  <p className="text-[13px] font-light text-muted-foreground leading-relaxed">{value.description}</p>
+                </div>
               </ScrollReveal>
             ))}
           </div>
         </div>
-      </div>
-      <div className="bg-dark-surface py-20">
+      </section>
+
+      {/* Offices */}
+      <section className="bg-dark-surface py-24">
         <div className="container">
           <ScrollReveal>
-            <div className="flex items-center gap-3 mb-12"><div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" /><h2 className="text-2xl font-serif text-dark-surface-foreground">Our Offices</h2></div>
+            <div className="flex items-start gap-6 mb-14">
+              <div className="w-[3px] bg-primary shrink-0 self-stretch min-h-[40px]" />
+              <h2 className="text-2xl md:text-3xl font-light text-foreground">Our Offices</h2>
+            </div>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 gap-8 max-w-2xl">
             {offices.map((office, i) => (
               <ScrollReveal key={office.city} delay={i * 0.15}>
                 <Link to="/contact" className="group block">
-                  <h3 className="font-serif text-lg text-dark-surface-foreground group-hover:text-primary transition-colors mb-3">{office.city}</h3>
-                  <p className="text-[13px] text-dark-surface-foreground/50 whitespace-pre-line leading-relaxed mb-2">{office.address}</p>
-                  <p className="text-[13px] text-dark-surface-foreground/50 mb-3">Tel: {office.phone}</p>
-                  <span className="link-arrow text-dark-surface-foreground/50 group-hover:text-primary text-[10px]">View Office <ChevronRight size={10} /></span>
+                  <h3 className="text-[18px] font-light text-foreground group-hover:text-primary transition-colors mb-3">{office.city}</h3>
+                  <p className="text-[13px] font-light text-muted-foreground whitespace-pre-line leading-relaxed mb-2">{office.address}</p>
+                  <p className="text-[13px] font-light text-muted-foreground mb-4">Tel: {office.phone}</p>
+                  <span className="link-arrow text-sm">View Office <ArrowUpRight /></span>
                 </Link>
               </ScrollReveal>
             ))}
           </div>
         </div>
-      </div>
+      </section>
     </main>
     <SiteFooter /><CookieBanner /><BackToTop />
   </div>

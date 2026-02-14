@@ -16,7 +16,7 @@ const ProgramDetail = () => {
         <SiteHeader />
         <div className="container pt-40 pb-20 text-center">
           <h1 className="text-3xl font-serif text-foreground mb-4">Program Not Found</h1>
-          <Link to="/programs" className="btn-fasken">Back to Programs</Link>
+          <Link to="/programs" className="btn-davies">Back to Programs</Link>
         </div>
         <SiteFooter />
       </div>
@@ -31,7 +31,7 @@ const ProgramDetail = () => {
       <main>
         {/* Split hero */}
         <div className="relative min-h-[45vh] flex">
-          <div className="relative z-10 w-full lg:w-1/2 bg-warm-beige flex flex-col justify-center px-8 md:px-16 lg:px-20 pt-32 pb-12 lg:pt-40 lg:pb-16">
+          <div className="relative z-10 w-full lg:w-1/2 bg-background flex flex-col justify-center px-8 md:px-16 lg:px-20 pt-32 pb-12 lg:pt-40 lg:pb-16">
             <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-primary mb-3">{program.type}</span>
             <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-4">{program.country}</h1>
             <div className="w-12 h-[3px] bg-primary mb-6" />
@@ -90,45 +90,43 @@ const ProgramDetail = () => {
         </div>
 
         {/* Benefits */}
-        <div className="bg-warm-beige py-16">
+        <div className="bg-dark-surface py-16">
           <div className="container">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" />
-              <h2 className="text-2xl font-serif text-foreground">Key Benefits</h2>
+            <div className="flex items-start gap-6 mb-8">
+              <div className="w-[3px] bg-primary shrink-0 self-stretch min-h-[30px]" />
+              <h2 className="text-2xl font-light text-foreground">Key Benefits</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-0">
               {program.benefits.map((benefit, i) => (
-                <div key={i} className="flex items-start gap-3 py-5 px-4 border-b border-border/40">
-                  <ChevronRight size={14} className="text-primary shrink-0 mt-0.5" />
-                  <span className="text-[15px] text-foreground">{benefit}</span>
+                <div key={i} className="flex items-start gap-3 py-5 px-4 border-b border-border">
+                  <span className="text-primary shrink-0 mt-0.5">›</span>
+                  <span className="text-[15px] font-light text-foreground">{benefit}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Requirements */}
         <div className="container py-16">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" />
-            <h2 className="text-2xl font-serif text-foreground">Requirements</h2>
+          <div className="flex items-start gap-6 mb-8">
+            <div className="w-[3px] bg-primary shrink-0 self-stretch min-h-[30px]" />
+            <h2 className="text-2xl font-light text-foreground">Requirements</h2>
           </div>
           <div className="space-y-0 max-w-3xl">
             {program.requirements.map((req, i) => (
               <div key={i} className="flex items-start gap-3 py-4 border-b border-border">
-                <span className="text-[11px] font-semibold text-primary mt-0.5">{String(i + 1).padStart(2, "0")}</span>
-                <span className="text-[15px] text-muted-foreground">{req}</span>
+                <span className="text-[11px] font-medium text-primary mt-0.5">{String(i + 1).padStart(2, "0")}</span>
+                <span className="text-[15px] font-light text-muted-foreground">{req}</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Process */}
-        <div className="bg-warm-beige py-16">
+        <div className="bg-dark-surface py-16">
           <div className="container">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" />
-              <h2 className="text-2xl font-serif text-foreground">Application Process</h2>
+            <div className="flex items-start gap-6 mb-8">
+              <div className="w-[3px] bg-primary shrink-0 self-stretch min-h-[30px]" />
+              <h2 className="text-2xl font-light text-foreground">Application Process</h2>
             </div>
             <div className="space-y-0 max-w-3xl">
               {program.process.map((step, i) => (
@@ -150,7 +148,7 @@ const ProgramDetail = () => {
             <p className="text-dark-surface-foreground/60 text-[14px] max-w-lg mx-auto mb-8">
               Our advisors specialize in the {program.country} {program.type.toLowerCase()} and can guide you through every step of the process.
             </p>
-            <Link to="/contact" className="btn-fasken-outline-white">
+            <Link to="/contact" className="btn-davies">
               Schedule a Consultation
             </Link>
           </div>

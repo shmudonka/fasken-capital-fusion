@@ -16,7 +16,7 @@ const ArticleDetail = () => {
         <SiteHeader />
         <div className="container pt-40 pb-20 text-center">
           <h1 className="text-3xl font-serif text-foreground mb-4">Article Not Found</h1>
-          <Link to="/knowledge" className="btn-fasken">Back to Knowledge</Link>
+          <Link to="/knowledge" className="btn-davies">Back to Knowledge</Link>
         </div>
         <SiteFooter />
       </div>
@@ -30,7 +30,7 @@ const ArticleDetail = () => {
       <SiteHeader />
       <main>
         {/* Header */}
-        <div className="bg-warm-beige pt-32 pb-12 lg:pt-40 lg:pb-16">
+        <div className="bg-background pt-32 pb-12 lg:pt-40 lg:pb-16">
           <div className="container max-w-4xl">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-primary">{article.category}</span>
@@ -62,14 +62,14 @@ const ArticleDetail = () => {
           ))}
 
           <div className="mt-12 pt-8 border-t border-border">
-            <Link to="/contact" className="btn-fasken">
+            <Link to="/contact" className="btn-davies">
               Speak to an Advisor
             </Link>
           </div>
         </div>
 
         {/* Related */}
-        <div className="bg-warm-beige py-16">
+        <div className="bg-dark-surface py-16">
           <div className="container">
             <div className="flex items-end justify-between mb-8 pb-4 border-b border-border/40">
               <h2 className="text-2xl font-serif text-foreground">Related Insights</h2>
