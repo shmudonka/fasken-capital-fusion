@@ -4,37 +4,37 @@ import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const slides = [
-  {
-    category: "GLOBAL MOBILITY",
-    title: "Access a world of visa-free travel and global mobility",
-    link: "/programs",
-    cta: "Explore Programs",
-  },
-  {
-    category: "INVESTMENT PROGRAMS",
-    title: "Freedom of mind to focus on what's important for you and your family",
-    link: "/services",
-    cta: "Our Services",
-  },
-  {
-    category: "CITIZENSHIP",
-    title: "Secure a better and safer future for your family",
-    link: "/programs",
-    cta: "Learn More",
-  },
-  {
-    category: "ADVISORY",
-    title: "Expand your horizons and unlock unimaginable possibilities",
-    link: "/about",
-    cta: "About Us",
-  },
-  {
-    category: "YOUR FUTURE",
-    title: "Realize your dreams and build the future you desire",
-    link: "/contact",
-    cta: "Get Started",
-  },
-];
+{
+  category: "GLOBAL MOBILITY",
+  title: "Access a world of visa-free travel and global mobility",
+  link: "/programs",
+  cta: "Explore Programs"
+},
+{
+  category: "INVESTMENT PROGRAMS",
+  title: "Freedom of mind to focus on what's important for you and your family",
+  link: "/services",
+  cta: "Our Services"
+},
+{
+  category: "CITIZENSHIP",
+  title: "Secure a better and safer future for your family",
+  link: "/programs",
+  cta: "Learn More"
+},
+{
+  category: "ADVISORY",
+  title: "Expand your horizons and unlock unimaginable possibilities",
+  link: "/about",
+  cta: "About Us"
+},
+{
+  category: "YOUR FUTURE",
+  title: "Realize your dreams and build the future you desire",
+  link: "/contact",
+  cta: "Get Started"
+}];
+
 
 const HeroSection = () => {
   const [current, setCurrent] = useState(0);
@@ -58,8 +58,8 @@ const HeroSection = () => {
         <div className="max-w-xl">
           <h1
             className="text-3xl md:text-4xl lg:text-[44px] font-serif leading-[1.18] text-foreground mb-6 transition-opacity duration-500"
-            key={current}
-          >
+            key={current}>
+
             {slides[current].title}
           </h1>
           <div className="w-12 h-[3px] bg-primary mb-8" />
@@ -74,8 +74,8 @@ const HeroSection = () => {
 
       {/* Right image panel */}
       <div className="hidden lg:block absolute right-0 top-0 w-[52%] h-full">
-        <img src={heroBg} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-foreground/15" />
+        <img alt="" className="w-full h-full object-cover" src="/lovable-uploads/d0575d64-ea9e-41f2-82d6-ce2cd16c7293.jpg" />
+        
       </div>
 
       {/* Navigation controls — centered like Fasken */}
@@ -94,16 +94,16 @@ const HeroSection = () => {
       {/* Slide tabs — Fasken numbered indicators */}
       <div className="absolute bottom-0 left-0 right-0 z-20">
         <div className="flex">
-          {slides.map((slide, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              className={`flex-1 py-5 px-4 text-left transition-all duration-300 border-t-2 ${
-                i === current
-                  ? "bg-dark-surface border-primary text-dark-surface-foreground triangle-accent"
-                  : "bg-dark-surface/90 border-transparent text-dark-surface-foreground/50 hover:text-dark-surface-foreground/80"
-              }`}
-            >
+          {slides.map((slide, i) =>
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`flex-1 py-5 px-4 text-left transition-all duration-300 border-t-2 ${
+            i === current ?
+            "bg-dark-surface border-primary text-dark-surface-foreground triangle-accent" :
+            "bg-dark-surface/90 border-transparent text-dark-surface-foreground/50 hover:text-dark-surface-foreground/80"}`
+            }>
+
               <span className="text-[10px] font-semibold uppercase tracking-[0.15em] block mb-1">
                 {slide.category}
               </span>
@@ -114,11 +114,11 @@ const HeroSection = () => {
                 {String(i + 1).padStart(2, "0")}
               </span>
             </button>
-          ))}
+          )}
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default HeroSection;
