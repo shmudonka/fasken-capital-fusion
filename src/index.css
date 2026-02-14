@@ -6,53 +6,83 @@
 
 @layer base {
   :root {
-    /* Davies-inspired dark navy + gold palette */
-    --background: 216 28% 14%;
-    --foreground: 0 0% 95%;
+    /* Fasken palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 15%;
 
-    --card: 216 25% 17%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
 
-    --popover: 216 25% 17%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
 
-    /* Davies gold accent */
-    --primary: 45 45% 58%;
-    --primary-foreground: 216 28% 14%;
+    /* Fasken red-orange accent */
+    --primary: 14 89% 46%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 216 22% 20%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 216 22% 20%;
-    --muted-foreground: 0 0% 55%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 216 22% 22%;
-    --accent-foreground: 0 0% 95%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 216 20% 22%;
-    --input: 216 20% 22%;
-    --ring: 45 45% 58%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 14 89% 46%;
 
     --radius: 0rem;
 
-    /* Davies custom tokens */
-    --dark-surface: 216 30% 11%;
+    /* Fasken custom tokens */
+    --dark-surface: 0 0% 13%;
     --dark-surface-foreground: 0 0% 95%;
-    --warm-gray: 216 22% 20%;
-    --warm-beige: 216 25% 17%;
-    --hero-overlay: 216 28% 10%;
+    --warm-gray: 30 10% 92%;
+    --warm-beige: 30 15% 94%;
+    --hero-overlay: 0 0% 0%;
 
-    --sidebar-background: 216 28% 12%;
-    --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 45 45% 58%;
-    --sidebar-primary-foreground: 216 28% 14%;
-    --sidebar-accent: 216 22% 20%;
-    --sidebar-accent-foreground: 0 0% 90%;
-    --sidebar-border: 216 20% 22%;
-    --sidebar-ring: 45 45% 58%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 14 89% 46%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 0% 18%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 14 89% 46%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -66,38 +96,53 @@
   }
 
   h1, h2, h3, h4 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
+    font-family: 'Playfair Display', serif;
   }
 }
 
 @layer components {
-  /* Davies-style gold left border accent */
+  /* Fasken-style red bar divider */
   .section-divider {
-    @apply w-[3px] h-12 bg-primary;
+    @apply w-12 h-[3px] bg-primary;
   }
 
-  /* Davies-style arrow link with ↗ */
+  /* Fasken-style chevron link - uppercase, tracked, with arrow */
   .link-arrow {
-    @apply inline-flex items-center gap-2 text-[14px] text-foreground/80 hover:text-primary transition-colors duration-200;
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-foreground hover:text-primary transition-colors duration-200;
   }
 
-  /* Card hover */
+  /* Fasken card hover */
   .card-hover {
-    @apply transition-all duration-300 hover:-translate-y-0.5;
+    @apply transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md;
   }
 
-  /* Davies-style outlined button - gold border */
-  .btn-davies {
-    @apply inline-flex items-center justify-center px-8 py-3.5 text-[13px] font-medium tracking-wide border border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground transition-all duration-300;
+  /* Fasken-style outlined button - square corners, uppercase */
+  .btn-fasken {
+    @apply inline-flex items-center justify-center px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] border border-foreground/30 text-foreground bg-transparent hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300;
   }
 
-  .btn-davies-filled {
-    @apply inline-flex items-center justify-center px-8 py-3.5 text-[13px] font-medium tracking-wide bg-primary text-primary-foreground border border-primary hover:bg-primary/90 transition-all duration-300;
+  .btn-fasken-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] bg-primary text-primary-foreground border border-primary hover:bg-primary/90 transition-all duration-300;
   }
 
-  .btn-davies-outline-white {
-    @apply inline-flex items-center justify-center px-8 py-3.5 text-[13px] font-medium tracking-wide border border-foreground/30 text-foreground bg-transparent hover:border-primary hover:text-primary transition-all duration-300;
+  .btn-fasken-outline-white {
+    @apply inline-flex items-center justify-center px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] border border-primary-foreground/40 text-primary-foreground bg-transparent hover:bg-primary hover:border-primary transition-all duration-300;
+  }
+
+  /* Fasken red triangle accent */
+  .triangle-accent {
+    @apply relative;
+  }
+  .triangle-accent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 40px 40px 0;
+    border-color: transparent hsl(14 89% 46%) transparent transparent;
   }
 }
 

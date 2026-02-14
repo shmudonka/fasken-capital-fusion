@@ -1,71 +1,35 @@
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { articles } from "@/data/articles";
 import ScrollReveal from "@/components/ScrollReveal";
 
-const ArrowUpRight = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block">
-    <line x1="7" y1="17" x2="17" y2="7" />
-    <polyline points="7 7 17 7 17 17" />
-  </svg>
-);
-
 const InsightsSection = () => (
-  <section id="insights" className="py-24 bg-background">
+  <section id="insights" className="py-20 bg-background">
     <div className="container">
       <ScrollReveal>
-        <div className="flex items-end justify-between mb-12">
-          <h2 className="text-3xl md:text-[40px] font-light text-foreground">News and Insights</h2>
-          <Link to="/knowledge" className="hidden md:flex link-arrow">
-            View All <ArrowUpRight />
-          </Link>
+        <div className="flex items-end justify-between mb-12 border-b border-border pb-6">
+          <div className="flex items-center gap-3">
+            <div className="w-0 h-0 border-l-[12px] border-l-primary border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent" />
+            <h2 className="text-3xl md:text-4xl font-serif text-foreground">Latest Insights</h2>
+          </div>
+          <Link to="/knowledge" className="hidden md:flex link-arrow">All Insights <ArrowRight size={12} /></Link>
         </div>
       </ScrollReveal>
-
-      {/* Featured article */}
-      {articles.filter(a => a.featured).slice(0, 1).map((article) => (
-        <ScrollReveal key={article.slug}>
-          <Link
-            to={`/knowledge/${article.slug}`}
-            className="group block relative mb-12 overflow-hidden"
-          >
-            <div className="bg-card h-64 md:h-80 flex items-end p-8 md:p-10">
-              <div>
-                <h3 className="text-2xl md:text-3xl font-light text-foreground group-hover:text-primary transition-colors leading-snug mb-2">
-                  {article.title}
-                </h3>
-                <span className="text-[13px] text-muted-foreground font-light">{article.date}</span>
-              </div>
-            </div>
-          </Link>
-        </ScrollReveal>
-      ))}
-
-      {/* Article grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {articles.filter(a => !a.featured).slice(0, 4).map((item, i) => (
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-0">
+        {articles.slice(0, 6).map((item, i) => (
           <ScrollReveal key={item.slug} delay={i * 0.08}>
-            <Link
-              to={`/knowledge/${item.slug}`}
-              className="group block"
-            >
-              <div className="bg-card h-40 mb-0" />
-              <div className="py-4">
-                <span className="text-[11px] font-medium text-muted-foreground uppercase tracking-wider block mb-2">
-                  {item.category}
-                </span>
-                <h3 className="text-[16px] font-light text-foreground group-hover:text-primary transition-colors leading-snug mb-2">
-                  {item.title}
-                </h3>
-                <span className="text-[12px] text-muted-foreground font-light">{item.date}</span>
+            <Link to={`/knowledge/${item.slug}`} className="group block py-6 border-b border-border">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-primary">{item.category}</span>
+                <span className="text-[11px] text-muted-foreground">{item.date}</span>
               </div>
+              <h3 className="font-serif text-lg text-foreground group-hover:text-primary transition-colors leading-snug mb-3">{item.title}</h3>
+              <span className="link-arrow text-muted-foreground group-hover:text-primary">Read more <ArrowRight size={12} /></span>
             </Link>
           </ScrollReveal>
         ))}
       </div>
-
-      <Link to="/knowledge" className="md:hidden link-arrow mt-8 block">
-        View All <ArrowUpRight />
-      </Link>
+      <Link to="/knowledge" className="md:hidden link-arrow mt-8 block text-center">All Insights <ArrowRight size={14} /></Link>
     </div>
   </section>
 );

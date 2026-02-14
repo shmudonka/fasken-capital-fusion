@@ -1,92 +1,99 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import PageHeader from "@/components/PageHeader";
 import CookieBanner from "@/components/CookieBanner";
 import BackToTop from "@/components/BackToTop";
-import ScrollReveal from "@/components/ScrollReveal";
 import { Link } from "react-router-dom";
-
-const ArrowUpRight = () => (
-  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block ml-1">
-    <line x1="7" y1="17" x2="17" y2="7" />
-    <polyline points="7 7 17 7 17 17" />
-  </svg>
-);
+import { ArrowRight, MapPin, Briefcase, Users } from "lucide-react";
 
 const openings = [
-  { title: "Senior Immigration Advisor", location: "Toronto", type: "Full-time", department: "Advisory" },
-  { title: "Compliance Analyst", location: "Lahore", type: "Full-time", department: "Compliance" },
-  { title: "Client Relations Manager", location: "Toronto", type: "Full-time", department: "Client Services" },
-  { title: "Legal Counsel, European Programs", location: "Toronto", type: "Full-time", department: "Legal" },
-  { title: "Due Diligence Specialist", location: "Lahore", type: "Full-time", department: "Compliance" },
-  { title: "Associate Advisor", location: "Toronto", type: "Full-time", department: "Advisory" },
+  { title: "Senior Immigration Advisor", location: "Dubai", type: "Full-time", department: "Advisory" },
+  { title: "Compliance Analyst", location: "London", type: "Full-time", department: "Compliance" },
+  { title: "Client Relations Manager", location: "Hong Kong", type: "Full-time", department: "Client Services" },
+  { title: "Legal Counsel, European Programs", location: "London", type: "Full-time", department: "Legal" },
+  { title: "Due Diligence Specialist", location: "Dubai", type: "Full-time", department: "Compliance" },
+  { title: "Marketing Coordinator", location: "Montreal", type: "Full-time", department: "Marketing" },
+  { title: "Associate Advisor, Caribbean Programs", location: "Dubai", type: "Full-time", department: "Advisory" },
+  { title: "Administrative Assistant", location: "London", type: "Full-time", department: "Operations" },
 ];
 
-const Careers = () => (
-  <div className="min-h-screen bg-background">
-    <SiteHeader />
-    <main>
-      {/* Hero */}
-      <div className="bg-background pt-32 pb-16 lg:pt-40 lg:pb-24">
-        <div className="container">
-          <ScrollReveal>
-            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-light text-foreground mb-6">Careers</h1>
-            <p className="text-[15px] font-light text-muted-foreground leading-relaxed max-w-2xl mb-8">
-              If you are ready to work on complex global challenges and possess a relentless drive to succeed on behalf of your clients, join us.
-            </p>
-            <div className="flex items-center gap-6">
-              <Link to="/contact" className="link-arrow">Open Positions <ArrowUpRight /></Link>
-            </div>
-          </ScrollReveal>
-        </div>
-      </div>
+const Careers = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      <SiteHeader />
+      <main>
+        <PageHeader
+          title="Careers"
+          description="Join a team of exceptional professionals at the forefront of investment migration. We are always looking for talented individuals who share our commitment to excellence and client service."
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "Careers" },
+          ]}
+          searchPlaceholder="Search openings"
+        />
 
-      {/* Carousel section - Davies style */}
-      <section className="bg-dark-surface py-24">
-        <div className="container">
-          <ScrollReveal>
-            <div className="bg-card h-72 w-full max-w-3xl mx-auto mb-10" />
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-light text-foreground mb-6">Join a Winning Team</h2>
-              <blockquote className="text-[15px] font-light text-muted-foreground leading-relaxed italic font-serif mb-6">
-                "Our team members work with high-net-worth individuals and families from around the world, navigating complex international regulations and delivering life-changing outcomes."
-              </blockquote>
-              <Link to="/about" className="link-arrow">About Our Firm <ArrowUpRight /></Link>
+        <div className="container py-16">
+          <div className="flex flex-col lg:flex-row gap-16 mb-20">
+            <div className="lg:w-1/2">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" />
+                <h2 className="text-2xl font-serif text-foreground">Why Join Us</h2>
+              </div>
+              <p className="text-[15px] text-muted-foreground leading-relaxed mb-5">
+                At Javaid & Associates - Citizenship Capital Group, we believe that our people are our greatest asset. We foster an environment of intellectual curiosity, professional growth, and mutual respect.
+              </p>
+              <p className="text-[15px] text-muted-foreground leading-relaxed mb-5">
+                Our team members work with high-net-worth individuals and families from around the world, navigating complex international regulations and delivering life-changing outcomes. Every day brings new challenges and opportunities.
+              </p>
+              <p className="text-[15px] text-muted-foreground leading-relaxed">
+                We offer competitive compensation, comprehensive benefits, opportunities for international travel, and a clear path for career advancement within a rapidly growing global firm.
+              </p>
             </div>
-          </ScrollReveal>
-        </div>
-      </section>
+            <div className="lg:w-1/2 space-y-4">
+              <div className="bg-warm-beige p-8">
+                <Briefcase size={20} className="text-primary mb-3" />
+                <h3 className="font-serif text-lg text-foreground mb-2">Professional Development</h3>
+                <p className="text-[13px] text-muted-foreground leading-relaxed">Ongoing training, conference attendance, and mentorship from senior leaders in the industry.</p>
+              </div>
+              <div className="bg-warm-beige p-8">
+                <MapPin size={20} className="text-primary mb-3" />
+                <h3 className="font-serif text-lg text-foreground mb-2">Global Opportunities</h3>
+                <p className="text-[13px] text-muted-foreground leading-relaxed">Work across multiple offices and jurisdictions, with opportunities for international assignments.</p>
+              </div>
+              <div className="bg-warm-beige p-8">
+                <Users size={20} className="text-primary mb-3" />
+                <h3 className="font-serif text-lg text-foreground mb-2">Collaborative Culture</h3>
+                <p className="text-[13px] text-muted-foreground leading-relaxed">A diverse, inclusive team united by a shared commitment to client excellence and ethical practice.</p>
+              </div>
+            </div>
+          </div>
 
-      {/* Openings */}
-      <section className="bg-background py-24">
-        <div className="container">
-          <ScrollReveal>
-            <div className="flex items-start gap-6 mb-10">
-              <div className="w-[3px] bg-primary shrink-0 self-stretch min-h-[30px]" />
-              <h2 className="text-2xl md:text-3xl font-light text-foreground">Current Openings</h2>
-            </div>
-          </ScrollReveal>
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" />
+            <h2 className="text-2xl font-serif text-foreground">Current Openings</h2>
+          </div>
           <div className="space-y-0">
             {openings.map((job, i) => (
-              <ScrollReveal key={i} delay={i * 0.05}>
-                <Link to="/contact" className="group flex items-center justify-between py-6 border-b border-border hover:bg-secondary/30 transition-colors px-2">
-                  <div>
-                    <h3 className="text-[16px] font-light text-foreground group-hover:text-primary transition-colors mb-1">{job.title}</h3>
-                    <div className="flex items-center gap-4 text-[12px] font-light text-muted-foreground">
-                      <span>{job.location}</span>
-                      <span>{job.type}</span>
-                      <span>{job.department}</span>
-                    </div>
+              <Link key={i} to="/contact" className="group flex items-center justify-between py-6 px-4 border-b border-border hover:bg-warm-beige transition-colors -mx-4">
+                <div>
+                  <h3 className="font-serif text-[16px] text-foreground group-hover:text-primary transition-colors mb-1">{job.title}</h3>
+                  <div className="flex items-center gap-4 text-[12px] text-muted-foreground">
+                    <span>{job.location}</span>
+                    <span>{job.type}</span>
+                    <span>{job.department}</span>
                   </div>
-                  <span className="text-muted-foreground group-hover:text-primary transition-colors"><ArrowUpRight /></span>
-                </Link>
-              </ScrollReveal>
+                </div>
+                <ArrowRight size={16} className="text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+              </Link>
             ))}
           </div>
         </div>
-      </section>
-    </main>
-    <SiteFooter /><CookieBanner /><BackToTop />
-  </div>
-);
+      </main>
+      <SiteFooter />
+      <CookieBanner />
+      <BackToTop />
+    </div>
+  );
+};
 
 export default Careers;

@@ -1,30 +1,67 @@
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
 
-const ArrowUpRight = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block">
-    <line x1="7" y1="17" x2="17" y2="7" />
-    <polyline points="7 7 17 7 17 17" />
-  </svg>
-);
+const cards = [
+  {
+    category: "GUIDE",
+    date: "February 2026",
+    title: "Become a Global Citizen",
+    description:
+      "Javaid & Associates — Citizenship Capital Group empowers high net worth individuals and families to become global citizens by investing in a second residence or citizenship.",
+    link: "Become a Global Citizen",
+    href: "/programs",
+  },
+  {
+    category: "PARTNERSHIPS",
+    title: "Join Our Certified Partner Network",
+    description:
+      "Javaid & Associates equips its Certified Partner network with tools, services, and training to deliver the best possible experience to clients.",
+    link: "Become a Partner",
+    href: "/contact",
+  },
+  {
+    category: "GOVERNMENT",
+    title: "Sovereign Partnership Solutions",
+    description:
+      "Javaid & Associates enables government agencies as trusted partners in designing, developing, and implementing investor programs for residence and citizenship.",
+    link: "Sovereign Partnerships",
+    href: "/services",
+  },
+];
 
 const GlobalCitizenSection = () => {
   return (
-    <section className="bg-dark-surface py-24">
+    <section id="citizenship" className="py-20 bg-background">
       <div className="container">
-        <ScrollReveal>
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-            <div className="flex items-start gap-6 max-w-2xl">
-              <div className="w-[3px] bg-primary shrink-0 self-stretch min-h-[80px]" />
-              <h2 className="text-3xl md:text-[40px] font-light leading-[1.3] text-foreground">
-                Discover how we find solutions to your most challenging matters.
-              </h2>
-            </div>
-            <Link to="/services" className="link-arrow shrink-0">
-              View Services <ArrowUpRight />
-            </Link>
-          </div>
-        </ScrollReveal>
+        <div className="grid md:grid-cols-3 gap-0">
+          {cards.map((card, i) => (
+            <ScrollReveal key={i} delay={i * 0.12}>
+              <Link
+                to={card.href}
+                className="group block border-b md:border-b-0 md:border-r last:border-r-0 border-border p-8 lg:p-10 hover:bg-warm-beige transition-colors duration-300 h-full"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-primary">
+                    {card.category}
+                  </span>
+                  {card.date && (
+                    <span className="text-[11px] text-muted-foreground">{card.date}</span>
+                  )}
+                </div>
+                <h3 className="text-xl font-serif text-foreground mb-3 leading-snug group-hover:text-primary transition-colors">
+                  {card.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                  {card.description}
+                </p>
+                <span className="link-arrow group-hover:text-primary">
+                  {card.link} <ArrowRight size={12} />
+                </span>
+              </Link>
+            </ScrollReveal>
+          ))}
+        </div>
       </div>
     </section>
   );
