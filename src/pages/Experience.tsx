@@ -8,31 +8,31 @@ import { ArrowRight, Award, MapPin, Users, CheckCircle, Globe, Shield, TrendingU
 import heroBg from "@/assets/hero-bg.jpg";
 
 const stats = [
-  { value: "30+", label: "Years of Experience", icon: Clock },
-  { value: "2", label: "Global Offices", icon: MapPin },
-  { value: "99%", label: "Case Win Rate", icon: CheckCircle },
-  { value: "1,500+", label: "Clients Served", icon: Users },
-];
+{ value: "30+", label: "Years of Experience", icon: Clock },
+{ value: "2", label: "Global Offices", icon: MapPin },
+{ value: "99%", label: "Case Win Rate", icon: CheckCircle },
+{ value: "1,500+", label: "Clients Served", icon: Users }];
+
 
 const milestones = [
-  { year: "1996", title: "Foundation", description: "Javaid & Associates Law Firm was established in Pakistan, laying the groundwork for what would become a global legal and advisory practice." },
-  { year: "2003", title: "Caribbean Expansion", description: "Became one of the first authorized agents for St. Kitts & Nevis and Dominica citizenship by investment programs, establishing deep government relationships." },
-  { year: "2008", title: "European Practice Launch", description: "Expanded into European residency programs, beginning with Portugal's Golden Visa and Malta's permanent residency program." },
-  { year: "2012", title: "Dubai Office Opening", description: "Opened our Dubai headquarters to serve the rapidly growing Middle Eastern and South Asian market, becoming a regional leader in investment migration." },
-  { year: "2016", title: "London Office", description: "Established our London presence to serve European and African clients, strengthening our global advisory capabilities." },
-  { year: "2019", title: "1,000th Client Milestone", description: "Celebrated our 1,000th successful citizenship or residency application, maintaining our industry-leading 99% approval rate." },
-  { year: "2022", title: "Asia-Pacific Expansion", description: "Opened representative offices in Hong Kong and Singapore to serve the growing demand from Asia-Pacific high-net-worth individuals." },
-  { year: "2026", title: "Industry Leadership", description: "Today, Javaid & Associates - Citizenship Capital Group is recognized as one of the world's premier investment migration advisory firms, with over 1,500 successful cases across 12 programs." },
-];
+{ year: "1996", title: "Foundation", description: "Javaid & Associates Law Firm was established in Pakistan, laying the groundwork for what would become a global legal and advisory practice." },
+{ year: "2003", title: "Caribbean Expansion", description: "Became one of the first authorized agents for St. Kitts & Nevis and Dominica citizenship by investment programs, establishing deep government relationships." },
+{ year: "2008", title: "European Practice Launch", description: "Expanded into European residency programs, beginning with Portugal's Golden Visa and Malta's permanent residency program." },
+{ year: "2012", title: "Dubai Office Opening", description: "Opened our Dubai headquarters to serve the rapidly growing Middle Eastern and South Asian market, becoming a regional leader in investment migration." },
+{ year: "2016", title: "London Office", description: "Established our London presence to serve European and African clients, strengthening our global advisory capabilities." },
+{ year: "2019", title: "1,000th Client Milestone", description: "Celebrated our 1,000th successful citizenship or residency application, maintaining our industry-leading 99% approval rate." },
+{ year: "2022", title: "Asia-Pacific Expansion", description: "Opened representative offices in Hong Kong and Singapore to serve the growing demand from Asia-Pacific high-net-worth individuals." },
+{ year: "2026", title: "Industry Leadership", description: "Today, Javaid & Associates - Citizenship Capital Group is recognized as one of the world's premier investment migration advisory firms, with over 1,500 successful cases across 12 programs." }];
+
 
 const recognitions = [
-  { title: "Best Investment Migration Advisory Firm", source: "Global Finance Awards 2025" },
-  { title: "Top Citizenship by Investment Advisory", source: "International Advisory Awards 2024" },
-  { title: "Excellence in Client Service", source: "Private Client Awards 2024" },
-  { title: "Most Trusted CBI Advisory", source: "Wealth Management Review 2023" },
-  { title: "Best Caribbean CBI Practice", source: "Investment Migration Insider 2023" },
-  { title: "Outstanding Due Diligence Standards", source: "Compliance Excellence Awards 2022" },
-];
+{ title: "Best Investment Migration Advisory Firm", source: "Global Finance Awards 2025" },
+{ title: "Top Citizenship by Investment Advisory", source: "International Advisory Awards 2024" },
+{ title: "Excellence in Client Service", source: "Private Client Awards 2024" },
+{ title: "Most Trusted CBI Advisory", source: "Wealth Management Review 2023" },
+{ title: "Best Caribbean CBI Practice", source: "Investment Migration Insider 2023" },
+{ title: "Outstanding Due Diligence Standards", source: "Compliance Excellence Awards 2022" }];
+
 
 const Experience = () => {
   return (
@@ -67,13 +67,13 @@ const Experience = () => {
         <div className="bg-dark-surface py-16">
           <div className="container">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
-              {stats.map((stat, i) => (
-                <div key={i} className="text-center py-8 px-4 border-r last:border-r-0 border-dark-surface-foreground/10">
+              {stats.map((stat, i) =>
+              <div key={i} className="text-center py-8 px-4 border-r last:border-r-0 border-dark-surface-foreground/10">
                   <stat.icon size={24} className="mx-auto mb-3 text-primary" />
                   <div className="text-4xl md:text-5xl font-serif text-dark-surface-foreground mb-2">{stat.value}</div>
                   <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-dark-surface-foreground/50">{stat.label}</div>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </div>
@@ -133,35 +133,35 @@ const Experience = () => {
               <h2 className="text-2xl font-serif text-foreground">Our Journey</h2>
             </div>
             <div className="space-y-0">
-              {milestones.map((milestone, i) => (
-                <div key={i} className="flex items-start gap-8 py-6 border-b border-border/40">
+              {milestones.map((milestone, i) =>
+              <div key={i} className="flex items-start gap-8 py-6 border-b border-border/40">
                   <span className="text-2xl font-serif text-primary shrink-0 w-20">{milestone.year}</span>
                   <div>
                     <h3 className="font-serif text-[17px] text-foreground mb-1">{milestone.title}</h3>
                     <p className="text-[13px] text-muted-foreground leading-relaxed">{milestone.description}</p>
                   </div>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </div>
 
         {/* Recognitions */}
-        <div className="container py-20">
-          <div className="flex items-center gap-3 mb-12">
-            <div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" />
-            <h2 className="text-2xl font-serif text-foreground">Recognition & Awards</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
-            {recognitions.map((award, i) => (
-              <div key={i} className="py-6 px-6 border-b border-r border-border">
-                <Award size={20} className="text-primary mb-3" />
-                <h3 className="font-serif text-[15px] text-foreground mb-1">{award.title}</h3>
-                <p className="text-[12px] text-muted-foreground">{award.source}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         {/* CTA */}
         <div className="bg-dark-surface py-20">
@@ -181,8 +181,8 @@ const Experience = () => {
       <SiteFooter />
       <CookieBanner />
       <BackToTop />
-    </div>
-  );
+    </div>);
+
 };
 
 export default Experience;
