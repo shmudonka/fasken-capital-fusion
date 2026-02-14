@@ -65,7 +65,7 @@ const SiteFooter = () => (
       <div>
         <h4 className="text-xs font-semibold uppercase tracking-[0.15em] mb-5 text-dark-surface-foreground/80">Contact</h4>
         <div className="space-y-3 text-[13px] text-dark-surface-foreground/50">
-          <a href="mailto:info@javaidassociates.com" className="flex items-center gap-2 hover:text-primary transition-colors"><Mail size={14} /> info@javaidassociates.com</a>
+          <a href="mailto:info@citizenshipcapitalgroup.com" className="flex items-center gap-2 hover:text-primary transition-colors"><Mail size={14} /> info@citizenshipcapitalgroup.com</a>
           <a href="tel:+14162900707" className="flex items-center gap-2 hover:text-primary transition-colors"><Phone size={14} /> +1-416-290-0707</a>
         </div>
         <div className="mt-8">
