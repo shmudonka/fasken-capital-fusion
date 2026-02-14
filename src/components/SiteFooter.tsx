@@ -69,7 +69,7 @@ const SiteFooter = () =>
           <a href="tel:+14162900707" className="flex items-center gap-2 hover:text-primary transition-colors"><Phone size={14} /> +1-416-290-0707</a>
         </div>
         <div className="mt-8">
-          <h4 className="text-xs font-semibold uppercase tracking-[0.15em] mb-3 text-dark-surface-foreground/80">Portals</h4>
+          
           <div className="space-y-2">
             
             <Link to="/contact" className="flex items-center gap-1 text-[13px] text-dark-surface-foreground/50 hover:text-primary transition-colors">Partner Portal <ChevronRight size={12} /></Link>
