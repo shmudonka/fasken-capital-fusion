@@ -86,9 +86,9 @@ const HeroSection = () => {
         
 
 
-        <button onClick={() => setPaused(!paused)} className="p-3 text-dark-surface-foreground/60 hover:text-primary transition-colors" aria-label="Pause">
-          {paused ? <Play size={14} /> : <Pause size={14} />}
-        </button>
+        
+
+
       </div>
 
       {/* Slide tabs — Fasken numbered indicators */}
