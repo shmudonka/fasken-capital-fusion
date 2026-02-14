@@ -72,7 +72,7 @@ const SiteFooter = () =>
           
           <div className="space-y-2">
             
-            <Link to="/contact" className="flex items-center gap-1 text-[13px] text-dark-surface-foreground/50 hover:text-primary transition-colors">Partner Portal <ChevronRight size={12} /></Link>
+            
           </div>
         </div>
       </div>
