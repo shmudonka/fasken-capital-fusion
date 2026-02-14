@@ -44,7 +44,7 @@ const ServiceDetail = () => {
                 ))}
               </div>
               <div className="mt-12 pt-8 border-t border-border">
-                <Link to="/contact" className="btn-fasken">Schedule a Consultation</Link>
+                <Link to="/contact" className="btn-davies">Schedule a Consultation</Link>
               </div>
             </div>
             <aside>
@@ -62,7 +62,7 @@ const ServiceDetail = () => {
                   ))}
                 </div>
               </div>
-              <div className="bg-warm-beige p-6">
+              <div className="bg-card p-6">
                 <h3 className="font-serif text-lg text-foreground mb-3">Need Expert Guidance?</h3>
                 <p className="text-[13px] text-muted-foreground leading-relaxed mb-5">Our advisors are ready to discuss your specific situation and recommend the best path forward.</p>
                 <Link to="/contact" className="link-arrow text-primary hover:text-foreground">Contact Us <ChevronRight size={12} /></Link>

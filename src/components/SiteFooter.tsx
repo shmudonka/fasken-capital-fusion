@@ -1,94 +1,52 @@
-import { Mail, Phone, ChevronRight } from "lucide-react";
+import { Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const footerSections = [
-{
-  title: "About Us", titleHref: "/about",
-  links: [
-  { label: "Our Firm", href: "/about" },
-  { label: "Experience", href: "/experience" },
-  { label: "Careers", href: "/careers" }]
+const ArrowUpRight = () => (
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="7" y1="17" x2="17" y2="7" />
+    <polyline points="7 7 17 7 17 17" />
+  </svg>
+);
 
-},
-{
-  title: "Services", titleHref: "/services",
-  links: [
-  { label: "Citizenship by Investment", href: "/services/citizenship-by-investment" },
-  { label: "Residency by Investment", href: "/services/residency-by-investment" },
-  { label: "Family Office Advisory", href: "/services/family-office" },
-  { label: "Government Advisory", href: "/services/government-advisory" },
-  { label: "Due Diligence", href: "/services/due-diligence" },
-  { label: "Tax Planning", href: "/services/tax-planning" }]
+const SiteFooter = () => (
+  <footer className="bg-dark-surface text-dark-surface-foreground">
+    <div className="border-t border-border">
+      <div className="container py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        {/* Logo */}
+        <Link to="/" className="text-[16px] font-light tracking-[0.35em] text-foreground uppercase">
+          Citizenship Capital
+        </Link>
 
-},
-{
-  title: "Programs", titleHref: "/programs",
-  links: [
-  { label: "Caribbean Programs", href: "/programs/st-kitts-nevis" },
-  { label: "European Programs", href: "/programs/portugal-golden-visa" },
-  { label: "All Programs", href: "/programs" }]
-
-},
-{
-  title: "Offices", titleHref: "/contact",
-  links: [
-  { label: "Toronto, Canada", href: "/contact" },
-  { label: "Lahore, Pakistan", href: "/contact" }]
-
-}];
-
-
-const SiteFooter = () =>
-<footer className="bg-dark-surface text-dark-surface-foreground">
-    <div className="border-b border-dark-surface-foreground/10">
-      <div className="container py-14 flex flex-col md:flex-row items-center justify-between gap-8">
-        <div>
-          <h3 className="text-2xl font-serif mb-2">Ready to become a global citizen?</h3>
-          <p className="text-dark-surface-foreground/50 text-sm">Contact our team for a confidential consultation.</p>
-        </div>
-        <Link to="/contact" className="btn-fasken-primary">Get Started</Link>
-      </div>
-    </div>
-    <div className="container py-14 grid md:grid-cols-5 gap-8">
-      {footerSections.map((section) =>
-    <div key={section.title}>
-          <Link to={section.titleHref} className="flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.15em] mb-5 text-dark-surface-foreground/80 hover:text-primary transition-colors">
-            {section.title} <ChevronRight size={12} />
+        {/* Right actions */}
+        <div className="flex items-center gap-8">
+          <a
+            href="mailto:info@citizenshipcapitalgroup.com"
+            className="flex items-center gap-2 text-[14px] font-light text-foreground/60 hover:text-primary transition-colors"
+          >
+            <Mail size={14} />
+            Subscribe
+          </a>
+          <Link
+            to="/contact"
+            className="px-6 py-2.5 border border-primary text-[13px] font-medium text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+          >
+            Contact Us
           </Link>
-          <ul className="space-y-2.5">
-            {section.links.map((link) =>
-        <li key={link.label}><Link to={link.href} className="text-[13px] text-dark-surface-foreground/50 hover:text-primary transition-colors">{link.label}</Link></li>
-        )}
-          </ul>
-        </div>
-    )}
-      <div>
-        <h4 className="text-xs font-semibold uppercase tracking-[0.15em] mb-5 text-dark-surface-foreground/80">Contact</h4>
-        <div className="space-y-3 text-[13px] text-dark-surface-foreground/50">
-          <a href="mailto:info@citizenshipcapitalgroup.com" className="flex items-center gap-2 hover:text-primary transition-colors"><Mail size={14} /> info@citizenshipcapitalgroup.com</a>
-          <a href="tel:+14162900707" className="flex items-center gap-2 hover:text-primary transition-colors"><Phone size={14} /> +1-416-290-0707</a>
-        </div>
-        <div className="mt-8">
-          
-          <div className="space-y-2">
-            
-            
-          </div>
         </div>
       </div>
     </div>
-    <div className="border-t border-dark-surface-foreground/10">
-      <div className="container py-5 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-dark-surface-foreground/35">
-        <p>© 2026 Javaid & Associates - Citizenship Capital Group. All rights reserved.</p>
+
+    {/* Bottom bar */}
+    <div className="border-t border-border">
+      <div className="container py-5 flex flex-col md:flex-row items-center justify-between gap-4 text-[12px] text-foreground/35 font-light">
         <div className="flex gap-6">
           <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
           <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
-          <Link to="/cookies" className="hover:text-primary transition-colors">Cookie Policy</Link>
-          <Link to="/accessibility" className="hover:text-primary transition-colors">Accessibility</Link>
         </div>
+        <p>© 2026 Javaid & Associates — Citizenship Capital Group</p>
       </div>
     </div>
-  </footer>;
-
+  </footer>
+);
 
 export default SiteFooter;

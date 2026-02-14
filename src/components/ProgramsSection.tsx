@@ -1,40 +1,48 @@
 import { Link } from "react-router-dom";
-import { ChevronRight } from "lucide-react";
 import { programs } from "@/data/programs";
-import programsBg from "@/assets/programs-bg.jpg";
 import ScrollReveal from "@/components/ScrollReveal";
 
+const ArrowUpRight = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block">
+    <line x1="7" y1="17" x2="17" y2="7" />
+    <polyline points="7 7 17 7 17 17" />
+  </svg>
+);
+
 const ProgramsSection = () => (
-  <section id="programs" className="relative py-24 overflow-hidden">
-    <div className="absolute inset-0">
-      <img src={programsBg} alt="" className="w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-dark-surface/92" />
-    </div>
-    <div className="relative z-10 container">
+  <section id="programs" className="bg-dark-surface py-24">
+    <div className="container">
       <ScrollReveal>
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-0 h-0 border-l-[12px] border-l-primary border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent" />
-          <h2 className="text-3xl md:text-4xl font-serif text-dark-surface-foreground">Global Citizen Programs</h2>
-        </div>
-        <div className="w-12 h-[3px] bg-primary mb-6" />
-        <p className="text-dark-surface-foreground/60 max-w-2xl text-[15px] mb-12">Explore our comprehensive portfolio of citizenship and residency by investment programs across the globe.</p>
+        <h2 className="text-3xl md:text-[40px] font-light text-foreground mb-4">Representative Programs</h2>
+        <p className="text-[15px] font-light text-muted-foreground max-w-2xl mb-4">
+          <Link to="/programs" className="link-arrow">
+            View All Programs <ArrowUpRight />
+          </Link>
+        </p>
       </ScrollReveal>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
-        {programs.map((program, i) => (
-          <ScrollReveal key={program.slug} delay={i * 0.05} direction="none">
-            <Link to={`/programs/${program.slug}`} className="group flex items-center justify-between border-b border-dark-surface-foreground/10 py-5 px-4 hover:bg-dark-surface-foreground/5 transition-all duration-200">
-              <div>
-                <h3 className="font-serif text-[15px] text-dark-surface-foreground group-hover:text-primary transition-colors">{program.country}</h3>
-                <p className="text-[10px] text-dark-surface-foreground/40 uppercase tracking-[0.1em] mt-0.5">{program.type}</p>
+
+      <div className="mt-10 space-y-0">
+        {programs.slice(0, 6).map((program, i) => (
+          <ScrollReveal key={program.slug} delay={i * 0.05}>
+            <Link
+              to={`/programs/${program.slug}`}
+              className="group flex items-start justify-between py-6 border-b border-border hover:bg-secondary/30 transition-colors px-2"
+            >
+              <div className="flex-1">
+                <h3 className="text-[17px] font-light text-foreground group-hover:text-primary transition-colors mb-1">
+                  {program.country}
+                </h3>
+                <p className="text-[13px] text-muted-foreground font-light">
+                  {program.type} · Min. {program.minInvestment}
+                </p>
               </div>
-              <ChevronRight size={16} className="text-dark-surface-foreground/20 group-hover:text-primary transition-colors shrink-0" />
+              <span className="text-[13px] text-muted-foreground font-light mt-1">
+                Read More <ArrowUpRight />
+              </span>
             </Link>
           </ScrollReveal>
         ))}
       </div>
-      <ScrollReveal delay={0.3}>
-        <div className="mt-10"><Link to="/programs" className="btn-fasken-outline-white">View All Programs</Link></div>
-      </ScrollReveal>
     </div>
   </section>
 );

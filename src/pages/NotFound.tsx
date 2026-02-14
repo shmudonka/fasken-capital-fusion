@@ -1,5 +1,7 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 
 const NotFound = () => {
   const location = useLocation();
@@ -9,14 +11,20 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
-        <a href="/" className="text-primary underline hover:text-primary/90">
-          Return to Home
-        </a>
+    <div className="min-h-screen bg-background">
+      <SiteHeader />
+      <div className="pt-32 pb-24 lg:pt-40">
+        <div className="container">
+          <h1 className="text-3xl font-light text-foreground mb-4">
+            We are sorry, the page you are looking for cannot be found.
+          </h1>
+          <p className="text-[15px] font-light text-muted-foreground">
+            Please return to the{" "}
+            <Link to="/" className="text-primary hover:underline">homepage</Link>.
+          </p>
+        </div>
       </div>
+      <SiteFooter />
     </div>
   );
 };
