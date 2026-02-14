@@ -80,9 +80,9 @@ const HeroSection = () => {
 
       {/* Navigation controls — centered like Fasken */}
       <div className="absolute bottom-[88px] left-1/2 -translate-x-1/2 z-20 flex items-center gap-1 bg-dark-surface/80 backdrop-blur-sm">
-        <button onClick={prev} className="p-3 text-dark-surface-foreground/60 hover:text-primary transition-colors" aria-label="Previous">
-          <ChevronLeft size={18} />
-        </button>
+        
+
+
         
 
 
