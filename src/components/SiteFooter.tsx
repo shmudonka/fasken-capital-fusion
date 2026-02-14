@@ -2,44 +2,44 @@ import { Mail, Phone, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const footerSections = [
-  {
-    title: "About Us", titleHref: "/about",
-    links: [
-      { label: "Our Firm", href: "/about" },
-      { label: "Experience", href: "/experience" },
-      { label: "Careers", href: "/careers" },
-    ],
-  },
-  {
-    title: "Services", titleHref: "/services",
-    links: [
-      { label: "Citizenship by Investment", href: "/services/citizenship-by-investment" },
-      { label: "Residency by Investment", href: "/services/residency-by-investment" },
-      { label: "Family Office Advisory", href: "/services/family-office" },
-      { label: "Government Advisory", href: "/services/government-advisory" },
-      { label: "Due Diligence", href: "/services/due-diligence" },
-      { label: "Tax Planning", href: "/services/tax-planning" },
-    ],
-  },
-  {
-    title: "Programs", titleHref: "/programs",
-    links: [
-      { label: "Caribbean Programs", href: "/programs/st-kitts-nevis" },
-      { label: "European Programs", href: "/programs/portugal-golden-visa" },
-      { label: "All Programs", href: "/programs" },
-    ],
-  },
-  {
-    title: "Offices", titleHref: "/contact",
-    links: [
-      { label: "Toronto, Canada", href: "/contact" },
-      { label: "Lahore, Pakistan", href: "/contact" },
-    ],
-  },
-];
+{
+  title: "About Us", titleHref: "/about",
+  links: [
+  { label: "Our Firm", href: "/about" },
+  { label: "Experience", href: "/experience" },
+  { label: "Careers", href: "/careers" }]
 
-const SiteFooter = () => (
-  <footer className="bg-dark-surface text-dark-surface-foreground">
+},
+{
+  title: "Services", titleHref: "/services",
+  links: [
+  { label: "Citizenship by Investment", href: "/services/citizenship-by-investment" },
+  { label: "Residency by Investment", href: "/services/residency-by-investment" },
+  { label: "Family Office Advisory", href: "/services/family-office" },
+  { label: "Government Advisory", href: "/services/government-advisory" },
+  { label: "Due Diligence", href: "/services/due-diligence" },
+  { label: "Tax Planning", href: "/services/tax-planning" }]
+
+},
+{
+  title: "Programs", titleHref: "/programs",
+  links: [
+  { label: "Caribbean Programs", href: "/programs/st-kitts-nevis" },
+  { label: "European Programs", href: "/programs/portugal-golden-visa" },
+  { label: "All Programs", href: "/programs" }]
+
+},
+{
+  title: "Offices", titleHref: "/contact",
+  links: [
+  { label: "Toronto, Canada", href: "/contact" },
+  { label: "Lahore, Pakistan", href: "/contact" }]
+
+}];
+
+
+const SiteFooter = () =>
+<footer className="bg-dark-surface text-dark-surface-foreground">
     <div className="border-b border-dark-surface-foreground/10">
       <div className="container py-14 flex flex-col md:flex-row items-center justify-between gap-8">
         <div>
@@ -50,18 +50,18 @@ const SiteFooter = () => (
       </div>
     </div>
     <div className="container py-14 grid md:grid-cols-5 gap-8">
-      {footerSections.map((section) => (
-        <div key={section.title}>
+      {footerSections.map((section) =>
+    <div key={section.title}>
           <Link to={section.titleHref} className="flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.15em] mb-5 text-dark-surface-foreground/80 hover:text-primary transition-colors">
             {section.title} <ChevronRight size={12} />
           </Link>
           <ul className="space-y-2.5">
-            {section.links.map((link) => (
-              <li key={link.label}><Link to={link.href} className="text-[13px] text-dark-surface-foreground/50 hover:text-primary transition-colors">{link.label}</Link></li>
-            ))}
+            {section.links.map((link) =>
+        <li key={link.label}><Link to={link.href} className="text-[13px] text-dark-surface-foreground/50 hover:text-primary transition-colors">{link.label}</Link></li>
+        )}
           </ul>
         </div>
-      ))}
+    )}
       <div>
         <h4 className="text-xs font-semibold uppercase tracking-[0.15em] mb-5 text-dark-surface-foreground/80">Contact</h4>
         <div className="space-y-3 text-[13px] text-dark-surface-foreground/50">
@@ -71,7 +71,7 @@ const SiteFooter = () => (
         <div className="mt-8">
           <h4 className="text-xs font-semibold uppercase tracking-[0.15em] mb-3 text-dark-surface-foreground/80">Portals</h4>
           <div className="space-y-2">
-            <Link to="/contact" className="flex items-center gap-1 text-[13px] text-dark-surface-foreground/50 hover:text-primary transition-colors">Client Portal <ChevronRight size={12} /></Link>
+            
             <Link to="/contact" className="flex items-center gap-1 text-[13px] text-dark-surface-foreground/50 hover:text-primary transition-colors">Partner Portal <ChevronRight size={12} /></Link>
           </div>
         </div>
@@ -88,7 +88,7 @@ const SiteFooter = () => (
         </div>
       </div>
     </div>
-  </footer>
-);
+  </footer>;
+
 
 export default SiteFooter;
