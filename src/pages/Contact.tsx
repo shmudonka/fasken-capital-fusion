@@ -10,20 +10,21 @@ const offices = [
   {
     city: "Toronto, Canada",
     address: "55 Town Centre Court, Suite 700, Toronto, Ontario M1P 4X4",
-    phone: "+1-416-290-0707",
-    mobile: "+1-416-616-1972",
-    mobileLabel: "Mob/WhatsApp",
-    email: "canada@javaidassociates.com",
+    phone: "+1 416 290 0707",
+    mobile: "+1 416 616 1972",
+    mobileLabel: "WhatsApp",
+    fax: "+1 416-290-1698",
+    email: "info@citizenshipcapitalgroup.com",
   },
   {
     city: "Lahore, Pakistan",
     address: "Office 1004 Haly Tower, Lalak Jan Chowk, DHA Phase II, Lahore, Pakistan",
-    phone: "+92-42-3455-1015",
-    mobile: "+92-345-220-6000",
+    phone: "+92 42 3455 1015",
+    mobile: "+92 303 220 6000",
     mobileLabel: "WhatsApp",
-    mobile2: "+92-311-147-7772",
+    mobile2: "+92 311 147 7773",
     mobile2Label: "Mob",
-    email: "pakistan@javaidassociates.com",
+    email: "info@citizenshipcapitalgroup.com",
   },
 ];
 
@@ -136,11 +137,11 @@ const Contact = () => {
                 <h2 className="text-2xl font-serif text-foreground">General Inquiries</h2>
               </div>
               <div className="space-y-4 mb-12">
-                <a href="mailto:info@javaidassociates.com" className="flex items-center gap-3 text-[14px] text-muted-foreground hover:text-primary transition-colors">
-                  <Mail size={16} className="text-primary" /> info@javaidassociates.com
+                <a href="mailto:info@citizenshipcapitalgroup.com" className="flex items-center gap-3 text-[14px] text-muted-foreground hover:text-primary transition-colors">
+                  <Mail size={16} className="text-primary" /> info@citizenshipcapitalgroup.com
                 </a>
                 <a href="tel:+14162900707" className="flex items-center gap-3 text-[14px] text-muted-foreground hover:text-primary transition-colors">
-                  <Phone size={16} className="text-primary" /> +1-416-290-0707
+                  <Phone size={16} className="text-primary" /> +1 416 290 0707
                 </a>
               </div>
 
@@ -170,6 +171,12 @@ const Contact = () => {
                        <div className="flex items-center gap-2 text-[13px] text-muted-foreground mb-1 ml-[22px]">
                          <Phone size={12} className="text-primary shrink-0" />
                          <a href={`tel:${office.mobile2}`} className="hover:text-primary transition-colors">{office.mobile2Label}: {office.mobile2}</a>
+                       </div>
+                     )}
+                     {office.fax && (
+                       <div className="flex items-center gap-2 text-[13px] text-muted-foreground mb-1 ml-[22px]">
+                         <Phone size={12} className="text-primary shrink-0" />
+                         <span>Fax: {office.fax}</span>
                        </div>
                      )}
                      <div className="flex items-center gap-2 text-[13px] text-muted-foreground ml-[22px]">

@@ -8,21 +8,20 @@ import { ArrowRight, Award, MapPin, Users, CheckCircle, Globe, Shield, TrendingU
 import heroBg from "@/assets/hero-bg.jpg";
 
 const stats = [
-{ value: "30+", label: "Years of Experience", icon: Clock },
+{ value: "25+", label: "Years of Experience", icon: Clock },
 { value: "2", label: "Global Offices", icon: MapPin },
 { value: "99%", label: "Case Win Rate", icon: CheckCircle },
 { value: "1,500+", label: "Clients Served", icon: Users }];
 
 
 const milestones = [
-{ year: "1996", title: "Foundation", description: "Javaid & Associates Law Firm was established in Pakistan, laying the groundwork for what would become a global legal and advisory practice." },
+{ year: "1999", title: "Foundation", description: "Javaid & Associates Law Firm was established in Lahore, Pakistan, laying the groundwork for what would become a trusted legal and advisory practice." },
 { year: "2003", title: "Caribbean Expansion", description: "Became one of the first authorized agents for St. Kitts & Nevis and Dominica citizenship by investment programs, establishing deep government relationships." },
 { year: "2008", title: "European Practice Launch", description: "Expanded into European residency programs, beginning with Portugal's Golden Visa and Malta's permanent residency program." },
-{ year: "2012", title: "Dubai Office Opening", description: "Opened our Dubai headquarters to serve the rapidly growing Middle Eastern and South Asian market, becoming a regional leader in investment migration." },
-{ year: "2016", title: "London Office", description: "Established our London presence to serve European and African clients, strengthening our global advisory capabilities." },
+{ year: "2012", title: "Toronto Office", description: "Opened our Toronto office to serve the North American market, establishing Javaid & Associates — Canada as a dedicated Canadian practice." },
 { year: "2019", title: "1,000th Client Milestone", description: "Celebrated our 1,000th successful citizenship or residency application, maintaining our industry-leading 99% approval rate." },
-{ year: "2022", title: "Asia-Pacific Expansion", description: "Opened representative offices in Hong Kong and Singapore to serve the growing demand from Asia-Pacific high-net-worth individuals." },
-{ year: "2026", title: "Industry Leadership", description: "Today, Javaid & Associates - Citizenship Capital Group is recognized as one of the world's premier investment migration advisory firms, with over 1,500 successful cases across 12 programs." }];
+{ year: "2023", title: "Citizenship Capital Group Launch", description: "Launched the Citizenship Capital Group as a dedicated investment migration advisory division, formalizing our expertise under a distinct brand." },
+{ year: "2026", title: "Industry Leadership", description: "Today, Javaid & Associates - Citizenship Capital Group is recognized as one of the premier investment migration advisory firms, with over 1,500 successful cases across 12 programs." }];
 
 
 const recognitions = [
@@ -87,7 +86,7 @@ const Experience = () => {
                 <h2 className="text-2xl font-serif text-foreground">Our Track Record</h2>
               </div>
               <p className="text-[15px] text-muted-foreground leading-relaxed mb-5">
-                Since 1996, Javaid & Associates has been at the forefront of the investment migration industry. Our three decades of experience have given us unparalleled insight into the nuances of citizenship and residency programs worldwide.
+                Since 1999, Javaid & Associates has been at the forefront of the investment migration industry. Over 25 years of experience have given us unparalleled insight into the nuances of citizenship and residency programs worldwide.
               </p>
               <p className="text-[15px] text-muted-foreground leading-relaxed mb-5">
                 Our 99% case approval rate is not a marketing claim — it is the result of rigorous pre-screening, meticulous documentation, and deep relationships with government agencies across every jurisdiction we serve. We do not submit applications unless we are confident of success.

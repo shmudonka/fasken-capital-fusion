@@ -40,11 +40,11 @@ const Privacy = () => (
         </div>
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">Your Rights</h2>
-          <p className="text-[15px] text-muted-foreground leading-relaxed">Depending on your jurisdiction, you may have the right to access, correct, delete, or port your personal data, as well as the right to object to or restrict certain processing activities. To exercise your rights, please contact us at privacy@javaidassociates.com.</p>
+          <p className="text-[15px] text-muted-foreground leading-relaxed">Depending on your jurisdiction, you may have the right to access, correct, delete, or port your personal data, as well as the right to object to or restrict certain processing activities. To exercise your rights, please contact us at info@citizenshipcapitalgroup.com.</p>
         </div>
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">Contact Us</h2>
-          <p className="text-[15px] text-muted-foreground leading-relaxed">For questions about this Privacy Policy or our data practices, please contact our Data Protection Officer at privacy@javaidassociates.com or write to us at our London office address.</p>
+          <p className="text-[15px] text-muted-foreground leading-relaxed">For questions about this Privacy Policy or our data practices, please contact us at info@citizenshipcapitalgroup.com or write to us at our Toronto office: 55 Town Centre Court, Suite 700, Toronto, Ontario M1P 4X4.</p>
         </div>
         <p className="text-[12px] text-muted-foreground">Last updated: February 1, 2026</p>
       </div>
