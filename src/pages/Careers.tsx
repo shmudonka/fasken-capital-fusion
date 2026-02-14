@@ -7,14 +7,14 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Briefcase, Users } from "lucide-react";
 
 const openings = [
-  { title: "Senior Immigration Advisor", location: "Dubai", type: "Full-time", department: "Advisory" },
-  { title: "Compliance Analyst", location: "London", type: "Full-time", department: "Compliance" },
-  { title: "Client Relations Manager", location: "Hong Kong", type: "Full-time", department: "Client Services" },
-  { title: "Legal Counsel, European Programs", location: "London", type: "Full-time", department: "Legal" },
-  { title: "Due Diligence Specialist", location: "Dubai", type: "Full-time", department: "Compliance" },
-  { title: "Marketing Coordinator", location: "Montreal", type: "Full-time", department: "Marketing" },
-  { title: "Associate Advisor, Caribbean Programs", location: "Dubai", type: "Full-time", department: "Advisory" },
-  { title: "Administrative Assistant", location: "London", type: "Full-time", department: "Operations" },
+  { title: "Senior Immigration Advisor", location: "Toronto", type: "Full-time", department: "Advisory" },
+  { title: "Compliance Analyst", location: "Lahore", type: "Full-time", department: "Compliance" },
+  { title: "Client Relations Manager", location: "Toronto", type: "Full-time", department: "Client Services" },
+  { title: "Legal Counsel, Investment Programs", location: "Toronto", type: "Full-time", department: "Legal" },
+  { title: "Due Diligence Specialist", location: "Lahore", type: "Full-time", department: "Compliance" },
+  { title: "Marketing Coordinator", location: "Toronto", type: "Full-time", department: "Marketing" },
+  { title: "Associate Advisor, Caribbean Programs", location: "Lahore", type: "Full-time", department: "Advisory" },
+  { title: "Administrative Assistant", location: "Lahore", type: "Full-time", department: "Operations" },
 ];
 
 const Careers = () => {

@@ -29,7 +29,7 @@ const Cookies = () => (
         </div>
         <div>
           <h2 className="text-xl font-serif text-foreground mb-3">Contact Us</h2>
-          <p className="text-[15px] text-muted-foreground leading-relaxed">If you have questions about our use of cookies, please contact us at privacy@javaidassociates.com.</p>
+          <p className="text-[15px] text-muted-foreground leading-relaxed">If you have questions about our use of cookies, please contact us at info@citizenshipcapitalgroup.com.</p>
         </div>
         <p className="text-[12px] text-muted-foreground">Last updated: February 1, 2026</p>
       </div>

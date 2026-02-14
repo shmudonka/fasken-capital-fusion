@@ -66,14 +66,12 @@ const SiteFooter = () =>
         <h4 className="text-xs font-semibold uppercase tracking-[0.15em] mb-5 text-dark-surface-foreground/80">Contact</h4>
         <div className="space-y-3 text-[13px] text-dark-surface-foreground/50">
           <a href="mailto:info@citizenshipcapitalgroup.com" className="flex items-center gap-2 hover:text-primary transition-colors"><Mail size={14} /> info@citizenshipcapitalgroup.com</a>
-          <a href="tel:+14162900707" className="flex items-center gap-2 hover:text-primary transition-colors"><Phone size={14} /> +1-416-290-0707</a>
-        </div>
-        <div className="mt-8">
-          
-          <div className="space-y-2">
-            
-            
-          </div>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-dark-surface-foreground/40 mt-4 mb-1">Canada</p>
+          <a href="tel:+14162900707" className="flex items-center gap-2 hover:text-primary transition-colors"><Phone size={14} /> +1 416 290 0707</a>
+          <a href="https://wa.me/14166161972" className="flex items-center gap-2 hover:text-primary transition-colors"><Phone size={14} /> WhatsApp: +1 416 616 1972</a>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-dark-surface-foreground/40 mt-4 mb-1">Pakistan</p>
+          <a href="tel:+924234551015" className="flex items-center gap-2 hover:text-primary transition-colors"><Phone size={14} /> +92 42 3455 1015</a>
+          <a href="https://wa.me/923032206000" className="flex items-center gap-2 hover:text-primary transition-colors"><Phone size={14} /> WhatsApp: +92 303 220 6000</a>
         </div>
       </div>
     </div>
