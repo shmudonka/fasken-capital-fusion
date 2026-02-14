@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Search, ChevronDown, User } from "lucide-react";
 
 const topBarLinks = [
@@ -20,8 +20,22 @@ const navItems = [
 const SiteHeader = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const location = useLocation();
+  const navigate = useNavigate();
   const isActive = (href: string) => location.pathname === href;
+
+  const handleSearch = () => {
+    if (!searchQuery.trim()) return;
+    navigate(`/knowledge?q=${encodeURIComponent(searchQuery.trim())}`);
+    setSearchQuery("");
+    setSearchOpen(false);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") handleSearch();
+    if (e.key === "Escape") setSearchOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background">
@@ -53,8 +67,18 @@ const SiteHeader = () => {
           <div className="hidden lg:flex items-center gap-3">
             {searchOpen ? (
               <div className="flex items-center border-b border-foreground/30">
-                <input type="text" placeholder="What are you looking for?" className="bg-transparent text-sm py-1 px-2 outline-none w-56 text-foreground placeholder:text-muted-foreground" autoFocus onBlur={() => setSearchOpen(false)} />
-                <Search size={16} className="text-muted-foreground" />
+                <input
+                  type="text"
+                  placeholder="What are you looking for?"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  className="bg-transparent text-sm py-1 px-2 outline-none w-56 text-foreground placeholder:text-muted-foreground"
+                  autoFocus
+                />
+                <button onClick={handleSearch}>
+                  <Search size={16} className="text-muted-foreground hover:text-foreground transition-colors" />
+                </button>
               </div>
             ) : (
               <button onClick={() => setSearchOpen(true)} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">

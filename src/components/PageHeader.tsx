@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface Breadcrumb {
   label: string;
@@ -11,12 +12,28 @@ interface PageHeaderProps {
   description?: string;
   breadcrumbs: Breadcrumb[];
   searchPlaceholder?: string;
+  onSearch?: (query: string) => void;
 }
 
-const PageHeader = ({ title, description, breadcrumbs, searchPlaceholder }: PageHeaderProps) => {
+const PageHeader = ({ title, description, breadcrumbs, searchPlaceholder, onSearch }: PageHeaderProps) => {
+  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    if (!query.trim()) return;
+    if (onSearch) {
+      onSearch(query.trim());
+    } else {
+      navigate(`/knowledge?q=${encodeURIComponent(query.trim())}`);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") handleSearch();
+  };
+
   return (
     <>
-      {/* Warm beige hero header — Fasken style */}
       <div className="bg-warm-beige pt-32 pb-16 lg:pt-40 lg:pb-20">
         <div className="container text-center">
           <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-5">{title}</h1>
@@ -31,9 +48,12 @@ const PageHeader = ({ title, description, breadcrumbs, searchPlaceholder }: Page
                 <input
                   type="text"
                   placeholder={searchPlaceholder}
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  onKeyDown={handleKeyDown}
                   className="flex-1 bg-transparent text-sm py-3.5 px-5 outline-none text-foreground placeholder:text-muted-foreground"
                 />
-                <button className="px-4 text-muted-foreground hover:text-foreground transition-colors">
+                <button onClick={handleSearch} className="px-4 text-muted-foreground hover:text-foreground transition-colors">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 </button>
               </div>
@@ -41,8 +61,6 @@ const PageHeader = ({ title, description, breadcrumbs, searchPlaceholder }: Page
           )}
         </div>
       </div>
-
-      {/* Breadcrumb bar — Fasken style */}
       <div className="border-b border-border">
         <div className="container flex items-center justify-between py-4">
           <div className="flex items-center text-[11px] uppercase tracking-[0.1em] text-muted-foreground">

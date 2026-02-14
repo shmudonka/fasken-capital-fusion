@@ -1,9 +1,11 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHeader from "@/components/PageHeader";
 import CookieBanner from "@/components/CookieBanner";
 import BackToTop from "@/components/BackToTop";
+import ScrollReveal from "@/components/ScrollReveal";
 import { ArrowRight, ChevronDown, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { articles } from "@/data/articles";
@@ -17,9 +19,21 @@ const filterOptions: Record<string, string[]> = {
 };
 
 const Knowledge = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "");
   const [openFilter, setOpenFilter] = useState<string | null>(null);
   const [activeFilters, setActiveFilters] = useState<Record<string, string[]>>({});
   const [sortOrder, setSortOrder] = useState<string>("desc");
+
+  useEffect(() => {
+    const q = searchParams.get("q");
+    if (q) setSearchQuery(q);
+  }, [searchParams]);
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    setSearchParams(query ? { q: query } : {});
+  };
 
   const toggleFilter = (group: string, value: string) => {
     setActiveFilters((prev) => {
@@ -39,24 +53,33 @@ const Knowledge = () => {
   const clearAllFilters = () => {
     setActiveFilters({});
     setOpenFilter(null);
+    setSearchQuery("");
+    setSearchParams({});
   };
 
-  const hasActiveFilters = Object.keys(activeFilters).length > 0;
+  const hasActiveFilters = Object.keys(activeFilters).length > 0 || !!searchQuery;
 
   const filteredArticles = useMemo(() => {
     let result = [...articles];
 
-    // Filter by Types (matches category)
+    // Text search
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      result = result.filter(
+        (a) =>
+          a.title.toLowerCase().includes(q) ||
+          a.excerpt.toLowerCase().includes(q) ||
+          a.category.toLowerCase().includes(q) ||
+          a.content.some((c) => c.toLowerCase().includes(q))
+      );
+    }
+
     if (activeFilters.Types?.length) {
       result = result.filter((a) => activeFilters.Types.includes(a.category));
     }
-
-    // Filter by Year
     if (activeFilters.Year?.length) {
       result = result.filter((a) => activeFilters.Year.some((y) => a.date.includes(y)));
     }
-
-    // Filter by Topics (search in title + excerpt)
     if (activeFilters.Topics?.length) {
       result = result.filter((a) =>
         activeFilters.Topics.some(
@@ -67,8 +90,6 @@ const Knowledge = () => {
         )
       );
     }
-
-    // Filter by Industries
     if (activeFilters.Industries?.length) {
       result = result.filter((a) =>
         activeFilters.Industries.some(
@@ -79,8 +100,6 @@ const Knowledge = () => {
         )
       );
     }
-
-    // Filter by Programs
     if (activeFilters.Programs?.length) {
       result = result.filter((a) =>
         activeFilters.Programs.some(
@@ -92,7 +111,6 @@ const Knowledge = () => {
       );
     }
 
-    // Sort
     result.sort((a, b) => {
       const da = new Date(a.date).getTime();
       const db = new Date(b.date).getTime();
@@ -100,7 +118,7 @@ const Knowledge = () => {
     });
 
     return result;
-  }, [activeFilters, sortOrder]);
+  }, [activeFilters, sortOrder, searchQuery]);
 
   const featuredArticles = filteredArticles.filter((a) => a.featured);
   const listArticles = filteredArticles.filter((a) => !a.featured);
@@ -114,8 +132,21 @@ const Knowledge = () => {
           description="Good client service includes sharing expertise with colleagues and clients. Explore our publications, guides, and insights on the investment migration developments that matter to you."
           breadcrumbs={[{ label: "Home", href: "/" }, { label: "Knowledge" }]}
           searchPlaceholder="Search for a topic"
+          onSearch={handleSearch}
         />
         <div className="container py-12">
+          {/* Search result indicator */}
+          {searchQuery && (
+            <div className="mb-6 flex items-center gap-3">
+              <span className="text-[13px] text-muted-foreground">
+                Showing results for: <strong className="text-foreground">"{searchQuery}"</strong>
+              </span>
+              <button onClick={() => handleSearch("")} className="text-primary hover:text-primary/80 transition-colors">
+                <X size={14} />
+              </button>
+            </div>
+          )}
+
           {/* Filter buttons */}
           <div className="flex flex-wrap gap-3 mb-4">
             {Object.keys(filterOptions).map((filter) => {
@@ -173,7 +204,7 @@ const Knowledge = () => {
           </div>
 
           {/* Active filter tags */}
-          {hasActiveFilters && (
+          {Object.keys(activeFilters).length > 0 && (
             <div className="flex flex-wrap gap-2 mb-8">
               {Object.entries(activeFilters).map(([group, values]) =>
                 values.map((val) => (
@@ -212,7 +243,7 @@ const Knowledge = () => {
           {filteredArticles.length === 0 && (
             <div className="text-center py-16">
               <p className="font-serif text-xl text-foreground mb-2">No articles found</p>
-              <p className="text-[13px] text-muted-foreground mb-6">Try adjusting your filters to find what you're looking for.</p>
+              <p className="text-[13px] text-muted-foreground mb-6">Try adjusting your filters or search terms.</p>
               <button onClick={clearAllFilters} className="btn-fasken">Clear Filters</button>
             </div>
           )}
@@ -220,31 +251,33 @@ const Knowledge = () => {
           {/* Featured cards */}
           {featuredArticles.length > 0 && (
             <div className="grid md:grid-cols-3 gap-6 mb-12">
-              {featuredArticles.map((article) => (
-                <Link key={article.slug} to={`/knowledge/${article.slug}`} className="group block">
-                  <div className="relative h-48 bg-warm-beige mb-0 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
-                    <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-background/90 px-2 py-1">
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className="text-primary">
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                      </svg>
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-foreground">Featured</span>
+              {featuredArticles.map((article, i) => (
+                <ScrollReveal key={article.slug} delay={i * 0.1}>
+                  <Link to={`/knowledge/${article.slug}`} className="group block">
+                    <div className="relative h-48 bg-warm-beige mb-0 overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
+                      <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-background/90 px-2 py-1">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className="text-primary">
+                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                        <span className="text-[10px] font-semibold uppercase tracking-wider text-foreground">Featured</span>
+                      </div>
                     </div>
-                  </div>
-                  <div className="border border-t-0 border-border p-5">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-primary">{article.category}</span>
-                      <span className="text-[11px] text-muted-foreground">{article.date}</span>
+                    <div className="border border-t-0 border-border p-5">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-primary">{article.category}</span>
+                        <span className="text-[11px] text-muted-foreground">{article.date}</span>
+                      </div>
+                      <h3 className="font-serif text-lg text-foreground group-hover:text-primary transition-colors leading-snug mb-2">
+                        {article.title}
+                      </h3>
+                      <p className="text-[13px] text-muted-foreground leading-relaxed line-clamp-2 mb-3">{article.excerpt}</p>
+                      <span className="link-arrow text-muted-foreground group-hover:text-primary">
+                        Read more <ArrowRight size={12} />
+                      </span>
                     </div>
-                    <h3 className="font-serif text-lg text-foreground group-hover:text-primary transition-colors leading-snug mb-2">
-                      {article.title}
-                    </h3>
-                    <p className="text-[13px] text-muted-foreground leading-relaxed line-clamp-2 mb-3">{article.excerpt}</p>
-                    <span className="link-arrow text-muted-foreground group-hover:text-primary">
-                      Read more <ArrowRight size={12} />
-                    </span>
-                  </div>
-                </Link>
+                  </Link>
+                </ScrollReveal>
               ))}
             </div>
           )}
