@@ -38,24 +38,14 @@ const Experience = () => {
     <div className="min-h-screen bg-background">
       <SiteHeader />
       <main>
-        {/* Hero */}
-        <div className="bg-muted py-20 lg:py-28">
-          <div className="container">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-foreground mb-4">Experience</h1>
-            <p className="text-[15px] text-muted-foreground max-w-2xl leading-relaxed">
-              Over 25 years of trusted legal expertise in investment migration, citizenship planning, and global advisory services.
-            </p>
-          </div>
-        </div>
-
-        {/* Breadcrumb */}
-        <div className="border-b border-border">
-          <div className="container flex items-center py-4 text-[11px] uppercase tracking-[0.1em] text-muted-foreground">
-            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
-            <span className="mx-2">›</span>
-            <span className="text-foreground">Experience</span>
-          </div>
-        </div>
+        <PageHeader
+          title="Experience"
+          description="Over 25 years of trusted legal expertise in investment migration, citizenship planning, and global advisory services."
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "Experience" }
+          ]}
+        />
 
         {/* Stats */}
         <div className="bg-dark-surface py-16">
