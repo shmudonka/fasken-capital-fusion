@@ -38,7 +38,7 @@ const ProgramDetail = () => {
             <p className="text-[14px] text-muted-foreground leading-relaxed max-w-md">{program.description.substring(0, 150)}...</p>
           </div>
           <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full">
-            <img src="/placeholder.svg" alt={program.country} className="w-full h-full object-cover" />
+            <img src={program.image || "/placeholder.svg"} alt={program.country} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-dark-surface/30 pointer-events-none" />
           </div>
         </div>
