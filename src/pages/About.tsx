@@ -58,7 +58,7 @@ const About = () =>
             <Link to="/experience" className="btn-fasken">Our Experience</Link>
           </ScrollReveal>
           <ScrollReveal className="lg:w-1/2" delay={0.2}>
-            <img src={heroBg} alt="Our office" className="w-full h-80 object-cover" />
+            <img alt="Our office" className="w-full h-80 object-cover" src="/lovable-uploads/ef5e8b98-a29d-42df-bc18-2e0335e748cf.webp" />
           </ScrollReveal>
         </div>
       </div>
