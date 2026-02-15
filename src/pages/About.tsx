@@ -40,7 +40,7 @@ const About = () => (
           </ScrollReveal>
         </div>
         <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full">
-          <img src={heroBg} alt="About Us" className="w-full h-full object-cover" /><div className="absolute inset-0 bg-foreground/10" />
+          <img src={heroBg} alt="About Us" className="w-full h-full object-cover" /><div className="absolute inset-0 bg-foreground/10 pointer-events-none" />
         </div>
       </div>
       <div className="border-b border-border">

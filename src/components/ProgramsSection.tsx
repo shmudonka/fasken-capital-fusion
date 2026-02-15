@@ -8,7 +8,7 @@ const ProgramsSection = () =>
 <section id="programs" className="relative py-24 overflow-hidden">
     <div className="absolute inset-0">
       <img src={programsBg} alt="" className="w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-dark-surface/95 opacity-70" />
+      <div className="absolute inset-0 bg-dark-surface/95 opacity-70 pointer-events-none" />
     </div>
     <div className="relative z-10 container">
       <ScrollReveal>
