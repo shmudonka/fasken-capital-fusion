@@ -37,11 +37,9 @@ const ProgramDetail = () => {
             <div className="w-12 h-[3px] bg-primary mb-6" />
             <p className="text-[14px] text-muted-foreground leading-relaxed max-w-md">{program.description.substring(0, 150)}...</p>
           </div>
-          <div className="hidden lg:flex absolute right-0 top-0 w-1/2 h-full bg-dark-surface items-center justify-center">
-            <div className="text-center">
-              <div className="text-5xl font-serif text-dark-surface-foreground/20 mb-4">{program.visaFree}</div>
-              <div className="text-[11px] uppercase tracking-wider text-dark-surface-foreground/40">Visa-Free Travel</div>
-            </div>
+          <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full">
+            <img src="/placeholder.svg" alt={program.country} className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-dark-surface/30 pointer-events-none" />
           </div>
         </div>
 
