@@ -4,11 +4,11 @@ import { programs } from "@/data/programs";
 import programsBg from "@/assets/programs-bg.jpg";
 import ScrollReveal from "@/components/ScrollReveal";
 
-const ProgramsSection = () => (
-  <section id="programs" className="relative py-24 overflow-hidden">
+const ProgramsSection = () =>
+<section id="programs" className="relative py-24 overflow-hidden">
     <div className="absolute inset-0">
       <img src={programsBg} alt="" className="w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-dark-surface/95" />
+      <div className="absolute inset-0 bg-dark-surface/95 opacity-70" />
     </div>
     <div className="relative z-10 container">
       <ScrollReveal>
@@ -20,8 +20,8 @@ const ProgramsSection = () => (
         <p className="text-dark-surface-foreground/60 max-w-2xl text-[15px] mb-12">Explore our comprehensive portfolio of citizenship and residency by investment programs across the globe.</p>
       </ScrollReveal>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
-        {programs.map((program, i) => (
-          <ScrollReveal key={program.slug} delay={i * 0.05} direction="none">
+        {programs.map((program, i) =>
+      <ScrollReveal key={program.slug} delay={i * 0.05} direction="none">
             <Link to={`/programs/${program.slug}`} className="group flex items-center justify-between border-b border-dark-surface-foreground/10 py-5 px-4 hover:bg-dark-surface-foreground/5 transition-all duration-200">
               <div>
                 <h3 className="font-serif text-[15px] text-dark-surface-foreground group-hover:text-primary transition-colors">{program.country}</h3>
@@ -30,13 +30,13 @@ const ProgramsSection = () => (
               <ChevronRight size={16} className="text-dark-surface-foreground/20 group-hover:text-primary transition-colors shrink-0" />
             </Link>
           </ScrollReveal>
-        ))}
+      )}
       </div>
       <ScrollReveal delay={0.3}>
         <div className="mt-10"><Link to="/programs" className="btn-fasken-outline-white">View All Programs</Link></div>
       </ScrollReveal>
     </div>
-  </section>
-);
+  </section>;
+
 
 export default ProgramsSection;
