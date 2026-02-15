@@ -1,3 +1,16 @@
+import programAntiguaBarbuda from "@/assets/program-antigua-barbuda.jpg";
+import programDominica from "@/assets/program-dominica.jpg";
+import programGrenada from "@/assets/program-grenada.jpg";
+import programMalta from "@/assets/program-malta.jpg";
+import programSaintLucia from "@/assets/program-saint-lucia.jpg";
+import programStkitts from "@/assets/program-stkitts.jpg";
+import programGreece from "@/assets/program-greece.jpg";
+import programHungary from "@/assets/program-hungary.jpg";
+import programLatvia from "@/assets/program-latvia.jpg";
+import programPortugal from "@/assets/program-portugal.jpg";
+import programSpain from "@/assets/program-spain.jpg";
+import programUsaEb5 from "@/assets/program-usa-eb5.jpg";
+
 export interface Program {
   slug: string;
   country: string;
@@ -19,6 +32,7 @@ export const programs: Program[] = [
     country: "Antigua & Barbuda",
     type: "Citizenship by Investment",
     category: "citizenship",
+    image: programAntiguaBarbuda,
     minInvestment: "USD $100,000",
     timeline: "3-4 months",
     visaFree: "150+ countries",
@@ -54,6 +68,7 @@ export const programs: Program[] = [
     country: "Dominica",
     type: "Economic Citizenship Program",
     category: "citizenship",
+    image: programDominica,
     minInvestment: "USD $100,000",
     timeline: "2-3 months",
     visaFree: "140+ countries",
@@ -89,6 +104,7 @@ export const programs: Program[] = [
     country: "Grenada",
     type: "Citizenship by Investment",
     category: "citizenship",
+    image: programGrenada,
     minInvestment: "USD $150,000",
     timeline: "3-4 months",
     visaFree: "145+ countries",
@@ -124,6 +140,7 @@ export const programs: Program[] = [
     country: "Malta",
     type: "Citizenship by Naturalization",
     category: "citizenship",
+    image: programMalta,
     minInvestment: "EUR €690,000",
     timeline: "12-36 months",
     visaFree: "185+ countries",
@@ -159,6 +176,7 @@ export const programs: Program[] = [
     country: "Saint Lucia",
     type: "Citizenship by Investment",
     category: "citizenship",
+    image: programSaintLucia,
     minInvestment: "USD $100,000",
     timeline: "3-4 months",
     visaFree: "145+ countries",
@@ -194,6 +212,7 @@ export const programs: Program[] = [
     country: "St. Kitts & Nevis",
     type: "Citizenship by Investment",
     category: "citizenship",
+    image: programStkitts,
     minInvestment: "USD $250,000",
     timeline: "3-6 months",
     visaFree: "155+ countries",
@@ -229,6 +248,7 @@ export const programs: Program[] = [
     country: "Greece",
     type: "Golden Visa Program",
     category: "residency",
+    image: programGreece,
     minInvestment: "EUR €250,000",
     timeline: "2-3 months",
     visaFree: "Schengen Area",
@@ -264,6 +284,7 @@ export const programs: Program[] = [
     country: "Hungary",
     type: "Investor Residence Program",
     category: "residency",
+    image: programHungary,
     minInvestment: "EUR €250,000",
     timeline: "2-3 months",
     visaFree: "Schengen Area",
@@ -299,6 +320,7 @@ export const programs: Program[] = [
     country: "Latvia",
     type: "Residency by Investment",
     category: "residency",
+    image: programLatvia,
     minInvestment: "EUR €50,000",
     timeline: "1-3 months",
     visaFree: "Schengen Area",
@@ -334,6 +356,7 @@ export const programs: Program[] = [
     country: "Portugal",
     type: "Golden Residence Permit",
     category: "residency",
+    image: programPortugal,
     minInvestment: "EUR €500,000",
     timeline: "4-6 months",
     visaFree: "Schengen Area",
@@ -369,6 +392,7 @@ export const programs: Program[] = [
     country: "Spain",
     type: "Residency Program",
     category: "residency",
+    image: programSpain,
     minInvestment: "EUR €500,000",
     timeline: "2-3 months",
     visaFree: "Schengen Area",
@@ -404,6 +428,7 @@ export const programs: Program[] = [
     country: "USA EB-5",
     type: "Immigrant Investor Program",
     category: "residency",
+    image: programUsaEb5,
     minInvestment: "USD $800,000",
     timeline: "24-36 months",
     visaFree: "N/A",
