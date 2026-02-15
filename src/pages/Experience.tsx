@@ -11,7 +11,7 @@ const stats = [
 { value: "25+", label: "Years of Experience", icon: Clock },
 { value: "2", label: "Global Offices", icon: MapPin },
 { value: "99%", label: "Case Win Rate", icon: CheckCircle },
-{ value: "1,500+", label: "Clients Served", icon: Users }];
+{ value: "10,000+", label: "Clients Served", icon: Users }];
 
 
 const milestones = [
