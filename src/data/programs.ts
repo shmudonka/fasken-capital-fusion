@@ -10,6 +10,7 @@ export interface Program {
   benefits: string[];
   requirements: string[];
   process: string[];
+  image?: string;
 }
 
 export const programs: Program[] = [
