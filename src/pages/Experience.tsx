@@ -5,7 +5,7 @@ import CookieBanner from "@/components/CookieBanner";
 import BackToTop from "@/components/BackToTop";
 import { Link } from "react-router-dom";
 import { ArrowRight, Award, MapPin, Users, CheckCircle, Globe, Shield, TrendingUp, Clock } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+
 
 const stats = [
 { value: "25+", label: "Years of Experience", icon: Clock },
@@ -38,18 +38,13 @@ const Experience = () => {
     <div className="min-h-screen bg-background">
       <SiteHeader />
       <main>
-        {/* Split hero */}
-        <div className="relative min-h-[50vh] flex">
-          
-
-
-
-
-
-
-          <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full">
-            <img src={heroBg} alt="Experience" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-foreground/10 pointer-events-none" />
+        {/* Hero */}
+        <div className="bg-muted py-20 lg:py-28">
+          <div className="container">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-foreground mb-4">Experience</h1>
+            <p className="text-[15px] text-muted-foreground max-w-2xl leading-relaxed">
+              Over 25 years of trusted legal expertise in investment migration, citizenship planning, and global advisory services.
+            </p>
           </div>
         </div>
 
