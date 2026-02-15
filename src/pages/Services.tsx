@@ -38,7 +38,7 @@ const Services = () => {
       <main>
         <PageHeader
           title="Services"
-          description="Citizenship Capital Group provides comprehensive advisory and legal services across the full spectrum of investment migration, global mobility, and private client solutions."
+          description="Citizenship Capital Group provides full-service advisory and legal support across the full spectrum of investment migration, global mobility, and private client solutions."
           breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
           searchPlaceholder="Filter services"
           onSearch={setSearchQuery}

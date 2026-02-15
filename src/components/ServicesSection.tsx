@@ -9,7 +9,7 @@ const ServicesSection = () => (
       <div className="container text-center">
         <ScrollReveal>
           <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-4">Services</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-[15px]">Comprehensive advisory and legal services across the full spectrum of investment migration and global mobility.</p>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-[15px]">Full-service advisory and legal support across investment migration and global mobility.</p>
         </ScrollReveal>
       </div>
     </div>

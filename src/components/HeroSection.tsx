@@ -23,7 +23,7 @@ const slides = [
   },
   {
     category: "ADVISORY",
-    title: "Expand your horizons and unlock unimaginable possibilities",
+    title: "Expand your horizons and discover new possibilities",
     link: "/about",
     cta: "About Us",
   },
@@ -80,7 +80,7 @@ const HeroSection = () => {
               </h1>
               <div className="w-16 h-[3px] bg-primary mb-8" />
               <p className="text-[15px] text-dark-surface-foreground/50 leading-relaxed mb-10 max-w-lg">
-                Javaid & Associates — Citizenship Capital Group empowers individuals and families to become global citizens through strategic investment migration solutions.
+                Javaid & Associates, Citizenship Capital Group helps individuals and families become global citizens through strategic investment migration solutions.
               </p>
               <Link
                 to={slides[current].link}
@@ -93,7 +93,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Slide indicators — clean line style like DWPV */}
+      {/* Slide indicators */}
       <div className="absolute bottom-12 left-0 right-0 z-20">
         <div className="container">
           <div className="flex items-center gap-6 max-w-3xl">

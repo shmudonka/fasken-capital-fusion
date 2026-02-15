@@ -8,7 +8,7 @@ const cards = [
     date: "February 2026",
     title: "Become a Global Citizen",
     description:
-      "Javaid & Associates — Citizenship Capital Group empowers high net worth individuals and families to become global citizens by investing in a second residence or citizenship.",
+      "Javaid & Associates, Citizenship Capital Group helps high net worth individuals and families become global citizens by investing in a second residence or citizenship.",
     link: "Become a Global Citizen",
     href: "/programs",
   },

@@ -18,7 +18,7 @@ const milestones = [
 { year: "1999", title: "Foundation", description: "Javaid & Associates Law Firm was established in Lahore, Pakistan, laying the groundwork for what would become a trusted legal and advisory practice." },
 { year: "2003", title: "Caribbean Expansion", description: "Became one of the first authorized agents for St. Kitts & Nevis and Dominica citizenship by investment programs, establishing deep government relationships." },
 { year: "2008", title: "European Practice Launch", description: "Expanded into European residency programs, beginning with Portugal's Golden Visa and Malta's permanent residency program." },
-{ year: "2012", title: "Toronto Office", description: "Opened our Toronto office to serve the North American market, establishing Javaid & Associates — Canada as a dedicated Canadian practice." },
+{ year: "2012", title: "Toronto Office", description: "Opened our Toronto office to serve the North American market, establishing Javaid & Associates, Canada as a dedicated Canadian practice." },
 { year: "2019", title: "1,000th Client Milestone", description: "Celebrated our 1,000th successful citizenship or residency application, maintaining our industry-leading 99% approval rate." },
 { year: "2023", title: "Citizenship Capital Group Launch", description: "Launched the Citizenship Capital Group as a dedicated investment migration advisory division, formalizing our expertise under a distinct brand." },
 { year: "2026", title: "Industry Leadership", description: "Today, Javaid & Associates - Citizenship Capital Group is recognized as one of the premier investment migration advisory firms, with over 1,500 successful cases across 12 programs." }];
@@ -71,10 +71,10 @@ const Experience = () => {
                 <h2 className="text-2xl font-serif text-foreground">Our Track Record</h2>
               </div>
               <p className="text-[15px] text-muted-foreground leading-relaxed mb-5">
-                Since 1999, Javaid & Associates has been at the forefront of the investment migration industry. Over 25 years of experience have given us unparalleled insight into the nuances of citizenship and residency programs worldwide.
+                Since 1999, Javaid & Associates has been a leader in the investment migration industry. Over 25 years of experience have given us deep insight into the nuances of citizenship and residency programs worldwide.
               </p>
               <p className="text-[15px] text-muted-foreground leading-relaxed mb-5">
-                Our 99% case approval rate is not a marketing claim — it is the result of rigorous pre-screening, meticulous documentation, and deep relationships with government agencies across every jurisdiction we serve. We do not submit applications unless we are confident of success.
+                Our 99% case approval rate is the result of rigorous pre-screening, meticulous documentation, and deep relationships with government agencies across every jurisdiction we serve. We do not submit applications unless we are confident of success.
               </p>
               <p className="text-[15px] text-muted-foreground leading-relaxed mb-8">
                 With offices in Toronto and Lahore, we serve a truly global clientele. Our team brings diverse expertise from law, finance, real estate, and government.
@@ -131,21 +131,23 @@ const Experience = () => {
         </div>
 
         {/* Recognitions */}
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <div className="bg-dark-surface py-20">
+          <div className="container">
+            <div className="flex items-center gap-3 mb-12">
+              <div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" />
+              <h2 className="text-2xl font-serif text-dark-surface-foreground">Industry Recognition</h2>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl">
+              {recognitions.map((recognition, i) =>
+              <div key={i} className="bg-warm-beige p-6">
+                  <Award size={24} className="text-primary mb-3" />
+                  <h3 className="font-serif text-lg text-foreground mb-1">{recognition.title}</h3>
+                  <p className="text-[13px] text-muted-foreground leading-relaxed">{recognition.source}</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
 
         {/* CTA */}
         <div className="bg-dark-surface py-20">
@@ -154,7 +156,7 @@ const Experience = () => {
               Put our experience to work for you
             </h2>
             <p className="text-dark-surface-foreground/60 text-[15px] max-w-xl mx-auto mb-8">
-              Schedule a confidential consultation with our team to discuss how our three decades of expertise can help you achieve your global mobility goals.
+              Schedule a confidential consultation with our team to discuss how our decades of expertise can help you achieve your global mobility goals.
             </p>
             <Link to="/contact" className="btn-fasken-outline-white">
               Contact Us Today

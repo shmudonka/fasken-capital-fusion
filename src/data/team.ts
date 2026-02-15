@@ -18,7 +18,7 @@ export const team: TeamMember[] = [
     email: "a.mercer@javaidassociates.com",
     phone: "+44 20 7946 0958",
     bio: [
-      "Alexandra Mercer is the Managing Partner of Javaid & Associates - Citizenship Capital Group, bringing over 25 years of experience in international law, investment migration, and private client advisory. She joined the firm to lead its investment migration division with a vision to provide unparalleled service to high-net-worth individuals and families seeking global mobility solutions.",
+      "Alexandra Mercer is the Managing Partner of Javaid & Associates - Citizenship Capital Group, bringing over 25 years of experience in international law, investment migration, and private client advisory. She joined the firm to lead its investment migration division with a vision to provide exceptional service to high-net-worth individuals and families seeking global mobility solutions.",
       "Prior to joining Javaid & Associates, Alexandra served as a senior partner at a leading international law firm in London, where she built one of the UK's most respected immigration and citizenship practices. Her expertise spans citizenship by investment programs, tax-efficient structuring, and cross-border family planning.",
       "Alexandra is a frequent speaker at international migration conferences and has been recognized by leading industry publications as one of the most influential figures in investment migration. She holds degrees from Oxford University and Harvard Law School.",
     ],
@@ -32,9 +32,9 @@ export const team: TeamMember[] = [
     email: "d.chen@javaidassociates.com",
     phone: "+852 3103 7500",
     bio: [
-      "David Chen leads the Asia-Pacific practice from Hong Kong, serving ultra-high-net-worth clients across Greater China, Southeast Asia, and the broader region. With over 20 years of experience, David has helped hundreds of families navigate complex immigration and citizenship pathways.",
+      "David Chen leads the Asia-Pacific practice from Hong Kong, serving ultra-high-net-worth clients across Greater China, Southeast Asia, and the broader region. With over 20 years of experience, David has helped hundreds of families through complex immigration and citizenship pathways.",
       "David's practice focuses on citizenship by investment programs, particularly for clients from mainland China, Hong Kong, and Southeast Asia. He is known for his deep understanding of both Asian and Western regulatory frameworks, enabling him to provide truly cross-cultural advisory services.",
-      "Before joining Javaid & Associates, David was a director at a major Asian wealth management firm, where he developed bespoke immigration solutions for the firm's private banking clients. He is a graduate of the University of Hong Kong and Columbia Law School.",
+      "Before joining Javaid & Associates, David was a director at a major Asian wealth management firm, where he developed specialized immigration solutions for the firm's private banking clients. He is a graduate of the University of Hong Kong and Columbia Law School.",
     ],
     specializations: ["Asia-Pacific Market Strategy", "Wealth Management Integration", "Greater China Practice", "High-Value Program Advisory"],
   },
@@ -103,7 +103,7 @@ export const team: TeamMember[] = [
     phone: "+971 4 568 5221",
     bio: [
       "Amara Okonkwo serves African market clients from the Dubai office, specializing in investment migration solutions for high-net-worth individuals from across the continent. She has rapidly become one of the firm's most accomplished advisors since joining five years ago.",
-      "Amara's understanding of the unique challenges and opportunities facing African investors — from currency controls to documentation requirements — makes her an invaluable resource for clients seeking global mobility. She has managed successful applications for clients from over 20 African nations.",
+      "Amara's understanding of the unique challenges and opportunities facing African investors, from currency controls to documentation requirements, makes her an invaluable resource for clients seeking global mobility. She has managed successful applications for clients from over 20 African nations.",
       "She holds degrees from the University of Lagos and University College London, and is fluent in English, French, and Yoruba.",
     ],
     specializations: ["African Market Advisory", "Currency & Transfer Compliance", "Family Migration Planning", "Emerging Market Clients"],

@@ -17,7 +17,7 @@ const ProgramsSection = () =>
           <h2 className="text-3xl md:text-4xl font-serif text-dark-surface-foreground">Global Citizen Programs</h2>
         </div>
         <div className="w-12 h-[3px] bg-primary mb-6" />
-        <p className="text-dark-surface-foreground/60 max-w-2xl text-[15px] mb-12">Explore our comprehensive portfolio of citizenship and residency by investment programs across the globe.</p>
+        <p className="text-dark-surface-foreground/60 max-w-2xl text-[15px] mb-12">Explore our full portfolio of citizenship and residency by investment programs across the globe.</p>
       </ScrollReveal>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
         {programs.map((program, i) =>
