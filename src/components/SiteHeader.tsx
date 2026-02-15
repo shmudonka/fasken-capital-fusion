@@ -4,7 +4,6 @@ import { Menu, X, Search, ChevronDown, User } from "lucide-react";
 
 const topBarLinks = [
 { label: "Careers", href: "/careers" },
-{ label: "Offices", href: "/contact" },
 { label: "News", href: "/knowledge" },
 { label: "Contact", href: "/contact" }];
 
