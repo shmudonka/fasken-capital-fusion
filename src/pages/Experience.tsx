@@ -47,10 +47,10 @@ const Experience = () => {
               Three decades of trusted advisory, an industry-leading approval rate, and a global presence that sets us apart.
             </p>
           </div>
-          <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full">
-            
-            <div className="absolute inset-0 bg-foreground/10 pointer-events-none" />
-          </div>
+          
+
+
+
         </div>
 
         {/* Breadcrumb */}
