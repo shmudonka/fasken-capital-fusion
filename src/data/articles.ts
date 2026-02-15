@@ -1,3 +1,7 @@
+import articleResidencies from "@/assets/article-residencies.jpg";
+import articleStkitts from "@/assets/article-stkitts.jpg";
+import articleRejection from "@/assets/article-rejection.jpg";
+
 export interface Article {
   slug: string;
   featured: boolean;
@@ -6,6 +10,7 @@ export interface Article {
   title: string;
   excerpt: string;
   content: string[];
+  image?: string;
 }
 
 export const articles: Article[] = [
@@ -15,6 +20,7 @@ export const articles: Article[] = [
     date: "February 12, 2026",
     category: "Industry News",
     title: "Which Alternative Residencies Americans Are Choosing in 2026",
+    image: articleResidencies,
     excerpt: "With growing global uncertainty, an increasing number of American families are exploring second residency options in Europe, the Caribbean, and beyond.",
     content: [
       "Investment migration trends have shifted significantly for American citizens in 2026. With economic uncertainty, evolving tax policies, and a desire for greater global mobility, more U.S. families than ever are exploring second residency options abroad.",
@@ -31,6 +37,7 @@ export const articles: Article[] = [
     date: "February 6, 2026",
     category: "Industry News",
     title: "St. Kitts and Nevis Reshapes Its CBI Program Signaling a New Era",
+    image: articleStkitts,
     excerpt: "The government of St. Kitts and Nevis has introduced sweeping changes to its citizenship by investment program, setting new standards for due diligence.",
     content: [
       "St. Kitts and Nevis, home to the world's oldest citizenship by investment program established in 1984, has announced significant reforms aimed at strengthening the program's integrity and international standing.",
@@ -47,6 +54,7 @@ export const articles: Article[] = [
     date: "January 28, 2026",
     category: "Knowledge",
     title: "Understanding Rejection Risks for CBI Applicants",
+    image: articleRejection,
     excerpt: "A detailed analysis of the most common grounds for rejection in citizenship by investment applications across multiple jurisdictions.",
     content: [
       "While citizenship by investment programs offer a legitimate pathway to second citizenship, not all applications are approved. Understanding the common reasons for rejection can help prospective applicants prepare more effectively and avoid costly mistakes.",

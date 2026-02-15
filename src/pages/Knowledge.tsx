@@ -8,7 +8,7 @@ import BackToTop from "@/components/BackToTop";
 import ScrollReveal from "@/components/ScrollReveal";
 import { ArrowRight, ChevronDown, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import antiguaBg from "@/assets/antigua-barbuda.jpg";
+
 import { articles } from "@/data/articles";
 
 const filterOptions: Record<string, string[]> = {
@@ -256,7 +256,7 @@ const Knowledge = () => {
                 <ScrollReveal key={article.slug} delay={i * 0.1}>
                   <Link to={`/knowledge/${article.slug}`} className="group block">
                     <div className="relative h-48 bg-warm-beige mb-0 overflow-hidden">
-                      <img src={antiguaBg} alt="Antigua and Barbuda tropical island" className="absolute inset-0 w-full h-full object-cover" />
+                      {article.image && <img src={article.image} alt={article.title} className="absolute inset-0 w-full h-full object-cover" />}
                       <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
                       <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-background/90 px-2 py-1">
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className="text-primary">
