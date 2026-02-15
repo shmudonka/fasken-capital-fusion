@@ -40,17 +40,15 @@ const Experience = () => {
       <main>
         {/* Split hero */}
         <div className="relative min-h-[50vh] flex">
-          <div className="relative z-10 w-full lg:w-1/2 bg-warm-beige flex flex-col justify-center px-8 md:px-16 lg:px-20 pt-32 pb-16 lg:pt-40 lg:pb-20">
-            <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-5">Experience</h1>
+          <img src={heroBg} alt="Experience hero" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+          <div className="relative z-10 w-full lg:w-1/2 flex flex-col justify-center px-8 md:px-16 lg:px-20 pt-32 pb-16 lg:pt-40 lg:pb-20">
+            <h1 className="text-4xl md:text-5xl font-serif text-white mb-5">Experience</h1>
             <div className="w-12 h-[3px] bg-primary mb-6" />
-            <p className="text-[15px] text-muted-foreground leading-relaxed max-w-md">
+            <p className="text-[15px] text-white/80 leading-relaxed max-w-md">
               Three decades of trusted advisory, an industry-leading approval rate, and a global presence that sets us apart.
             </p>
           </div>
-          
-
-
-
         </div>
 
         {/* Breadcrumb */}
