@@ -18,7 +18,7 @@ const events = [
     title: "Caribbean CBI Programs: What's New in 2026",
     date: "March 22, 2026",
     location: "Online Webinar",
-    description: "A comprehensive webinar covering recent changes to Caribbean citizenship by investment programs, including St. Kitts & Nevis, Dominica, and Grenada.",
+    description: "A detailed webinar covering recent changes to Caribbean citizenship by investment programs, including St. Kitts & Nevis, Dominica, and Grenada.",
     type: "Webinar",
   },
   {

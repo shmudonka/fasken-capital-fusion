@@ -24,7 +24,7 @@ const Careers = () => {
       <main>
         <PageHeader
           title="Careers"
-          description="Join a team of exceptional professionals at the forefront of investment migration. We are always looking for talented individuals who share our commitment to excellence and client service."
+          description="Join a team of exceptional professionals leading the investment migration industry. We are always looking for talented individuals who share our commitment to excellence and client service."
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Careers" },
@@ -43,10 +43,10 @@ const Careers = () => {
                 At Javaid & Associates - Citizenship Capital Group, we believe that our people are our greatest asset. We foster an environment of intellectual curiosity, professional growth, and mutual respect.
               </p>
               <p className="text-[15px] text-muted-foreground leading-relaxed mb-5">
-                Our team members work with high-net-worth individuals and families from around the world, navigating complex international regulations and delivering life-changing outcomes. Every day brings new challenges and opportunities.
+                Our team members work with high-net-worth individuals and families from around the world, managing complex international regulations and delivering life-changing outcomes. Every day brings new challenges and opportunities.
               </p>
               <p className="text-[15px] text-muted-foreground leading-relaxed">
-                We offer competitive compensation, comprehensive benefits, opportunities for international travel, and a clear path for career advancement within a rapidly growing global firm.
+                We offer competitive compensation, strong benefits, opportunities for international travel, and a clear path for career advancement within a rapidly growing global firm.
               </p>
             </div>
             <div className="lg:w-1/2 space-y-4">

@@ -35,7 +35,7 @@ const Contact = () => {
       <main>
         <PageHeader
           title="Contact Us"
-          description="Get in touch with our team of investment migration specialists. We're here to help you navigate the path to global citizenship."
+          description="Get in touch with our team of investment migration specialists. We are here to help you on the path to global citizenship."
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Contact" },

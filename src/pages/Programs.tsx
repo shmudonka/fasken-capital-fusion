@@ -32,7 +32,7 @@ const Programs = () => {
     <div className="min-h-screen bg-background">
       <SiteHeader />
       <main>
-        <PageHeader title="Global Citizen Programs" description="Explore our comprehensive portfolio of citizenship and residency by investment programs across the globe. Each program is carefully vetted and managed by our team of experts." breadcrumbs={[{ label: "Home", href: "/" }, { label: "Programs" }]} searchPlaceholder="Filter programs" />
+        <PageHeader title="Global Citizen Programs" description="Explore our full portfolio of citizenship and residency by investment programs across the globe. Each program is carefully vetted and managed by our team of experts." breadcrumbs={[{ label: "Home", href: "/" }, { label: "Programs" }]} searchPlaceholder="Filter programs" />
         <div className="container py-16">
           <div className="flex flex-col md:flex-row items-start gap-8 mb-20">
             <div className="w-full md:w-56 shrink-0 flex items-center gap-3 mb-4 md:mb-0 md:pt-6">
