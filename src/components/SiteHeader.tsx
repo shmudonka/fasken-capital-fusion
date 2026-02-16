@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, Search, ChevronDown, User } from "lucide-react";
+import { Menu, X, Search } from "lucide-react";
+import logo from "@/assets/logo.jpeg";
 
 const topBarLinks = [
 { label: "Careers", href: "/careers" },
@@ -52,9 +53,12 @@ const SiteHeader = () => {
       </div>
       <div className="border-b border-border bg-background">
         <div className="container flex items-center justify-between py-5">
-          <Link to="/" className="flex flex-col leading-none">
-            <span className="text-[20px] font-serif font-bold tracking-tight text-foreground uppercase">Javaid & Associates</span>
-            <span className="text-[10px] tracking-[0.12em] text-muted-foreground font-serif mt-0.5 uppercase">Citizenship Capital Group</span>
+          <Link to="/" className="flex items-center gap-3 leading-none">
+            <img src={logo} alt="Javaid & Associates" className="h-10 w-10 object-contain rounded-sm" />
+            <div className="flex flex-col">
+              <span className="text-[18px] sm:text-[20px] font-serif font-bold tracking-tight text-foreground uppercase">Javaid & Associates</span>
+              <span className="text-[9px] sm:text-[10px] tracking-[0.12em] text-muted-foreground font-serif mt-0.5 uppercase">Citizenship Capital Group</span>
+            </div>
           </Link>
           <nav className="hidden lg:flex items-center gap-10">
             {navItems.map((item) =>

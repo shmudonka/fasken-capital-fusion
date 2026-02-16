@@ -30,14 +30,14 @@ const ProgramDetail = () => {
       <SiteHeader />
       <main>
         {/* Split hero */}
-        <div className="relative min-h-[45vh] flex">
-          <div className="relative z-10 w-full lg:w-1/2 bg-warm-beige flex flex-col justify-center px-8 md:px-16 lg:px-20 pt-32 pb-12 lg:pt-40 lg:pb-16">
+        <div className="relative min-h-[45vh] flex flex-col lg:flex-row">
+          <div className="relative z-10 w-full lg:w-1/2 bg-warm-beige flex flex-col justify-center px-6 sm:px-8 md:px-16 lg:px-20 pt-32 pb-8 lg:pt-40 lg:pb-16">
             <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-primary mb-3">{program.type}</span>
-            <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-4">{program.country}</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif text-foreground mb-4">{program.country}</h1>
             <div className="w-12 h-[3px] bg-primary mb-6" />
-            <p className="text-[14px] text-muted-foreground leading-relaxed max-w-md">{program.description.substring(0, 150)}...</p>
+            <p className="text-[14px] text-muted-foreground leading-relaxed max-w-md">{program.description}</p>
           </div>
-          <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full">
+          <div className="relative w-full h-56 sm:h-64 lg:absolute lg:right-0 lg:top-0 lg:w-1/2 lg:h-full">
             <img src={program.image || "/placeholder.svg"} alt={program.country} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-dark-surface/30 pointer-events-none" />
           </div>
@@ -56,7 +56,7 @@ const ProgramDetail = () => {
 
         {/* Key facts bar */}
         <div className="border-b border-border">
-          <div className="container py-6 flex flex-wrap gap-8 md:gap-16">
+          <div className="container py-6 grid grid-cols-2 sm:flex sm:flex-wrap gap-4 sm:gap-8 md:gap-16">
             <div>
               <span className="block text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Min. Investment</span>
               <span className="text-[16px] font-serif text-foreground">{program.minInvestment}</span>

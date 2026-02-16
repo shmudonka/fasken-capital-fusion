@@ -1,0 +1,15 @@
+{
+  "name": "Javaid & Associates - Citizenship Capital Group",
+  "short_name": "Citizenship Capital",
+  "icons": [
+    {
+      "src": "/logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#1a2332",
+  "background_color": "#1a2332",
+  "display": "standalone"
+}

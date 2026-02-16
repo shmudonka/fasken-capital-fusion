@@ -1,5 +1,6 @@
 import { Mail, Phone, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.jpeg";
 
 const footerSections = [
 {
@@ -77,8 +78,11 @@ const SiteFooter = () =>
     </div>
     <div className="border-t border-dark-surface-foreground/10">
       <div className="container py-5 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-dark-surface-foreground/35">
-        <p>© 2026 Javaid & Associates - Citizenship Capital Group. All rights reserved.</p>
-        <div className="flex gap-6">
+        <div className="flex items-center gap-3">
+          <img src={logo} alt="Javaid & Associates" className="h-8 w-8 object-contain rounded-sm" />
+          <p>© 2026 Javaid & Associates - Citizenship Capital Group. All rights reserved.</p>
+        </div>
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
           <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
           <Link to="/cookies" className="hover:text-primary transition-colors">Cookie Policy</Link>
