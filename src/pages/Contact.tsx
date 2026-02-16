@@ -3,6 +3,7 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHeader from "@/components/PageHeader";
 import CookieBanner from "@/components/CookieBanner";
 import BackToTop from "@/components/BackToTop";
+import ScrollReveal from "@/components/ScrollReveal";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -45,7 +46,7 @@ const Contact = () => {
         <div className="container py-16">
           <div className="flex flex-col lg:flex-row gap-16">
             {/* Contact Form */}
-            <div className="lg:w-1/2">
+            <ScrollReveal className="lg:w-1/2">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" />
                 <h2 className="text-2xl font-serif text-foreground">Send Us a Message</h2>
@@ -128,10 +129,10 @@ const Contact = () => {
                   Submit Inquiry
                 </button>
               </form>
-            </div>
+            </ScrollReveal>
 
             {/* Quick Contact */}
-            <div className="lg:w-1/2">
+            <ScrollReveal className="lg:w-1/2" delay={0.2}>
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" />
                 <h2 className="text-2xl font-serif text-foreground">General Inquiries</h2>
@@ -150,43 +151,45 @@ const Contact = () => {
                 <h2 className="text-2xl font-serif text-foreground">Our Offices</h2>
               </div>
               <div className="space-y-0">
-                {offices.map((office) => (
-                  <div key={office.city} className="py-5 border-b border-border">
-                    <h3 className="font-serif text-[16px] text-foreground mb-2">{office.city}</h3>
-                    <div className="flex items-start gap-2 text-[13px] text-muted-foreground mb-1">
-                      <MapPin size={14} className="text-primary shrink-0 mt-0.5" />
-                      <span>{office.address}</span>
+                {offices.map((office, i) => (
+                  <ScrollReveal key={office.city} delay={0.3 + i * 0.1}>
+                    <div className="py-5 border-b border-border">
+                      <h3 className="font-serif text-[16px] text-foreground mb-2">{office.city}</h3>
+                      <div className="flex items-start gap-2 text-[13px] text-muted-foreground mb-1">
+                        <MapPin size={14} className="text-primary shrink-0 mt-0.5" />
+                        <span>{office.address}</span>
+                      </div>
+                       <div className="flex items-center gap-2 text-[13px] text-muted-foreground mb-1 ml-[22px]">
+                         <Phone size={12} className="text-primary shrink-0" />
+                         <a href={`tel:${office.phone}`} className="hover:text-primary transition-colors">Tel: {office.phone}</a>
+                       </div>
+                       {office.mobile && (
+                         <div className="flex items-center gap-2 text-[13px] text-muted-foreground mb-1 ml-[22px]">
+                           <Phone size={12} className="text-primary shrink-0" />
+                           <a href={`tel:${office.mobile}`} className="hover:text-primary transition-colors">{office.mobileLabel}: {office.mobile}</a>
+                         </div>
+                       )}
+                       {office.mobile2 && (
+                         <div className="flex items-center gap-2 text-[13px] text-muted-foreground mb-1 ml-[22px]">
+                           <Phone size={12} className="text-primary shrink-0" />
+                           <a href={`tel:${office.mobile2}`} className="hover:text-primary transition-colors">{office.mobile2Label}: {office.mobile2}</a>
+                         </div>
+                       )}
+                       {office.fax && (
+                         <div className="flex items-center gap-2 text-[13px] text-muted-foreground mb-1 ml-[22px]">
+                           <Phone size={12} className="text-primary shrink-0" />
+                           <span>Fax: {office.fax}</span>
+                         </div>
+                       )}
+                       <div className="flex items-center gap-2 text-[13px] text-muted-foreground ml-[22px]">
+                         <Mail size={12} className="text-primary shrink-0" />
+                         <a href={`mailto:${office.email}`} className="hover:text-primary transition-colors">{office.email}</a>
+                       </div>
                     </div>
-                     <div className="flex items-center gap-2 text-[13px] text-muted-foreground mb-1 ml-[22px]">
-                       <Phone size={12} className="text-primary shrink-0" />
-                       <a href={`tel:${office.phone}`} className="hover:text-primary transition-colors">Tel: {office.phone}</a>
-                     </div>
-                     {office.mobile && (
-                       <div className="flex items-center gap-2 text-[13px] text-muted-foreground mb-1 ml-[22px]">
-                         <Phone size={12} className="text-primary shrink-0" />
-                         <a href={`tel:${office.mobile}`} className="hover:text-primary transition-colors">{office.mobileLabel}: {office.mobile}</a>
-                       </div>
-                     )}
-                     {office.mobile2 && (
-                       <div className="flex items-center gap-2 text-[13px] text-muted-foreground mb-1 ml-[22px]">
-                         <Phone size={12} className="text-primary shrink-0" />
-                         <a href={`tel:${office.mobile2}`} className="hover:text-primary transition-colors">{office.mobile2Label}: {office.mobile2}</a>
-                       </div>
-                     )}
-                     {office.fax && (
-                       <div className="flex items-center gap-2 text-[13px] text-muted-foreground mb-1 ml-[22px]">
-                         <Phone size={12} className="text-primary shrink-0" />
-                         <span>Fax: {office.fax}</span>
-                       </div>
-                     )}
-                     <div className="flex items-center gap-2 text-[13px] text-muted-foreground ml-[22px]">
-                       <Mail size={12} className="text-primary shrink-0" />
-                       <a href={`mailto:${office.email}`} className="hover:text-primary transition-colors">{office.email}</a>
-                     </div>
-                  </div>
+                  </ScrollReveal>
                 ))}
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </main>

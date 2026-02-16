@@ -3,6 +3,7 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHeader from "@/components/PageHeader";
 import CookieBanner from "@/components/CookieBanner";
 import BackToTop from "@/components/BackToTop";
+import ScrollReveal from "@/components/ScrollReveal";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Briefcase, Users } from "lucide-react";
 
@@ -34,7 +35,7 @@ const Careers = () => {
 
         <div className="container py-16">
           <div className="flex flex-col lg:flex-row gap-16 mb-20">
-            <div className="lg:w-1/2">
+            <ScrollReveal className="lg:w-1/2">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" />
                 <h2 className="text-2xl font-serif text-foreground">Why Join Us</h2>
@@ -48,43 +49,45 @@ const Careers = () => {
               <p className="text-[15px] text-muted-foreground leading-relaxed">
                 We offer competitive compensation, strong benefits, opportunities for international travel, and a clear path for career advancement within a rapidly growing global firm.
               </p>
-            </div>
+            </ScrollReveal>
             <div className="lg:w-1/2 space-y-4">
-              <div className="bg-warm-beige p-8">
-                <Briefcase size={20} className="text-primary mb-3" />
-                <h3 className="font-serif text-lg text-foreground mb-2">Professional Development</h3>
-                <p className="text-[13px] text-muted-foreground leading-relaxed">Ongoing training, conference attendance, and mentorship from senior leaders in the industry.</p>
-              </div>
-              <div className="bg-warm-beige p-8">
-                <MapPin size={20} className="text-primary mb-3" />
-                <h3 className="font-serif text-lg text-foreground mb-2">Global Opportunities</h3>
-                <p className="text-[13px] text-muted-foreground leading-relaxed">Work across multiple offices and jurisdictions, with opportunities for international assignments.</p>
-              </div>
-              <div className="bg-warm-beige p-8">
-                <Users size={20} className="text-primary mb-3" />
-                <h3 className="font-serif text-lg text-foreground mb-2">Collaborative Culture</h3>
-                <p className="text-[13px] text-muted-foreground leading-relaxed">A diverse, inclusive team united by a shared commitment to client excellence and ethical practice.</p>
-              </div>
+              {[
+                { icon: Briefcase, title: "Professional Development", desc: "Ongoing training, conference attendance, and mentorship from senior leaders in the industry." },
+                { icon: MapPin, title: "Global Opportunities", desc: "Work across multiple offices and jurisdictions, with opportunities for international assignments." },
+                { icon: Users, title: "Collaborative Culture", desc: "A diverse, inclusive team united by a shared commitment to client excellence and ethical practice." },
+              ].map((item, i) => (
+                <ScrollReveal key={i} delay={0.2 + i * 0.1}>
+                  <div className="bg-warm-beige p-8">
+                    <item.icon size={20} className="text-primary mb-3" />
+                    <h3 className="font-serif text-lg text-foreground mb-2">{item.title}</h3>
+                    <p className="text-[13px] text-muted-foreground leading-relaxed">{item.desc}</p>
+                  </div>
+                </ScrollReveal>
+              ))}
             </div>
           </div>
 
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" />
-            <h2 className="text-2xl font-serif text-foreground">Current Openings</h2>
-          </div>
+          <ScrollReveal>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" />
+              <h2 className="text-2xl font-serif text-foreground">Current Openings</h2>
+            </div>
+          </ScrollReveal>
           <div className="space-y-0">
             {openings.map((job, i) => (
-              <Link key={i} to="/contact" className="group flex items-center justify-between py-6 px-4 border-b border-border hover:bg-warm-beige transition-colors -mx-4">
-                <div>
-                  <h3 className="font-serif text-[16px] text-foreground group-hover:text-primary transition-colors mb-1">{job.title}</h3>
-                  <div className="flex items-center gap-4 text-[12px] text-muted-foreground">
-                    <span>{job.location}</span>
-                    <span>{job.type}</span>
-                    <span>{job.department}</span>
+              <ScrollReveal key={i} delay={i * 0.05}>
+                <Link to="/contact" className="group flex items-center justify-between py-6 px-4 border-b border-border hover:bg-warm-beige transition-colors -mx-4">
+                  <div>
+                    <h3 className="font-serif text-[16px] text-foreground group-hover:text-primary transition-colors mb-1">{job.title}</h3>
+                    <div className="flex items-center gap-4 text-[12px] text-muted-foreground">
+                      <span>{job.location}</span>
+                      <span>{job.type}</span>
+                      <span>{job.department}</span>
+                    </div>
                   </div>
-                </div>
-                <ArrowRight size={16} className="text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
-              </Link>
+                  <ArrowRight size={16} className="text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                </Link>
+              </ScrollReveal>
             ))}
           </div>
         </div>
