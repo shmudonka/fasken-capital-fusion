@@ -4,6 +4,7 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHeader from "@/components/PageHeader";
 import CookieBanner from "@/components/CookieBanner";
 import BackToTop from "@/components/BackToTop";
+import ScrollReveal from "@/components/ScrollReveal";
 import { getServiceBySlug, industries, practices } from "@/data/services";
 import { ChevronRight } from "lucide-react";
 import NotFound from "./NotFound";
@@ -32,7 +33,7 @@ const ServiceDetail = () => {
         />
         <div className="container py-16">
           <div className="grid md:grid-cols-3 gap-16">
-            <div className="md:col-span-2">
+            <ScrollReveal className="md:col-span-2">
               {service.areas && (
                 <div className="flex items-center gap-2 mb-8">
                   <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-primary bg-primary/5 px-3 py-1.5">{service.areas}</span>
@@ -46,28 +47,30 @@ const ServiceDetail = () => {
               <div className="mt-12 pt-8 border-t border-border">
                 <Link to="/contact" className="btn-fasken">Schedule a Consultation</Link>
               </div>
-            </div>
-            <aside>
-              <div className="border border-border p-6 mb-8">
-                <div className="flex items-center gap-2 mb-6">
-                  <div className="w-0 h-0 border-l-[10px] border-l-primary border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent" />
-                  <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-foreground">Related {isIndustry ? "Industries" : "Practices"}</h3>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <aside>
+                <div className="border border-border p-6 mb-8">
+                  <div className="flex items-center gap-2 mb-6">
+                    <div className="w-0 h-0 border-l-[10px] border-l-primary border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent" />
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-foreground">Related {isIndustry ? "Industries" : "Practices"}</h3>
+                  </div>
+                  <div className="space-y-0">
+                    {relatedItems.map((item) => (
+                      <Link key={item.slug} to={`/services/${item.slug}`} className="group flex items-center justify-between py-3.5 border-b border-border last:border-b-0 hover:text-primary transition-colors">
+                        <span className="font-serif text-[14px] text-foreground group-hover:text-primary transition-colors">{item.title}</span>
+                        <ChevronRight size={14} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-                <div className="space-y-0">
-                  {relatedItems.map((item) => (
-                    <Link key={item.slug} to={`/services/${item.slug}`} className="group flex items-center justify-between py-3.5 border-b border-border last:border-b-0 hover:text-primary transition-colors">
-                      <span className="font-serif text-[14px] text-foreground group-hover:text-primary transition-colors">{item.title}</span>
-                      <ChevronRight size={14} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </Link>
-                  ))}
+                <div className="bg-warm-beige p-6">
+                  <h3 className="font-serif text-lg text-foreground mb-3">Need Expert Guidance?</h3>
+                  <p className="text-[13px] text-muted-foreground leading-relaxed mb-5">Our advisors are ready to discuss your specific situation and recommend the best path forward.</p>
+                  <Link to="/contact" className="link-arrow text-primary hover:text-foreground">Contact Us <ChevronRight size={12} /></Link>
                 </div>
-              </div>
-              <div className="bg-warm-beige p-6">
-                <h3 className="font-serif text-lg text-foreground mb-3">Need Expert Guidance?</h3>
-                <p className="text-[13px] text-muted-foreground leading-relaxed mb-5">Our advisors are ready to discuss your specific situation and recommend the best path forward.</p>
-                <Link to="/contact" className="link-arrow text-primary hover:text-foreground">Contact Us <ChevronRight size={12} /></Link>
-              </div>
-            </aside>
+              </aside>
+            </ScrollReveal>
           </div>
         </div>
       </main>
