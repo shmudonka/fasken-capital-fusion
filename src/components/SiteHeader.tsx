@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, Search, ChevronRight } from "lucide-react";
+import { Menu, X, Search, ChevronRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.jpeg";
 
@@ -9,14 +9,83 @@ const topBarLinks = [
 { label: "News", href: "/knowledge" },
 { label: "Contact", href: "/contact" }];
 
+const serviceDropdown = [
+  { label: "Citizenship by Investment", href: "/services/citizenship-by-investment" },
+  { label: "Residency by Investment", href: "/services/residency-by-investment" },
+  { label: "Corporate Services", href: "/services/corporate-services" },
+  { label: "All Services", href: "/services" },
+];
+
+const programDropdown = [
+  { label: "Antigua & Barbuda", href: "/programs/antigua-barbuda" },
+  { label: "Dominica", href: "/programs/dominica" },
+  { label: "Grenada", href: "/programs/grenada" },
+  { label: "Malta", href: "/programs/malta" },
+  { label: "Saint Lucia", href: "/programs/saint-lucia" },
+  { label: "St. Kitts & Nevis", href: "/programs/st-kitts-nevis" },
+  { label: "Turkey (Türkiye)", href: "/programs/turkey" },
+  { label: "Greece", href: "/programs/greece" },
+  { label: "Portugal", href: "/programs/portugal" },
+  { label: "Quebec, Canada", href: "/programs/quebec-canada" },
+  { label: "All Programs", href: "/programs" },
+];
 
 const navItems = [
 { label: "About Us", href: "/about" },
-{ label: "Services", href: "/services" },
+{ label: "Services", href: "/services", dropdown: serviceDropdown },
 { label: "Experience", href: "/experience" },
 { label: "Knowledge", href: "/knowledge" },
-{ label: "Programs", href: "/programs" }];
+{ label: "Programs", href: "/programs", dropdown: programDropdown }];
 
+
+const NavDropdown = ({ item, isActive }: { item: typeof navItems[0]; isActive: (href: string) => boolean }) => {
+  const [open, setOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setOpen(true);
+  };
+  const handleLeave = () => {
+    timeoutRef.current = setTimeout(() => setOpen(false), 150);
+  };
+
+  return (
+    <div className="relative" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+      <Link
+        to={item.href}
+        className={`text-[15px] transition-colors font-serif inline-flex items-center gap-1 ${isActive(item.href) ? "text-primary" : "text-foreground hover:text-primary"}`}
+      >
+        {item.label}
+        <ChevronDown size={13} className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
+      </Link>
+      <AnimatePresence>
+        {open && item.dropdown && (
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            transition={{ duration: 0.18, ease: "easeOut" }}
+            className="absolute top-full left-0 pt-3 z-[100]"
+          >
+            <div className="bg-background border border-border rounded-md shadow-lg min-w-[240px] py-2">
+              {item.dropdown.map((sub) => (
+                <Link
+                  key={sub.label}
+                  to={sub.href}
+                  onClick={() => setOpen(false)}
+                  className="block px-5 py-2.5 text-[13px] font-serif text-foreground/80 hover:text-primary hover:bg-muted/50 transition-colors"
+                >
+                  {sub.label}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const SiteHeader = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -63,9 +132,13 @@ const SiteHeader = () => {
           </Link>
           <nav className="hidden lg:flex items-center gap-10">
             {navItems.map((item) =>
-            <Link key={item.label} to={item.href} className={`text-[15px] transition-colors font-serif ${isActive(item.href) ? "text-primary" : "text-foreground hover:text-primary"}`}>
-                {item.label}
-              </Link>
+              item.dropdown ? (
+                <NavDropdown key={item.label} item={item} isActive={isActive} />
+              ) : (
+                <Link key={item.label} to={item.href} className={`text-[15px] transition-colors font-serif ${isActive(item.href) ? "text-primary" : "text-foreground hover:text-primary"}`}>
+                  {item.label}
+                </Link>
+              )
             )}
           </nav>
           <div className="hidden lg:flex items-center gap-3">
