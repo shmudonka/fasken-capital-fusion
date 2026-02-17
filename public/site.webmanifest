@@ -1,15 +1,25 @@
 {
   "name": "Javaid & Associates - Citizenship Capital Group",
   "short_name": "Citizenship Capital",
+  "description": "Investment Immigration & Global Citizenship Advisory",
   "icons": [
     {
       "src": "/logo.jpeg",
       "sizes": "512x512",
       "type": "image/jpeg",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
     }
   ],
   "theme_color": "#1a2332",
   "background_color": "#1a2332",
-  "display": "standalone"
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "orientation": "portrait-primary"
 }
