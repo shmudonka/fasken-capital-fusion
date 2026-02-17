@@ -30,6 +30,42 @@ const offices = [
 ];
 
 const Contact = () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const data = {
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      service: formData.get("service"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        alert("Message sent successfully.");
+        form.reset();
+      } else {
+        alert("Something went wrong.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Server error.");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -52,7 +88,7 @@ const Contact = () => {
                 <h2 className="text-2xl font-serif text-foreground">Send Us a Message</h2>
               </div>
 
-              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-5" onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-2">
@@ -60,6 +96,7 @@ const Contact = () => {
                     </label>
                     <input
                       type="text"
+                      name="firstName"
                       required
                       className="w-full border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-primary transition-colors"
                     />
@@ -70,6 +107,7 @@ const Contact = () => {
                     </label>
                     <input
                       type="text"
+                      name="lastName"
                       required
                       className="w-full border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-primary transition-colors"
                     />
@@ -81,6 +119,7 @@ const Contact = () => {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     required
                     className="w-full border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-primary transition-colors"
                   />
@@ -91,6 +130,7 @@ const Contact = () => {
                   </label>
                   <input
                     type="tel"
+                    name="phone"
                     className="w-full border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-primary transition-colors"
                   />
                 </div>
@@ -98,7 +138,9 @@ const Contact = () => {
                   <label className="block text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-2">
                     Interested In
                   </label>
-                  <select className="w-full border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-primary transition-colors">
+                  <select 
+                  name="service"
+                  className="w-full border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-primary transition-colors">
                     <option value="">Select a service</option>
                     <option>Citizenship by Investment</option>
                     <option>Residency by Investment</option>
@@ -113,6 +155,7 @@ const Contact = () => {
                     Message *
                   </label>
                   <textarea
+                    name="message"
                     required
                     rows={5}
                     className="w-full border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-primary transition-colors resize-none"
