@@ -104,7 +104,7 @@ const Contact = () => {
                     <option>Residency by Investment</option>
                     <option>Tax Planning</option>
                     <option>Family Office Advisory</option>
-                    <option>Government Advisory</option>
+                    
                     <option>Other</option>
                   </select>
                 </div>

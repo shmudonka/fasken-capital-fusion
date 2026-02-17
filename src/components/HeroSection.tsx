@@ -6,30 +6,35 @@ const slides = [
   {
     category: "GLOBAL MOBILITY",
     title: "Access a world of visa-free travel and global mobility",
+    description: "Our programs provide access to over 150 countries without the need for traditional visa applications, giving you the freedom to travel, live, and do business worldwide.",
     link: "/programs",
     cta: "Explore Programs",
   },
   {
     category: "INVESTMENT PROGRAMS",
     title: "Freedom of mind to focus on what's important for you and your family",
+    description: "From citizenship to residency programs across the Caribbean, Europe, and North America, we help you find the right investment pathway for your goals.",
     link: "/services",
     cta: "Our Services",
   },
   {
     category: "CITIZENSHIP",
     title: "Secure a better and safer future for your family",
+    description: "Gain a second citizenship and provide your family with greater security, stability, and access to world-class healthcare and education systems.",
     link: "/programs",
     cta: "Learn More",
   },
   {
     category: "ADVISORY",
     title: "Expand your horizons and discover new possibilities",
+    description: "With over 25 years of experience and a 99% success rate, our team of advisors will guide you through every step of the investment migration process.",
     link: "/about",
     cta: "About Us",
   },
   {
     category: "YOUR FUTURE",
     title: "Realize your dreams and build the future you desire",
+    description: "Whether it's business expansion, tax optimization, or a fresh start in a new country, we turn your vision into reality with trusted, results-driven advisory.",
     link: "/contact",
     cta: "Get Started",
   },
@@ -56,9 +61,9 @@ const HeroSection = () => {
         <img
           alt=""
           className="w-full h-full object-cover opacity-30"
-          src="/lovable-uploads/d0575d64-ea9e-41f2-82d6-ce2cd16c7293.jpg"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark-surface via-dark-surface/95 to-dark-surface/60" />
+           src="/lovable-uploads/d0575d64-ea9e-41f2-82d6-ce2cd16c7293.jpg"
+         />
+         <div className="absolute inset-0 bg-gradient-to-r from-dark-surface via-dark-surface/85 to-dark-surface/40" />
       </div>
 
       {/* Content */}
@@ -80,7 +85,7 @@ const HeroSection = () => {
               </h1>
               <div className="w-16 h-[3px] bg-primary mb-8" />
               <p className="text-[15px] text-dark-surface-foreground/50 leading-relaxed mb-10 max-w-lg">
-                Javaid & Associates, Citizenship Capital Group helps individuals and families become global citizens through strategic investment migration solutions.
+                {slides[current].description}
               </p>
               <Link
                 to={slides[current].link}

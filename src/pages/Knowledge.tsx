@@ -15,7 +15,7 @@ const filterOptions: Record<string, string[]> = {
   Types: ["Industry News", "Knowledge", "Analysis", "Guide"],
   Year: ["2026", "2025"],
   Topics: ["Citizenship by Investment", "Residency by Investment", "Due Diligence", "Tax Planning", "EU Policy", "Global Mobility"],
-  Industries: ["Investment Migration", "Real Estate", "Government Advisory", "Private Client"],
+  Industries: ["Investment Migration", "Real Estate", "Private Client"],
   Programs: ["St. Kitts & Nevis", "Portugal", "Greece", "Malta", "Caribbean"],
 };
 
