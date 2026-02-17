@@ -1,6 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import heroSlide1 from "@/assets/hero-slide-1.jpg";
+import heroSlide2 from "@/assets/hero-slide-2.jpg";
+import heroSlide3 from "@/assets/hero-slide-3.jpg";
+import heroSlide4 from "@/assets/hero-slide-4.jpg";
+import heroSlide5 from "@/assets/hero-slide-5.jpg";
 
 const slides = [
   {
@@ -9,6 +14,7 @@ const slides = [
     description: "Our programs provide access to over 150 countries without the need for traditional visa applications, giving you the freedom to travel, live, and do business worldwide.",
     link: "/programs",
     cta: "Explore Programs",
+    image: heroSlide1,
   },
   {
     category: "INVESTMENT PROGRAMS",
@@ -16,6 +22,7 @@ const slides = [
     description: "From citizenship to residency programs across the Caribbean, Europe, and North America, we help you find the right investment pathway for your goals.",
     link: "/services",
     cta: "Our Services",
+    image: heroSlide2,
   },
   {
     category: "CITIZENSHIP",
@@ -23,6 +30,7 @@ const slides = [
     description: "Gain a second citizenship and provide your family with greater security, stability, and access to world-class healthcare and education systems.",
     link: "/programs",
     cta: "Learn More",
+    image: heroSlide3,
   },
   {
     category: "ADVISORY",
@@ -30,6 +38,7 @@ const slides = [
     description: "With over 25 years of experience and a 99% success rate, our team of advisors will guide you through every step of the investment migration process.",
     link: "/about",
     cta: "About Us",
+    image: heroSlide4,
   },
   {
     category: "YOUR FUTURE",
@@ -37,6 +46,7 @@ const slides = [
     description: "Whether it's business expansion, tax optimization, or a fresh start in a new country, we turn your vision into reality with trusted, results-driven advisory.",
     link: "/contact",
     cta: "Get Started",
+    image: heroSlide5,
   },
 ];
 
@@ -58,12 +68,19 @@ const HeroSection = () => {
     <section className="relative min-h-[100vh] flex items-center overflow-hidden bg-dark-surface">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
-        <img
-          alt=""
-          className="w-full h-full object-cover opacity-30"
-           src="/lovable-uploads/d0575d64-ea9e-41f2-82d6-ce2cd16c7293.jpg"
-         />
-         <div className="absolute inset-0 bg-gradient-to-r from-dark-surface via-dark-surface/85 to-dark-surface/40" />
+        <AnimatePresence mode="sync">
+          <motion.img
+            key={current}
+            src={slides[current].image}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.3 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+          />
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-surface via-dark-surface/85 to-dark-surface/40" />
       </div>
 
       {/* Content */}
