@@ -141,8 +141,8 @@ const Contact = () => {
                 <a href="mailto:info@citizenshipcapitalgroup.com" className="flex items-center gap-3 text-[14px] text-muted-foreground hover:text-primary transition-colors">
                   <Mail size={16} className="text-primary" /> info@citizenshipcapitalgroup.com
                 </a>
-                <a href="tel:+14162900707" className="flex items-center gap-3 text-[14px] text-muted-foreground hover:text-primary transition-colors">
-                  <Phone size={16} className="text-primary" /> +1 416 290 0707
+                <a href="https://wa.me/14166161972" className="flex items-center gap-3 text-[14px] text-muted-foreground hover:text-primary transition-colors">
+                  <Phone size={16} className="text-primary" /> +1 416 616 1972 (WhatsApp)
                 </a>
               </div>
 

@@ -10,6 +10,8 @@ import programLatvia from "@/assets/program-latvia.jpg";
 import programPortugal from "@/assets/program-portugal.jpg";
 import programSpain from "@/assets/program-spain.jpg";
 import programUsaEb5 from "@/assets/program-usa-eb5.jpg";
+import programTurkey from "@/assets/program-turkey.jpg";
+import programQuebecCanada from "@/assets/program-quebec-canada.jpg";
 
 export interface Program {
   slug: string;
@@ -261,6 +263,7 @@ export const programs: Program[] = [
     country: "Turkey (Türkiye)",
     type: "Citizenship by Investment",
     category: "citizenship",
+    image: programTurkey,
     minInvestment: "USD $400,000",
     timeline: "1-3 months",
     visaFree: "110+ countries",
@@ -513,6 +516,7 @@ export const programs: Program[] = [
     country: "Quebec, Canada",
     type: "Immigrant Investor Program",
     category: "residency",
+    image: programQuebecCanada,
     minInvestment: "$1.2 million",
     timeline: "1-2 years",
     visaFree: "N/A",

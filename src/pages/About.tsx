@@ -8,10 +8,11 @@ import { ChevronRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const values = [
-{ title: "Excellence", description: "We set the highest standards in everything we do, delivering meticulous due diligence and exceptional client outcomes." },
-{ title: "Integrity", description: "Trust is the foundation of our practice. We operate with complete transparency and uphold the strictest ethical standards." },
-{ title: "Innovation", description: "We continually refine our approach, applying technology and deep expertise to stay ahead of evolving regulations." },
-{ title: "Global Perspective", description: "With offices in Toronto and Lahore, we bring a truly international outlook to every engagement." }];
+  { title: "Excellence", description: "We hold ourselves to the highest standard, delivering thorough due diligence and strong outcomes for every client we serve." },
+  { title: "Integrity", description: "Trust is earned through action. We operate with full transparency and maintain the strictest ethical standards in everything we do." },
+  { title: "Innovation", description: "We continuously improve our methods, combining technology with deep regulatory knowledge to keep our clients ahead." },
+  { title: "Global Perspective", description: "With offices in Toronto and Lahore, we bring a genuinely international outlook to every client engagement." },
+];
 
 
 const offices = [
@@ -36,7 +37,7 @@ const About = () =>
           <ScrollReveal>
             <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-5">About Us</h1>
             <div className="w-12 h-[3px] bg-primary mb-6" />
-            <p className="text-[15px] text-muted-foreground leading-relaxed max-w-md">In this fast-changing world, it takes vision and ambition to secure a better future. Javaid & Associates, Citizenship Capital Group is your trusted partner in global mobility.</p>
+            <p className="text-[15px] text-muted-foreground leading-relaxed max-w-md">Since 1999, Javaid & Associates, Citizenship Capital Group has helped individuals and families build a more secure future through investment migration. We are your trusted partner in global mobility.</p>
           </ScrollReveal>
         </div>
         <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full">
@@ -52,9 +53,9 @@ const About = () =>
         <div className="flex flex-col lg:flex-row items-start gap-16">
           <ScrollReveal className="lg:w-1/2">
             <div className="flex items-center gap-3 mb-6"><div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" /><h2 className="text-2xl font-serif text-foreground">Overview</h2></div>
-            <p className="text-[15px] text-muted-foreground leading-relaxed mb-6">Established in <strong>1999</strong>, Javaid & Associates, Citizenship Capital Group is the investment migration division of <p className="text-[15px] text-muted-foreground leading-relaxed mb-6">Established in <strong>1999</strong>, Javaid & Associates, Citizenship Capital Group is the investment migration division of Javaid & Associates Immigration Firm, Pakistan. We are a trusted leader in investment migration advisory, helping high-net-worth individuals and families access new opportunities through citizenship and residency by investment programs worldwide.</p>. We are a trusted leader in investment migration advisory, helping high-net-worth individuals and families access new opportunities through citizenship and residency by investment programs worldwide.</p>
-            <p className="text-[15px] text-muted-foreground leading-relaxed mb-6">Operating from <strong>two offices</strong> in Toronto, Canada and Lahore, Pakistan, our parent firm is a well-established legal practice with decades of experience. The Citizenship Capital Group operates as the firm's dedicated investment migration advisory division. We also have a separate Canadian practice, <strong>Javaid & Associates, Canada</strong>, serving clients across North America.</p>
-            <p className="text-[15px] text-muted-foreground leading-relaxed mb-8">With a team of seasoned professionals, we deliver end-to-end solutions, from program selection and due diligence to application management and post-approval support.</p>
+            <p className="text-[15px] text-muted-foreground leading-relaxed mb-6">Founded in <strong>1999</strong>, Javaid & Associates, Citizenship Capital Group is the investment migration division of Javaid & Associates Immigration Firm, Pakistan. We are a recognized leader in investment migration advisory, helping high-net-worth individuals and families secure new opportunities through citizenship and residency by investment programs worldwide.</p>
+            <p className="text-[15px] text-muted-foreground leading-relaxed mb-6">With <strong>two offices</strong> in Toronto, Canada and Lahore, Pakistan, our parent firm is an established immigration practice with over two decades of experience. The Citizenship Capital Group serves as the firm's dedicated investment migration advisory division. We also operate a separate Canadian practice, <strong>Javaid & Associates, Canada</strong>, serving clients across North America.</p>
+            <p className="text-[15px] text-muted-foreground leading-relaxed mb-8">Our team of experienced professionals provides complete support from start to finish, including program selection, due diligence, application management, and post-approval assistance.</p>
             <Link to="/experience" className="btn-fasken">Our Experience</Link>
           </ScrollReveal>
           <ScrollReveal className="lg:w-1/2" delay={0.2}>
