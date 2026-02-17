@@ -87,6 +87,46 @@ const NavDropdown = ({ item, isActive }: { item: typeof navItems[0]; isActive: (
   );
 };
 
+const MobileAccordionItem = ({ item, isActive, onNavigate }: { item: typeof navItems[0]; isActive: (href: string) => boolean; onNavigate: () => void }) => {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div className="border-b border-border/50">
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className={`flex items-center justify-between w-full py-4 text-lg font-serif transition-colors ${isActive(item.href) ? "text-primary" : "text-foreground"}`}
+      >
+        {item.label}
+        <ChevronDown size={18} className={`text-muted-foreground transition-transform duration-200 ${expanded ? "rotate-180" : ""}`} />
+      </button>
+      <AnimatePresence>
+        {expanded && item.dropdown && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <div className="pb-3 pl-4 flex flex-col gap-1">
+              {item.dropdown.map((sub) => (
+                <Link
+                  key={sub.label}
+                  to={sub.href}
+                  onClick={onNavigate}
+                  className="py-2 text-[14px] font-serif text-foreground/70 hover:text-primary transition-colors"
+                >
+                  {sub.label}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
 const SiteHeader = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -114,11 +154,6 @@ const SiteHeader = () => {
           {topBarLinks.map((link) =>
           <Link key={link.label} to={link.href} className="text-[11px] font-semibold uppercase tracking-[0.15em] text-foreground/70 hover:text-primary transition-colors hidden md:block">{link.label}</Link>
           )}
-          <div className="hidden md:flex items-center gap-4 ml-4 pl-4 border-l border-border">
-            
-
-
-          </div>
         </div>
       </div>
       <div className="border-b border-border bg-background">
@@ -190,7 +225,7 @@ const SiteHeader = () => {
                 <X size={24} className="text-foreground" />
               </button>
             </div>
-            <nav className="flex flex-col px-6 pt-8">
+            <nav className="flex flex-col px-6 pt-8 overflow-y-auto max-h-[calc(100vh-80px)]">
               {navItems.map((item, i) => (
                 <motion.div
                   key={item.label}
@@ -198,17 +233,25 @@ const SiteHeader = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 + i * 0.06, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <Link
-                    to={item.href}
-                    className={`flex items-center justify-between py-4 border-b border-border/50 text-lg font-serif transition-colors ${isActive(item.href) ? "text-primary" : "text-foreground hover:text-primary"}`}
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {item.label}
-                    <ChevronRight size={18} className="text-muted-foreground" />
-                  </Link>
+                  {item.dropdown ? (
+                    <MobileAccordionItem
+                      item={item}
+                      isActive={isActive}
+                      onNavigate={() => setMobileOpen(false)}
+                    />
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className={`flex items-center justify-between py-4 border-b border-border/50 text-lg font-serif transition-colors ${isActive(item.href) ? "text-primary" : "text-foreground hover:text-primary"}`}
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {item.label}
+                      <ChevronRight size={18} className="text-muted-foreground" />
+                    </Link>
+                  )}
                 </motion.div>
               ))}
-              <div className="pt-8 flex flex-col gap-4">
+              <div className="pt-8 flex flex-col gap-4 pb-8">
                 {topBarLinks.map((link, i) => (
                   <motion.div
                     key={link.label}
