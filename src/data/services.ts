@@ -41,17 +41,6 @@ export const industries: ServiceItem[] = [
     ],
   },
   {
-    title: "Government Advisory",
-    slug: "government-advisory",
-    areas: null,
-    description: "Advising governments on the design, development, and implementation of investment migration programs.",
-    details: [
-      "Citizenship Capital Group's sovereign advisory practice assists government agencies in developing and operating investment migration programs that meet international standards while achieving national economic objectives.",
-      "Our team brings decades of combined experience in program design, regulatory frameworks, due diligence systems, and marketing strategies. We have contributed to program design in multiple jurisdictions across the Caribbean and beyond.",
-      "We work closely with government stakeholders to balance the need for economic development with the imperative of maintaining program integrity and international reputation.",
-    ],
-  },
-  {
     title: "Asset Protection & Structuring",
     slug: "asset-protection",
     areas: null,
@@ -147,7 +136,7 @@ export const practices: ServiceItem[] = [
     description: "Cross-border tax advisory integrated with investment migration planning.",
     details: [
       "Our international tax law practice works at the intersection of taxation and mobility. We help clients understand the tax implications of acquiring new citizenship or residency, changing tax residence, and structuring cross-border investments.",
-      "We collaborate with leading international tax law firms to provide thorough advice on double taxation treaties, exchange of information agreements, substance requirements, and beneficial ownership reporting.",
+      "We collaborate with leading international tax advisory firms to provide thorough advice on double taxation treaties, exchange of information agreements, substance requirements, and beneficial ownership reporting.",
     ],
   },
   {

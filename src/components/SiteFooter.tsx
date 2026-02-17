@@ -17,7 +17,7 @@ const footerSections = [
   { label: "Citizenship by Investment", href: "/services/citizenship-by-investment" },
   { label: "Residency by Investment", href: "/services/residency-by-investment" },
   { label: "Family Office Advisory", href: "/services/family-office" },
-  { label: "Government Advisory", href: "/services/government-advisory" },
+  
   { label: "Due Diligence", href: "/services/due-diligence" },
   { label: "Tax Planning", href: "/services/tax-planning" }]
 

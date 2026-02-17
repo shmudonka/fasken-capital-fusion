@@ -19,7 +19,7 @@ export const team: TeamMember[] = [
     phone: "+44 20 7946 0958",
     bio: [
       "Alexandra Mercer is the Managing Partner of Javaid & Associates - Citizenship Capital Group, bringing over 25 years of experience in international law, investment migration, and private client advisory. She joined the firm to lead its investment migration division with a vision to provide exceptional service to high-net-worth individuals and families seeking global mobility solutions.",
-      "Prior to joining Javaid & Associates, Alexandra served as a senior partner at a leading international law firm in London, where she built one of the UK's most respected immigration and citizenship practices. Her expertise spans citizenship by investment programs, tax-efficient structuring, and cross-border family planning.",
+      "Prior to joining Javaid & Associates, Alexandra served as a senior partner at a leading international immigration firm in London, where she built one of the UK's most respected immigration and citizenship practices. Her expertise spans citizenship by investment programs, tax-efficient structuring, and cross-border family planning.",
       "Alexandra is a frequent speaker at international migration conferences and has been recognized by leading industry publications as one of the most influential figures in investment migration. She holds degrees from Oxford University and Harvard Law School.",
     ],
     specializations: ["Investment Migration Strategy", "Private Client Advisory", "Cross-Border Tax Planning", "Family Office Structuring"],
@@ -64,7 +64,7 @@ export const team: TeamMember[] = [
       "Marcus brings a unique perspective having served in diplomatic roles before entering the private sector. His government experience includes postings in the Caribbean and Europe, where he developed deep expertise in the policy frameworks that underpin citizenship and residency programs.",
       "He is a sought-after advisor for nations considering the establishment or reform of investment migration programs, having contributed to program design in multiple jurisdictions. Marcus holds degrees from McGill University and the London School of Economics.",
     ],
-    specializations: ["Government Advisory", "Program Design & Implementation", "Regulatory Compliance", "Sovereign Partnerships"],
+    specializations: ["Program Design & Implementation", "Regulatory Compliance", "Sovereign Partnerships", "International Relations"],
   },
   {
     slug: "elena-koslov",

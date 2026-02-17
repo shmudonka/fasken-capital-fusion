@@ -8,14 +8,10 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Briefcase, Users } from "lucide-react";
 
 const openings = [
-  { title: "Senior Immigration Advisor", location: "Toronto", type: "Full-time", department: "Advisory" },
-  { title: "Compliance Analyst", location: "Lahore", type: "Full-time", department: "Compliance" },
-  { title: "Client Relations Manager", location: "Toronto", type: "Full-time", department: "Client Services" },
-  { title: "Legal Counsel, Investment Programs", location: "Toronto", type: "Full-time", department: "Legal" },
-  { title: "Due Diligence Specialist", location: "Lahore", type: "Full-time", department: "Compliance" },
-  { title: "Marketing Coordinator", location: "Toronto", type: "Full-time", department: "Marketing" },
-  { title: "Associate Advisor, Caribbean Programs", location: "Lahore", type: "Full-time", department: "Advisory" },
-  { title: "Administrative Assistant", location: "Lahore", type: "Full-time", department: "Operations" },
+  { title: "Business Development Manager", location: "Lahore", type: "Full-time", department: "Business Development" },
+  { title: "Intake Officer", location: "Lahore", type: "Full-time", department: "Client Services" },
+  { title: "Marketing Coordinator", location: "Lahore", type: "Full-time", department: "Marketing" },
+  { title: "Partner", location: "Multiple Locations", type: "Full-time", department: "Leadership" },
 ];
 
 const Careers = () => {
