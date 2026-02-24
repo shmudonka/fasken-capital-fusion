@@ -149,7 +149,7 @@ export const programs: Program[] = [
     type: "Permanent Residency by Investment",
     category: "residency",
     image: programMalta,
-    minInvestment: "EUR €53,000+",
+    minInvestment: "EUR €500,000+",
     timeline: "12-18 months",
     visaFree: "Schengen Area",
     description: "Although one of the smallest countries in the world, Malta offers some of the biggest opportunities. A natively English-speaking member of the European Union and the Eurozone, Malta's strategic position in the central Mediterranean Sea plays an important role in its attraction to both visitors and investors. As an EU member since 2004, Malta is often considered the gateway to the Euro-Mediterranean region and has become an excellent choice for investment due to its stable political climate, growing economy, and booming tourist property market.",
