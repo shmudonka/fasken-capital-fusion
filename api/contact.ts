@@ -10,7 +10,7 @@ export default async function handler(req: any, res: any) {
   try {
     const { firstName, lastName, email, phone, service, message } = req.body;
 
-    await resend.emails.send({
+    const response = await resend.emails.send({
       from: "Website Contact <onboarding@resend.dev>",
       to: "info@citizenshipcapitalgroup.com",
       subject: `New Inquiry from ${firstName} ${lastName}`,
@@ -24,9 +24,15 @@ export default async function handler(req: any, res: any) {
       `,
     });
 
+    if (response.error) {
+      console.error("Resend Error:", response.error);
+      return res.status(500).json({ error: response.error });
+    }
+
     return res.status(200).json({ success: true });
+
   } catch (error) {
-    console.error(error);
+    console.error("Server Error:", error);
     return res.status(500).json({ error: "Email failed to send" });
   }
 }
