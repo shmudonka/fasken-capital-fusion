@@ -32,7 +32,7 @@ const events = [
     title: "Private Client Forum Asia",
     date: "April 18-19, 2026",
     location: "Singapore",
-    description: "Citizenship Capital Group is a proud sponsor of the Private Client Forum Asia, focusing on wealth management and mobility solutions for Asian HNW families.",
+    description: "Citizenship Capital Group is a proud sponsor of the Private Client Forum Asia, with a focus on wealth management and mobility solutions for Asian HNW families.",
     type: "Conference",
   },
   {
