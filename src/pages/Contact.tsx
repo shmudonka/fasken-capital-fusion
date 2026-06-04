@@ -55,9 +55,18 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        alert("Message sent successfully.");
-        form.reset();
-      } else {
+
+  if (window.gtag) {
+    window.gtag('event', 'conversion', {
+      send_to: 'AW-18204015661/4Ox6CJKdlrccEK34rOhD',
+      value: 1.0,
+      currency: 'CAD'
+    });
+  }
+
+  alert("Message sent successfully.");
+  form.reset();
+} else {
         alert("Something went wrong.");
       }
     } catch (error) {
