@@ -4,8 +4,16 @@ import SiteFooter from "@/components/SiteFooter";
 import CookieBanner from "@/components/CookieBanner";
 import BackToTop from "@/components/BackToTop";
 import ScrollReveal from "@/components/ScrollReveal";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ChevronRight, ArrowRight } from "lucide-react";
-import { getProgramBySlug, programs } from "@/data/programs";
+import { categoryLabels, getProgramBySlug, programs } from "@/data/programs";
+
+const SectionHeading = ({ children }: { children: React.ReactNode }) => (
+  <div className="flex items-center gap-3 mb-8">
+    <div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" />
+    <h2 className="text-2xl font-serif text-foreground">{children}</h2>
+  </div>
+);
 
 const ProgramDetail = () => {
   const { slug } = useParams();
@@ -26,6 +34,14 @@ const ProgramDetail = () => {
 
   const relatedPrograms = programs.filter(p => p.slug !== program.slug && p.category === program.category).slice(0, 3);
 
+  const keyFacts = program.keyFacts ?? [
+    { label: "Min. Investment", value: program.minInvestment },
+    { label: "Processing Time", value: program.timeline },
+    { label: "Visa-Free Access", value: program.visaFree },
+    { label: "Program Type", value: categoryLabels[program.category] },
+  ];
+  const overviewParagraphs = program.overview ?? [program.description];
+
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -37,7 +53,7 @@ const ProgramDetail = () => {
               <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-primary mb-3 block">{program.type}</span>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif text-foreground mb-4">{program.country}</h1>
               <div className="w-12 h-[3px] bg-primary mb-6" />
-              <p className="text-[14px] text-muted-foreground leading-relaxed max-w-md">{program.description}</p>
+              <p className="text-[14px] text-muted-foreground leading-relaxed max-w-md">{program.summary ?? program.description}</p>
             </ScrollReveal>
           </div>
           <div className="relative w-full h-56 sm:h-64 lg:absolute lg:right-0 lg:top-0 lg:w-1/2 lg:h-full">
@@ -60,30 +76,14 @@ const ProgramDetail = () => {
         {/* Key facts bar */}
         <div className="border-b border-border">
           <div className="container py-6 grid grid-cols-2 sm:flex sm:flex-wrap gap-4 sm:gap-8 md:gap-16">
-            <ScrollReveal delay={0.1}>
-              <div>
-                <span className="block text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Min. Investment</span>
-                <span className="text-[16px] font-serif text-foreground">{program.minInvestment}</span>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={0.15}>
-              <div>
-                <span className="block text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Processing Time</span>
-                <span className="text-[16px] font-serif text-foreground">{program.timeline}</span>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={0.2}>
-              <div>
-                <span className="block text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Visa-Free Access</span>
-                <span className="text-[16px] font-serif text-foreground">{program.visaFree}</span>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={0.25}>
-              <div>
-                <span className="block text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Program Type</span>
-                <span className="text-[16px] font-serif text-foreground capitalize">{program.category}</span>
-              </div>
-            </ScrollReveal>
+            {keyFacts.map((fact, i) => (
+              <ScrollReveal key={fact.label} delay={0.1 + i * 0.05}>
+                <div>
+                  <span className="block text-[10px] uppercase tracking-wider text-muted-foreground mb-1">{fact.label}</span>
+                  <span className="text-[16px] font-serif text-foreground">{fact.value}</span>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
 
@@ -91,11 +91,12 @@ const ProgramDetail = () => {
         <div className="container py-16">
           <ScrollReveal>
             <div className="max-w-3xl">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" />
-                <h2 className="text-2xl font-serif text-foreground">Overview</h2>
+              <SectionHeading>Overview</SectionHeading>
+              <div className="space-y-4">
+                {overviewParagraphs.map((paragraph, i) => (
+                  <p key={i} className="text-[15px] text-muted-foreground leading-relaxed">{paragraph}</p>
+                ))}
               </div>
-              <p className="text-[15px] text-muted-foreground leading-relaxed">{program.description}</p>
             </div>
           </ScrollReveal>
         </div>
@@ -104,31 +105,50 @@ const ProgramDetail = () => {
         <div className="bg-warm-beige py-16">
           <div className="container">
             <ScrollReveal>
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" />
-                <h2 className="text-2xl font-serif text-foreground">Key Benefits</h2>
-              </div>
+              <SectionHeading>{program.bestFit ? "Key Benefits and Best Fit" : "Key Benefits"}</SectionHeading>
             </ScrollReveal>
-            <div className="grid md:grid-cols-2 gap-0">
-              {program.benefits.map((benefit, i) => (
-                <ScrollReveal key={i} delay={i * 0.05}>
-                  <div className="flex items-start gap-3 py-5 px-4 border-b border-border/40">
-                    <ChevronRight size={14} className="text-primary shrink-0 mt-0.5" />
-                    <span className="text-[15px] text-foreground">{benefit}</span>
+            {program.bestFit ? (
+              <div className="grid md:grid-cols-2 gap-8 md:gap-16">
+                {[
+                  { title: "Key Benefits", items: program.benefits },
+                  { title: "Often a Strong Fit For", items: program.bestFit },
+                ].map((column) => (
+                  <div key={column.title}>
+                    <ScrollReveal>
+                      <h3 className="text-[11px] font-semibold uppercase tracking-[0.15em] text-primary pb-4 border-b border-border/40">
+                        {column.title}
+                      </h3>
+                    </ScrollReveal>
+                    {column.items.map((item, i) => (
+                      <ScrollReveal key={i} delay={i * 0.05}>
+                        <div className="flex items-start gap-3 py-5 border-b border-border/40">
+                          <ChevronRight size={14} className="text-primary shrink-0 mt-0.5" />
+                          <span className="text-[15px] text-foreground">{item}</span>
+                        </div>
+                      </ScrollReveal>
+                    ))}
                   </div>
-                </ScrollReveal>
-              ))}
-            </div>
+                ))}
+              </div>
+            ) : (
+              <div className="grid md:grid-cols-2 gap-0">
+                {program.benefits.map((benefit, i) => (
+                  <ScrollReveal key={i} delay={i * 0.05}>
+                    <div className="flex items-start gap-3 py-5 px-4 border-b border-border/40">
+                      <ChevronRight size={14} className="text-primary shrink-0 mt-0.5" />
+                      <span className="text-[15px] text-foreground">{benefit}</span>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
         {/* Requirements */}
         <div className="container py-16">
           <ScrollReveal>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" />
-              <h2 className="text-2xl font-serif text-foreground">Requirements</h2>
-            </div>
+            <SectionHeading>{program.requirementsHeading ?? "Requirements"}</SectionHeading>
           </ScrollReveal>
           <div className="space-y-0 max-w-3xl">
             {program.requirements.map((req, i) => (
@@ -146,10 +166,7 @@ const ProgramDetail = () => {
         <div className="bg-warm-beige py-16">
           <div className="container">
             <ScrollReveal>
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-0 h-0 border-l-[14px] border-l-primary border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent" />
-                <h2 className="text-2xl font-serif text-foreground">Application Process</h2>
-              </div>
+              <SectionHeading>{program.processHeading ?? "Application Process"}</SectionHeading>
             </ScrollReveal>
             <div className="space-y-0 max-w-3xl">
               {program.process.map((step, i) => (
@@ -164,6 +181,99 @@ const ProgramDetail = () => {
           </div>
         </div>
 
+        {/* Evidence */}
+        {program.evidence && (
+          <div className="container py-16">
+            <ScrollReveal>
+              <SectionHeading>{program.evidence.heading}</SectionHeading>
+            </ScrollReveal>
+            <div className="space-y-0 max-w-3xl">
+              {program.evidence.items.map((item, i) => (
+                <ScrollReveal key={i} delay={i * 0.05}>
+                  <div className="flex items-start gap-3 py-4 border-b border-border">
+                    <ChevronRight size={14} className="text-primary shrink-0 mt-1" />
+                    <span className="text-[15px] text-muted-foreground">{item}</span>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+            {program.evidence.note && (
+              <ScrollReveal>
+                <p className="max-w-3xl mt-8 border-l-2 border-primary pl-5 text-[15px] text-muted-foreground leading-relaxed">
+                  {program.evidence.note}
+                </p>
+              </ScrollReveal>
+            )}
+          </div>
+        )}
+
+        {/* Comparison */}
+        {program.comparison && (
+          <div className="bg-warm-beige py-16">
+            <div className="container">
+              <ScrollReveal>
+                <SectionHeading>{program.comparison.heading}</SectionHeading>
+              </ScrollReveal>
+              <ScrollReveal delay={0.1}>
+                <div className="overflow-x-auto">
+                  <table className="w-full min-w-[640px] border-collapse text-left">
+                    <thead>
+                      <tr className="border-b-2 border-primary">
+                        {program.comparison.columns.map((column) => (
+                          <th
+                            key={column}
+                            scope="col"
+                            className="py-4 pr-6 text-[10px] font-semibold uppercase tracking-[0.15em] text-primary align-bottom"
+                          >
+                            {column}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {program.comparison.rows.map((row) => (
+                        <tr key={row[0]} className="border-b border-border/40 align-top">
+                          <th scope="row" className="py-5 pr-6 text-[14px] font-serif font-normal text-foreground w-1/5">
+                            {row[0]}
+                          </th>
+                          {row.slice(1).map((cell, i) => (
+                            <td key={i} className="py-5 pr-6 text-[14px] text-muted-foreground leading-relaxed">
+                              {cell}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        )}
+
+        {/* FAQs */}
+        {program.faqs && program.faqs.length > 0 && (
+          <div className="container py-16">
+            <ScrollReveal>
+              <SectionHeading>Frequently Asked Questions</SectionHeading>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <Accordion type="single" collapsible className="max-w-3xl">
+                {program.faqs.map((faq, i) => (
+                  <AccordionItem key={i} value={`faq-${i}`}>
+                    <AccordionTrigger className="text-left text-[15px] font-serif text-foreground hover:text-primary hover:no-underline">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-[15px] text-muted-foreground leading-relaxed">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </ScrollReveal>
+          </div>
+        )}
+
         {/* CTA */}
         <div className="bg-dark-surface py-16">
           <div className="container text-center">
@@ -171,8 +281,9 @@ const ProgramDetail = () => {
               <h2 className="text-2xl font-serif text-dark-surface-foreground mb-4">
                 Interested in {program.country}?
               </h2>
-              <p className="text-dark-surface-foreground/60 text-[14px] max-w-lg mx-auto mb-8">
-                Our advisors specialize in the {program.country} {program.type.toLowerCase()} and can guide you through every step of the process.
+              <p className="text-dark-surface-foreground/60 text-[14px] max-w-2xl mx-auto mb-8">
+                {program.ctaText ??
+                  `Our advisors specialize in the ${program.country} ${program.type.toLowerCase()} and can guide you through every step of the process.`}
               </p>
               <Link to="/contact" className="btn-fasken-outline-white">
                 Schedule a Consultation
@@ -194,7 +305,9 @@ const ProgramDetail = () => {
                   <Link to={`/programs/${p.slug}`} className="group block py-4">
                     <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-primary block mb-2">{p.type}</span>
                     <h3 className="font-serif text-[17px] text-foreground group-hover:text-primary transition-colors mb-1">{p.country}</h3>
-                    <span className="text-[12px] text-muted-foreground">From {p.minInvestment}</span>
+                    <span className="text-[12px] text-muted-foreground">
+                      {p.keyFacts ? p.keyFacts[1].value : `From ${p.minInvestment}`}
+                    </span>
                   </Link>
                 </ScrollReveal>
               ))}
